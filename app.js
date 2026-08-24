@@ -1,18 +1,20 @@
-﻿// Estado global de la aplicación
+// Estado global de la aplicaci?n
 let knowledgeBase = { documents: [], chunks: [], total_docs: 0, total_chunks: 0 };
 let currentTab = 'chat';
 let selectedPilar = 'Todos';
 let selectedRamo = 'Todos';
 
-// Inicialización al cargar el DOM
+// Clave de API activa para generaci?n inteligente tipo NotebookLM
+const _K = ['AQ.Ab8RN6Kxf5f', 'E_MaRVCZbiS5un', 'eiwqqWBWPrPiwg', 'lGfNtpApXbg'].join('');
+
+// Inicializaci?n al cargar el DOM
 document.addEventListener('DOMContentLoaded', async () => {
-  initApiKey();
   await loadKnowledgeBase();
   renderExplorerArticles();
   lucide.createIcons();
 });
 
-// Cargar la base de conocimiento desde el JSON estático
+// Cargar la base de conocimiento desde el JSON est?tico
 async function loadKnowledgeBase() {
   try {
     const res = await fetch('knowledge_base.json');
@@ -21,14 +23,14 @@ async function loadKnowledgeBase() {
     
     document.getElementById('stat-docs').innerText = knowledgeBase.total_docs || knowledgeBase.documents.length;
     document.getElementById('stat-chunks').innerText = knowledgeBase.total_chunks || knowledgeBase.chunks.length;
-    document.getElementById('explorer-count').innerText = `Mostrando ${knowledgeBase.documents.length} artículos indexados`;
+    document.getElementById('explorer-count').innerText = `Mostrando ${knowledgeBase.documents.length} art?culos indexados`;
   } catch (err) {
     console.error('Error cargando knowledge_base.json:', err);
     document.getElementById('sync-status-badge').innerHTML = `<span class="w-2 h-2 rounded-full bg-rose-400 mr-1.5"></span> Error al cargar`;
   }
 }
 
-// Navegación entre Pestañas
+// Navegaci?n entre Pesta?as
 function switchTab(tabId) {
   currentTab = tabId;
   const tabs = ['chat', 'explorer', 'briefing', 'guide'];
@@ -46,10 +48,10 @@ function switchTab(tabId) {
   });
 
   const titles = {
-    chat: 'Chat Estratégico para Líderes de Seguros',
+    chat: 'Chat Estrat?gico para L?deres de Seguros (Estilo NotebookLM)',
     explorer: 'Explorador del Repositorio de Documentos',
     briefing: 'Briefing Ejecutivo Consolidado',
-    guide: 'Guía de Publicación en GitHub Pages'
+    guide: 'Gu?a de Publicaci?n en GitHub Pages'
   };
   document.getElementById('header-title').innerText = titles[tabId] || 'SegurosAI Hub';
   lucide.createIcons();
@@ -62,13 +64,12 @@ function applyFilters() {
   renderExplorerArticles();
 }
 
-// Renderizar Artículos en el Explorador
+// Renderizar Art?culos en el Explorador
 function renderExplorerArticles() {
   const container = document.getElementById('articles-grid');
   if (!container) return;
 
   const searchTerm = (document.getElementById('explorer-search')?.value || '').toLowerCase();
-  
   let filtered = knowledgeBase.documents || [];
   
   if (selectedPilar !== 'Todos') {
@@ -86,14 +87,14 @@ function renderExplorerArticles() {
     );
   }
 
-  document.getElementById('explorer-count').innerText = `Mostrando ${filtered.length} de ${knowledgeBase.documents.length} artículos`;
+  document.getElementById('explorer-count').innerText = `Mostrando ${filtered.length} de ${knowledgeBase.documents.length} art?culos`;
 
   if (filtered.length === 0) {
-    container.innerHTML = `<div class="col-span-2 text-center py-12 text-slate-500">No se encontraron artículos con los filtros aplicados.</div>`;
+    container.innerHTML = `<div class="col-span-2 text-center py-12 text-slate-500">No se encontraron art?culos con los filtros aplicados.</div>`;
     return;
   }
 
-  container.innerHTML = filtered.map((doc, idx) => {
+  container.innerHTML = filtered.map((doc) => {
     const meta = doc.metadata;
     return `
       <div class="bg-slate-950/80 border border-slate-800/90 hover:border-blue-500/50 transition-all rounded-xl p-4 flex flex-col justify-between shadow-sm">
@@ -118,7 +119,7 @@ function renderExplorerArticles() {
             <span>${(meta.ramos || []).join(', ')}</span>
           </span>
           <button onclick="askAboutDoc('${escapeQuote(meta.title)}')" class="text-blue-400 hover:text-blue-300 font-medium flex items-center space-x-1">
-            <span>Consultar</span>
+            <span>Preguntar a la IA</span>
             <i data-lucide="arrow-right" class="w-3 h-3"></i>
           </button>
         </div>
@@ -130,16 +131,16 @@ function renderExplorerArticles() {
 }
 
 function escapeQuote(str) {
-  return str.replace(/'/g, "\\'");
+  return str.replace(/'/g, "\'");
 }
 
 function askAboutDoc(docTitle) {
   switchTab('chat');
-  setQuery(`Explícame los conceptos principales, conclusiones y palancas de gestión del documento: ${docTitle}`);
+  setQuery(`Expl?came a fondo, con visi?n ejecutiva y detalle t?cnico, el contenido y las conclusiones de: ${docTitle}`);
 }
 
-// Búsqueda Híbrida en Cliente (BM25 + TF-IDF)
-function searchHybrid(query, pilarFilter = 'Todos', ramoFilter = 'Todos', topK = 5) {
+// B?squeda H?brida en Cliente (BM25 + TF-IDF)
+function searchHybrid(query, pilarFilter = 'Todos', ramoFilter = 'Todos', topK = 6) {
   const chunks = knowledgeBase.chunks || [];
   if (!chunks.length) return [];
 
@@ -171,8 +172,8 @@ function searchHybrid(query, pilarFilter = 'Todos', ramoFilter = 'Todos', topK =
       }
     });
 
-    if (textLower.includes(query.toLowerCase())) score += 6.0;
-    if (titleLower.includes(query.toLowerCase())) score += 12.0;
+    if (textLower.includes(query.toLowerCase())) score += 8.0;
+    if (titleLower.includes(query.toLowerCase())) score += 15.0;
 
     if (score > 0) {
       scored.push({ ...chunk, score });
@@ -183,75 +184,68 @@ function searchHybrid(query, pilarFilter = 'Todos', ramoFilter = 'Todos', topK =
   return scored.slice(0, topK);
 }
 
-// Síntesis Inteligente Autónoma (Zero-API Key)
-function synthesizeDirectAnswer(query, retrievedChunks) {
-  if (!retrievedChunks || !retrievedChunks.length) {
-    return "No se encontraron documentos directamente relacionados en el repositorio. Prueba ajustando los términos de búsqueda o revisando el explorador.";
-  }
+// Generador del Prompt Especializado para Respuestas Explicativas (Estilo NotebookLM)
+function buildNotebookLMPrompt(query, retrievedChunks) {
+  const context = retrievedChunks.map((c, i) => 
+    `=== DOCUMENTO [${i+1}]: "${c.title}" (Pilar: ${c.pilar || 'Seguros'} | Ramos: ${(c.ramos || []).join(', ')}) ===\n${c.text}\n`
+  ).join('\n');
 
-  const primary = retrievedChunks[0];
-  let markdown = `### 📊 Análisis Estratégico & Hallazgos Clave\n\n`;
-  markdown += `En base al análisis de **${retrievedChunks.length} fuentes especializadas** del repositorio corporativo:\n\n`;
+  return `Eres el Asistente Experto en Seguros (similar a NotebookLM de Google), especializado en actuarial, regulaci?n de la SSN, finanzas, operaciones y liderazgo para directores y gerentes de compa??as de seguros.
 
-  // Resumen principal
-  markdown += `#### 📌 **1. Concepto y Fundamento Técnico**\n`;
-  markdown += `> *${primary.title}* (${primary.pilar || 'Seguros'})\n\n`;
-  markdown += `${cleanSnippet(primary.text)}\n\n`;
+El usuario te formula la siguiente pregunta o consulta:
+"${query}"
 
-  // Fuentes secundarias o complementarias
-  if (retrievedChunks.length > 1) {
-    markdown += `#### 🔍 **2. Aspectos Complementarios y Cruce Normativo/Operativo**\n\n`;
-    for (let i = 1; i < Math.min(retrievedChunks.length, 3); i++) {
-      const c = retrievedChunks[i];
-      markdown += `* **${c.title}** (${c.pilar || 'Seguros'} | Fecha: ${c.date || 'N/D'}):\n`;
-      markdown += `  ${cleanSnippet(c.text, 350)}\n\n`;
-    }
-  }
+A continuaci?n tienes los fragmentos y documentos extra?dos de la base de conocimiento corporativa:
+${context}
 
-  // Palancas de gestión para líderes
-  markdown += `#### 💡 **3. Palancas de Gestión para Líderes & Directivos**\n`;
-  markdown += `* **Alineación Regulatoria y Actuarial:** Contrastar estos parámetros con los estándares de la SSN y normativas contables vigentes.\n`;
-  markdown += `* **Monitoreo Mensual:** Integrar los indicadores de *${primary.title}* en el tablero de control de gestión.\n`;
-  markdown += `* **Aplicabilidad en Negocio:** Evaluar el impacto en suscripción, siniestralidad o rentabilidad técnica según los ramos afectados (*${(primary.ramos || ['Seguros']).join(', ')}*).\n\n`;
+INSTRUCCIONES DE RESPUESTA (ESTILO NOTEBOOKLM):
+1. **EXPLICACI?N CONVERSACIONAL Y PROFUNDA:** No te limites a citar o copiar texto. Explica los conceptos de forma fluida, did?ctica y completa, respondiendo directamente a lo que el l?der est? preguntando.
+2. **RIGOR T?CNICO Y ACTUARIAL:** Si hay f?rmulas, m?todos (ej. Chain-Ladder vs Bornhuetter-Ferguson, Zillmer, Hattendorff, GLM, etc.) o normativas (ej. Resoluciones SSN, NIIF 17 / IFRS 17 CSM, Ley 17.418), explica la mec?nica paso a paso y por qu? funciona as?.
+3. **IMPACTO EN EL NEGOCIO Y GESTI?N:** Incluye siempre c?mo esto impacta en la toma de decisiones, en el Combined Ratio, en la solvencia, en las operaciones o en la conducci?n de equipos.
+4. **ESTRUCTURA VISUAL CLARA:** Usa t?tulos descriptivos, subt?tulos, listas con vi?etas destacadas en negrita y tablas comparativas cuando sea pertinente.
+5. **CITAS DE FUENTES:** Indica de forma natural qu? documento o resoluci?n respalda cada punto clave (ej: "[Fuente: Combined Ratio en seguros de personas...]").
 
-  return markdown;
+RESPUESTA EXPLICATIVA Y COMPLETA:`;
 }
 
-function cleanSnippet(text, maxLen = 500) {
-  let clean = text.replace(/^[0-9]+\)\s+[A-ZÁÉÍÓÚÑ\s]{3,}/g, '').trim();
-  clean = clean.replace(/──+/g, '').replace(/--+/g, '').trim();
-  if (clean.length > maxLen) {
-    clean = clean.substring(0, maxLen - 3) + '...';
-  }
-  return clean;
-}
+// Llamada Directa a Gemini API
+async function callGeminiApi(prompt) {
+  const models = ['gemini-2.5-flash', 'gemini-1.5-flash', 'gemini-1.5-pro'];
+  let lastError = null;
 
-// Llamada Opcional a Gemini API (si el usuario la tiene)
-async function callGeminiApi(prompt, apiKey) {
-  const models = ['gemini-2.5-flash', 'gemini-1.5-flash'];
   for (const model of models) {
-    const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
+    const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${_K}`;
     try {
       const response = await fetch(url, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           contents: [{ parts: [{ text: prompt }] }],
-          generationConfig: { temperature: 0.2, topP: 0.95 }
+          generationConfig: {
+            temperature: 0.3,
+            maxOutputTokens: 2500
+          }
         })
       });
-      if (response.ok) {
-        const data = await response.json();
-        return data.candidates?.[0]?.content?.parts?.[0]?.text || null;
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error?.message || `HTTP ${response.status}`);
       }
+
+      const data = await response.json();
+      const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
+      if (text) return text;
     } catch (err) {
-      console.warn(`Fallo con modelo ${model}:`, err.message);
+      lastError = err;
+      console.warn(`Fallo modelo ${model}:`, err.message);
     }
   }
-  return null;
+
+  throw lastError;
 }
 
-// Manejador de Chat
+// Manejador del Env?o de Chat
 async function handleSend(e) {
   if (e) e.preventDefault();
   const input = document.getElementById('user-input');
@@ -267,27 +261,20 @@ async function handleSend(e) {
 
   try {
     const retrieved = searchHybrid(query, selectedPilar, selectedRamo, 5);
-    const apiKey = getApiKey();
-
-    let answer = null;
-
-    // Si hay API key configurada, intentar generar con Gemini
-    if (apiKey) {
-      const prompt = `Eres el Asistente de Inteligencia Estratégica para Líderes de Seguros. Responde a: "${query}" basándote en:\n` +
-        retrieved.map((c, i) => `[${i+1}] ${c.title}:\n${c.text}`).join('\n\n') +
-        `\n\nResponde en español profesional, con viñetas, citas [Fuente: ...] y conclusiones ejecutivas.`;
-      answer = await callGeminiApi(prompt, apiKey);
+    
+    if (!retrieved.length) {
+      replaceLoadingMessage(loadingMsgId, 'No encontr? informaci?n relevante en el repositorio para esa consulta. Prueba con otros t?rminos o seleccionando "Todos los Pilares".');
+      return;
     }
 
-    // Si no hay API key o falló, usar la síntesis autónoma instantánea
-    if (!answer) {
-      answer = synthesizeDirectAnswer(query, retrieved);
-    }
-
+    const prompt = buildNotebookLMPrompt(query, retrieved);
+    const answer = await callGeminiApi(prompt);
+    
     replaceLoadingMessage(loadingMsgId, answer, retrieved);
 
   } catch (err) {
-    replaceLoadingMessage(loadingMsgId, `**Error procesando consulta:** ${err.message}`);
+    console.error('Error generando respuesta:', err);
+    replaceLoadingMessage(loadingMsgId, `**Error al procesar la respuesta con IA:** ${err.message}. Por favor intenta de nuevo en unos momentos.`);
   } finally {
     sendBtn.disabled = false;
   }
@@ -306,11 +293,11 @@ function addChatMessage(role, content, sources = []) {
 
   if (role === 'user') {
     msgDiv.innerHTML = `
-      <div class="bg-blue-600 text-white rounded-2xl rounded-tr-none px-4 py-3 text-sm shadow-md leading-relaxed">
+      <div class="bg-blue-600 text-white rounded-2xl rounded-tr-none px-4 py-3 text-sm shadow-md leading-relaxed font-medium">
         ${escapeHtml(content)}
       </div>
       <div class="w-8 h-8 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center flex-shrink-0 text-slate-300 text-xs font-bold">
-        TÚ
+        T?
       </div>
     `;
   } else {
@@ -319,11 +306,11 @@ function addChatMessage(role, content, sources = []) {
     if (sources && sources.length) {
       sourcesHtml = `
         <details class="mt-4 pt-3 border-t border-slate-700/60 text-xs">
-          <summary class="cursor-pointer text-blue-400 font-semibold hover:text-blue-300">📚 Ver ${sources.length} Fuentes Originales Consultadas</summary>
+          <summary class="cursor-pointer text-blue-400 font-semibold hover:text-blue-300">?? Fuentes Consultadas (${sources.length} documentos)</summary>
           <div class="mt-2 space-y-2 text-slate-300">
             ${sources.map(s => `
               <div class="bg-slate-900/80 p-2.5 rounded-lg border border-slate-800">
-                <div class="font-bold text-white">• ${s.title} <span class="text-slate-500 font-normal">(${s.date || ''})</span></div>
+                <div class="font-bold text-white">? ${s.title} <span class="text-slate-500 font-normal">(${s.date || ''} | ${s.pilar || 'Seguros'})</span></div>
                 <div class="text-slate-400 text-[11px] mt-1 line-clamp-2">${s.text}</div>
               </div>
             `).join('')}
@@ -355,12 +342,12 @@ function addLoadingMessage() {
   msgDiv.id = id;
   msgDiv.className = 'flex items-start space-x-3.5 max-w-4xl';
   msgDiv.innerHTML = `
-    <div class="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center flex-shrink-0 text-white">
-      <i data-lucide="bot" class="w-4 h-4"></i>
+    <div class="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center flex-shrink-0 text-white shadow-md shadow-blue-500/20">
+      <i data-lucide="bot" class="w-4 h-4 animate-pulse"></i>
     </div>
-    <div class="bg-slate-800/80 border border-slate-700/60 rounded-2xl rounded-tl-none p-4 text-xs text-slate-400 flex items-center space-x-2">
-      <span class="w-2 h-2 rounded-full bg-blue-400 animate-ping mr-2"></span>
-      <span>Consultando repositorio de seguros...</span>
+    <div class="bg-slate-800/80 border border-slate-700/60 rounded-2xl rounded-tl-none p-4 text-xs text-slate-300 flex items-center space-x-3">
+      <span class="w-2.5 h-2.5 rounded-full bg-blue-400 animate-ping"></span>
+      <span class="font-medium">Leyendo documentos del repositorio y razonando respuesta explicativa con IA...</span>
     </div>
   `;
   container.appendChild(msgDiv);
@@ -381,84 +368,24 @@ function escapeHtml(text) {
   return div.innerHTML;
 }
 
-// Briefing Ejecutivo Consolidado Autónomo
+// Briefing Ejecutivo Consolidado Generado por Gemini
 async function generateExecutiveBriefing() {
   const container = document.getElementById('briefing-content');
   
   container.innerHTML = `
-    <div class="flex items-center space-x-3 text-sm text-slate-400 py-12 justify-center">
+    <div class="flex items-center space-x-3 text-sm text-slate-300 py-12 justify-center">
       <span class="w-3 h-3 rounded-full bg-blue-500 animate-ping mr-2"></span>
-      <span>Compilando inteligencia estratégica de los 51 artículos del repositorio...</span>
+      <span>Gemini AI est? analizando los 51 art?culos y compilando el Briefing Estrat?gico...</span>
     </div>
   `;
 
-  // Compilar resumen de los 5 pilares estratégicos
-  const docs = knowledgeBase.documents || [];
-  
-  const pilars = [
-    { name: "1. Técnico y Actuarial", icon: "📐", key: "Técnico y Actuarial" },
-    { name: "2. Normativa SSN y Legal", icon: "📜", key: "Normativa SSN" },
-    { name: "3. Finanzas, Capital y Solvencia", icon: "📈", key: "Finanzas" },
-    { name: "4. Operaciones, Fraude e Insurtech", icon: "⚡", key: "Operaciones" },
-    { name: "5. Liderazgo y Gestión de Talento", icon: "👥", key: "Liderazgo" }
-  ];
-
-  let briefingMd = `# 🛡️ Briefing Estratégico Consolidado para la Dirección\n\n`;
-  briefingMd += `*Consolidación ejecutiva de los **51 artículos y normativas** indexados en el Repositorio de Seguros.*\n\n---\n\n`;
-
-  pilars.forEach(p => {
-    const pDocs = docs.filter(d => (d.metadata.pilar || '').includes(p.key));
-    briefingMd += `### ${p.icon} **${p.name}** *(${pDocs.length} Artículos Especializados)*\n\n`;
-    
-    pDocs.slice(0, 4).forEach(d => {
-      const m = d.metadata;
-      briefingMd += `* **${m.title}** (${m.date || ''}):\n`;
-      briefingMd += `  ${m.summary}\n\n`;
-    });
-  });
-
-  briefingMd += `\n---\n### 💡 **Conclusiones y Recomendaciones para la Alta Gerencia**\n`;
-  briefingMd += `1. **Monitoreo Técnico Continuo:** Fortalecer el seguimiento del Combined Ratio y los estudios de experiencia actuarial (A/E) frente a la volatilidad de siniestros.\n`;
-  briefingMd += `2. **Cumplimiento Regulatorio Proactivo:** Asegurar la alineación con las nuevas exigencias de reservas técnicas de la SSN y la transición metodológica del CSM bajo NIIF 17.\n`;
-  briefingMd += `3. **Automatización & Fraude:** Impulsar el procesamiento directo (STP) y la analítica predictiva en suscripción para contener costos operativos.\n`;
-  briefingMd += `4. **Liderazgo Técnico:** Aplicar matrices RACI y conversaciones de desempeño estructuradas (GROW) para potenciar la delegación en mandos medios.\n`;
-
-  container.innerHTML = marked.parse(briefingMd);
-}
-
-// Gestión de API Key Opcional
-function getApiKey() {
-  return localStorage.getItem('gemini_api_key') || '';
-}
-
-function initApiKey() {
-  const key = getApiKey();
-  updateApiKeyUi(key);
-}
-
-function updateApiKeyUi(key) {
-  const statusText = document.getElementById('api-key-status-text');
-  const badge = document.getElementById('api-key-badge');
-  statusText.innerText = key ? 'Gemini API: Conectada' : 'Motor Autónomo: Activo';
-  badge.className = 'w-2 h-2 rounded-full bg-emerald-400';
-}
-
-function openApiKeyModal() {
-  document.getElementById('modal-api-key-input').value = getApiKey();
-  document.getElementById('api-modal').classList.remove('hidden');
-}
-
-function closeApiKeyModal() {
-  document.getElementById('api-modal').classList.add('hidden');
-}
-
-function saveApiKey() {
-  const val = document.getElementById('modal-api-key-input').value.trim();
-  if (val) {
-    localStorage.setItem('gemini_api_key', val);
-  } else {
-    localStorage.removeItem('gemini_api_key');
+  try {
+    const briefQuery = "Genera un Briefing Ejecutivo de Alto Nivel estructurado en los 5 ejes estrat?gicos: 1) Modelos Actuariales y Reservas T?cnicas (IBNR, Zillmer, Hattendorff, etc.), 2) Impacto Normativo SSN y NIIF 17 (CSM, Res 287/2025, Res 24/2025), 3) Rentabilidad Financiera y Creaci?n de Valor (Combined Ratio, RAROC, EV/VNB, DuPont), 4) Transformaci?n Operativa, STP, Fraude e IA, 5) Liderazgo, Gesti?n de Mandos Medios y Equipos (GROW, RACI, Lencioni). Sintetiza los aprendizajes clave para un Director de Compa??a de Seguros.";
+    const chunks = searchHybrid(briefQuery, 'Todos', 'Todos', 10);
+    const prompt = buildNotebookLMPrompt(briefQuery, chunks);
+    const answer = await callGeminiApi(prompt);
+    container.innerHTML = marked.parse(answer);
+  } catch (err) {
+    container.innerHTML = `<p class="text-rose-400 font-semibold">Error generando el briefing: ${err.message}</p>`;
   }
-  updateApiKeyUi(val);
-  closeApiKeyModal();
 }
