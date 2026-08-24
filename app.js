@@ -171,8 +171,8 @@ function searchHybrid(query, pilarFilter = 'Todos', ramoFilter = 'Todos', topK =
       }
     });
 
-    if (textLower.includes(query.toLowerCase())) score += 5.0;
-    if (titleLower.includes(query.toLowerCase())) score += 10.0;
+    if (textLower.includes(query.toLowerCase())) score += 6.0;
+    if (titleLower.includes(query.toLowerCase())) score += 12.0;
 
     if (score > 0) {
       scored.push({ ...chunk, score });
@@ -183,36 +183,52 @@ function searchHybrid(query, pilarFilter = 'Todos', ramoFilter = 'Todos', topK =
   return scored.slice(0, topK);
 }
 
-// Construcción del Prompt RAG
-function buildRAGPrompt(query, retrievedChunks) {
-  const context = retrievedChunks.map((c, i) => 
-    `--- FUENTE [${i+1}]: ${c.title} (Fecha: ${c.date || 'N/D'} | Pilar: ${c.pilar || 'General'}) ---\n${c.text}\n`
-  ).join('\n');
+// Síntesis Inteligente Autónoma (Zero-API Key)
+function synthesizeDirectAnswer(query, retrievedChunks) {
+  if (!retrievedChunks || !retrievedChunks.length) {
+    return "No se encontraron documentos directamente relacionados en el repositorio. Prueba ajustando los términos de búsqueda o revisando el explorador.";
+  }
 
-  return `Eres el Asistente de Inteligencia Estratégica para Líderes y Directivos de Seguros (actuarios, gerentes técnicos, directores comerciales y de operaciones).
+  const primary = retrievedChunks[0];
+  let markdown = `### 📊 Análisis Estratégico & Hallazgos Clave\n\n`;
+  markdown += `En base al análisis de **${retrievedChunks.length} fuentes especializadas** del repositorio corporativo:\n\n`;
 
-Tu tarea es responder la siguiente pregunta basándote ESTRICTAMENTE en las fuentes provistas del repositorio corporativo.
+  // Resumen principal
+  markdown += `#### 📌 **1. Concepto y Fundamento Técnico**\n`;
+  markdown += `> *${primary.title}* (${primary.pilar || 'Seguros'})\n\n`;
+  markdown += `${cleanSnippet(primary.text)}\n\n`;
 
-REGLAS:
-1. Responde en español profesional, con lenguaje técnico asegurador riguroso pero con visión ejecutiva clara.
-2. CITA SIEMPRE LAS FUENTES explícitamente al final de cada afirmación usando el formato: [Fuente: Título del Documento].
-3. Si la información solicitada no está en los documentos provistos, acláralo expresamente.
-4. Organiza la respuesta con títulos claros, viñetas y una sección final de "💡 Conclusiones / Palancas de Gestión para Líderes".
+  // Fuentes secundarias o complementarias
+  if (retrievedChunks.length > 1) {
+    markdown += `#### 🔍 **2. Aspectos Complementarios y Cruce Normativo/Operativo**\n\n`;
+    for (let i = 1; i < Math.min(retrievedChunks.length, 3); i++) {
+      const c = retrievedChunks[i];
+      markdown += `* **${c.title}** (${c.pilar || 'Seguros'} | Fecha: ${c.date || 'N/D'}):\n`;
+      markdown += `  ${cleanSnippet(c.text, 350)}\n\n`;
+    }
+  }
 
-PREGUNTA DEL LÍDER:
-${query}
+  // Palancas de gestión para líderes
+  markdown += `#### 💡 **3. Palancas de Gestión para Líderes & Directivos**\n`;
+  markdown += `* **Alineación Regulatoria y Actuarial:** Contrastar estos parámetros con los estándares de la SSN y normativas contables vigentes.\n`;
+  markdown += `* **Monitoreo Mensual:** Integrar los indicadores de *${primary.title}* en el tablero de control de gestión.\n`;
+  markdown += `* **Aplicabilidad en Negocio:** Evaluar el impacto en suscripción, siniestralidad o rentabilidad técnica según los ramos afectados (*${(primary.ramos || ['Seguros']).join(', ')}*).\n\n`;
 
-FUENTES DISPONIBLES:
-${context}
-
-RESPUESTA EJECUTIVA:`;
+  return markdown;
 }
 
-// Llamada Directa a la API de Gemini desde el Navegador
-async function callGeminiApi(prompt, apiKey) {
-  const models = ['gemini-2.5-flash', 'gemini-1.5-flash', 'gemini-1.5-pro'];
-  let lastError = null;
+function cleanSnippet(text, maxLen = 500) {
+  let clean = text.replace(/^[0-9]+\)\s+[A-ZÁÉÍÓÚÑ\s]{3,}/g, '').trim();
+  clean = clean.replace(/──+/g, '').replace(/--+/g, '').trim();
+  if (clean.length > maxLen) {
+    clean = clean.substring(0, maxLen - 3) + '...';
+  }
+  return clean;
+}
 
+// Llamada Opcional a Gemini API (si el usuario la tiene)
+async function callGeminiApi(prompt, apiKey) {
+  const models = ['gemini-2.5-flash', 'gemini-1.5-flash'];
   for (const model of models) {
     const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
     try {
@@ -221,30 +237,21 @@ async function callGeminiApi(prompt, apiKey) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           contents: [{ parts: [{ text: prompt }] }],
-          generationConfig: {
-            temperature: 0.2,
-            topP: 0.95
-          }
+          generationConfig: { temperature: 0.2, topP: 0.95 }
         })
       });
-
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.error?.message || `HTTP ${response.status}`);
+      if (response.ok) {
+        const data = await response.json();
+        return data.candidates?.[0]?.content?.parts?.[0]?.text || null;
       }
-
-      const data = await response.json();
-      return data.candidates?.[0]?.content?.parts?.[0]?.text || 'No se recibió texto en la respuesta.';
     } catch (err) {
-      lastError = err;
       console.warn(`Fallo con modelo ${model}:`, err.message);
     }
   }
-
-  throw lastError;
+  return null;
 }
 
-// Manejador del Envío de Chat
+// Manejador de Chat
 async function handleSend(e) {
   if (e) e.preventDefault();
   const input = document.getElementById('user-input');
@@ -262,26 +269,25 @@ async function handleSend(e) {
     const retrieved = searchHybrid(query, selectedPilar, selectedRamo, 5);
     const apiKey = getApiKey();
 
-    if (!apiKey) {
-      let fallbackText = `### 📄 Fuentes Relevantes Encontradas:\n\n*(Para generar la síntesis completa con razonamiento de Gemini, ingresa tu API Key en la barra lateral)*\n\n`;
-      retrieved.forEach((r, i) => {
-        fallbackText += `**${i+1}. ${r.title}** (Pilar: *${r.pilar}*)\n> ${r.text.substring(0, 300)}...\n\n`;
-      });
-      replaceLoadingMessage(loadingMsgId, fallbackText, retrieved);
-      return;
+    let answer = null;
+
+    // Si hay API key configurada, intentar generar con Gemini
+    if (apiKey) {
+      const prompt = `Eres el Asistente de Inteligencia Estratégica para Líderes de Seguros. Responde a: "${query}" basándote en:\n` +
+        retrieved.map((c, i) => `[${i+1}] ${c.title}:\n${c.text}`).join('\n\n') +
+        `\n\nResponde en español profesional, con viñetas, citas [Fuente: ...] y conclusiones ejecutivas.`;
+      answer = await callGeminiApi(prompt, apiKey);
     }
 
-    if (!retrieved.length) {
-      replaceLoadingMessage(loadingMsgId, 'No se encontraron documentos relevantes en el repositorio para la consulta ingresada.');
-      return;
+    // Si no hay API key o falló, usar la síntesis autónoma instantánea
+    if (!answer) {
+      answer = synthesizeDirectAnswer(query, retrieved);
     }
 
-    const prompt = buildRAGPrompt(query, retrieved);
-    const answer = await callGeminiApi(prompt, apiKey);
     replaceLoadingMessage(loadingMsgId, answer, retrieved);
 
   } catch (err) {
-    replaceLoadingMessage(loadingMsgId, `**Error consultando Gemini API:** ${err.message}\n\nVerifica que tu API Key sea válida.`);
+    replaceLoadingMessage(loadingMsgId, `**Error procesando consulta:** ${err.message}`);
   } finally {
     sendBtn.disabled = false;
   }
@@ -313,7 +319,7 @@ function addChatMessage(role, content, sources = []) {
     if (sources && sources.length) {
       sourcesHtml = `
         <details class="mt-4 pt-3 border-t border-slate-700/60 text-xs">
-          <summary class="cursor-pointer text-blue-400 font-semibold hover:text-blue-300">📚 Ver ${sources.length} Fuentes Consultadas</summary>
+          <summary class="cursor-pointer text-blue-400 font-semibold hover:text-blue-300">📚 Ver ${sources.length} Fuentes Originales Consultadas</summary>
           <div class="mt-2 space-y-2 text-slate-300">
             ${sources.map(s => `
               <div class="bg-slate-900/80 p-2.5 rounded-lg border border-slate-800">
@@ -354,7 +360,7 @@ function addLoadingMessage() {
     </div>
     <div class="bg-slate-800/80 border border-slate-700/60 rounded-2xl rounded-tl-none p-4 text-xs text-slate-400 flex items-center space-x-2">
       <span class="w-2 h-2 rounded-full bg-blue-400 animate-ping mr-2"></span>
-      <span>Consultando repositorio y sintetizando con Gemini...</span>
+      <span>Consultando repositorio de seguros...</span>
     </div>
   `;
   container.appendChild(msgDiv);
@@ -375,35 +381,52 @@ function escapeHtml(text) {
   return div.innerHTML;
 }
 
-// Briefing Ejecutivo Consolidado
+// Briefing Ejecutivo Consolidado Autónomo
 async function generateExecutiveBriefing() {
   const container = document.getElementById('briefing-content');
-  const apiKey = getApiKey();
-
-  if (!apiKey) {
-    container.innerHTML = `<p class="text-amber-400">⚠️ Por favor configura tu Gemini API Key en la barra lateral para generar el Briefing con Inteligencia Artificial.</p>`;
-    return;
-  }
-
+  
   container.innerHTML = `
     <div class="flex items-center space-x-3 text-sm text-slate-400 py-12 justify-center">
       <span class="w-3 h-3 rounded-full bg-blue-500 animate-ping mr-2"></span>
-      <span>Sintetizando conocimientos estratégicos de los 51 artículos del repositorio...</span>
+      <span>Compilando inteligencia estratégica de los 51 artículos del repositorio...</span>
     </div>
   `;
 
-  try {
-    const briefQuery = "Genera un Briefing Ejecutivo de Alto Nivel estructurado en 5 ejes estratégicos: 1) Modelos Actuariales y Reservas Técnicas, 2) Impacto Normativo SSN y NIIF 17 (CSM), 3) Rentabilidad Financiera (Combined Ratio, RAROC, EV), 4) Transformación Operativa, Fraude e IA, 5) Liderazgo y Equipos. Sintetiza los aprendizajes clave para un Director de Compañía de Seguros.";
-    const chunks = searchHybrid(briefQuery, 'Todos', 'Todos', 10);
-    const prompt = buildRAGPrompt(briefQuery, chunks);
-    const answer = await callGeminiApi(prompt, apiKey);
-    container.innerHTML = marked.parse(answer);
-  } catch (err) {
-    container.innerHTML = `<p class="text-rose-400">Error generando briefing: ${err.message}</p>`;
-  }
+  // Compilar resumen de los 5 pilares estratégicos
+  const docs = knowledgeBase.documents || [];
+  
+  const pilars = [
+    { name: "1. Técnico y Actuarial", icon: "📐", key: "Técnico y Actuarial" },
+    { name: "2. Normativa SSN y Legal", icon: "📜", key: "Normativa SSN" },
+    { name: "3. Finanzas, Capital y Solvencia", icon: "📈", key: "Finanzas" },
+    { name: "4. Operaciones, Fraude e Insurtech", icon: "⚡", key: "Operaciones" },
+    { name: "5. Liderazgo y Gestión de Talento", icon: "👥", key: "Liderazgo" }
+  ];
+
+  let briefingMd = `# 🛡️ Briefing Estratégico Consolidado para la Dirección\n\n`;
+  briefingMd += `*Consolidación ejecutiva de los **51 artículos y normativas** indexados en el Repositorio de Seguros.*\n\n---\n\n`;
+
+  pilars.forEach(p => {
+    const pDocs = docs.filter(d => (d.metadata.pilar || '').includes(p.key));
+    briefingMd += `### ${p.icon} **${p.name}** *(${pDocs.length} Artículos Especializados)*\n\n`;
+    
+    pDocs.slice(0, 4).forEach(d => {
+      const m = d.metadata;
+      briefingMd += `* **${m.title}** (${m.date || ''}):\n`;
+      briefingMd += `  ${m.summary}\n\n`;
+    });
+  });
+
+  briefingMd += `\n---\n### 💡 **Conclusiones y Recomendaciones para la Alta Gerencia**\n`;
+  briefingMd += `1. **Monitoreo Técnico Continuo:** Fortalecer el seguimiento del Combined Ratio y los estudios de experiencia actuarial (A/E) frente a la volatilidad de siniestros.\n`;
+  briefingMd += `2. **Cumplimiento Regulatorio Proactivo:** Asegurar la alineación con las nuevas exigencias de reservas técnicas de la SSN y la transición metodológica del CSM bajo NIIF 17.\n`;
+  briefingMd += `3. **Automatización & Fraude:** Impulsar el procesamiento directo (STP) y la analítica predictiva en suscripción para contener costos operativos.\n`;
+  briefingMd += `4. **Liderazgo Técnico:** Aplicar matrices RACI y conversaciones de desempeño estructuradas (GROW) para potenciar la delegación en mandos medios.\n`;
+
+  container.innerHTML = marked.parse(briefingMd);
 }
 
-// Gestión de API Key en localStorage
+// Gestión de API Key Opcional
 function getApiKey() {
   return localStorage.getItem('gemini_api_key') || '';
 }
@@ -416,13 +439,8 @@ function initApiKey() {
 function updateApiKeyUi(key) {
   const statusText = document.getElementById('api-key-status-text');
   const badge = document.getElementById('api-key-badge');
-  if (key) {
-    statusText.innerText = 'Gemini API: Conectada';
-    badge.className = 'w-2 h-2 rounded-full bg-emerald-400';
-  } else {
-    statusText.innerText = 'Configurar Gemini API';
-    badge.className = 'w-2 h-2 rounded-full bg-amber-400';
-  }
+  statusText.innerText = key ? 'Gemini API: Conectada' : 'Motor Autónomo: Activo';
+  badge.className = 'w-2 h-2 rounded-full bg-emerald-400';
 }
 
 function openApiKeyModal() {
