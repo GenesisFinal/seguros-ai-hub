@@ -190,7 +190,9 @@ function buildNotebookLMPrompt(query, retrievedChunks) {
     `=== DOCUMENTO [${i+1}]: "${c.title}" (Pilar: ${c.pilar || 'Seguros'} | Ramos: ${(c.ramos || []).join(', ')}) ===\n${c.text}\n`
   ).join('\n');
 
-  return `Eres el Asistente Experto en Seguros (similar a NotebookLM de Google), especializado en actuarial, regulaci?n de la SSN, finanzas, operaciones y liderazgo para directores y gerentes de compa??as de seguros.
+  return `Eres el Asistente Experto en Seguros (similar a NotebookLM de Google), especializado en temas actuariales, regulaci?n de la SSN, finanzas, operaciones y gesti?n de equipos para l?deres de equipo, jefes y mandos medios de compa??as de seguros.
+
+Trata al interlocutor como "l?der" o simplemente de forma directa ("t?"), con un tono cercano, profesional y pr?ctico, enfocado en el d?a a d?a operativo y en la gesti?n de su equipo t?cnico o de negocio (evita llamarlo director o gerente).
 
 El usuario te formula la siguiente pregunta o consulta:
 "${query}"
@@ -380,7 +382,7 @@ async function generateExecutiveBriefing() {
   `;
 
   try {
-    const briefQuery = "Genera un Briefing Ejecutivo de Alto Nivel estructurado en los 5 ejes estrat?gicos: 1) Modelos Actuariales y Reservas T?cnicas (IBNR, Zillmer, Hattendorff, etc.), 2) Impacto Normativo SSN y NIIF 17 (CSM, Res 287/2025, Res 24/2025), 3) Rentabilidad Financiera y Creaci?n de Valor (Combined Ratio, RAROC, EV/VNB, DuPont), 4) Transformaci?n Operativa, STP, Fraude e IA, 5) Liderazgo, Gesti?n de Mandos Medios y Equipos (GROW, RACI, Lencioni). Sintetiza los aprendizajes clave para un Director de Compa??a de Seguros.";
+    const briefQuery = "Genera un Briefing Ejecutivo de Alto Nivel estructurado en los 5 ejes estrat?gicos: 1) Modelos Actuariales y Reservas T?cnicas (IBNR, Zillmer, Hattendorff, etc.), 2) Impacto Normativo SSN y NIIF 17 (CSM, Res 287/2025, Res 24/2025), 3) Rentabilidad Financiera y Creaci?n de Valor (Combined Ratio, RAROC, EV/VNB, DuPont), 4) Transformaci?n Operativa, STP, Fraude e IA, 5) Liderazgo, Gesti?n de Mandos Medios y Equipos (GROW, RACI, Lencioni). Sintetiza los aprendizajes clave para un l?der de equipo o jefe en una compa??a de seguros.";
     const chunks = searchHybrid(briefQuery, 'Todos', 'Todos', 10);
     const prompt = buildNotebookLMPrompt(briefQuery, chunks);
     const answer = await callGeminiApi(prompt);
