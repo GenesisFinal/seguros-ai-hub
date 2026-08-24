@@ -1,0 +1,53 @@
+﻿name: Deploy SegurosAI to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Rebuild Knowledge Base if needed
+        run: |
+          pip install pypdf requests python-dotenv
+          python -c "
+          import os, json, shutil
+          if not os.path.exists('knowledge_base.json') and os.path.exists('data/storage/insurance_knowledge_base.json'):
+              shutil.copy('data/storage/insurance_knowledge_base.json', 'knowledge_base.json')
+          "
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
