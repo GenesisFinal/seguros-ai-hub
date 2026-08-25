@@ -47,7 +47,7 @@ function switchTab(tabId) {
     if (view && nav) {
       if (t === tabId) {
         view.classList.remove('hidden');
-        nav.className = 'w-full flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-all bg-blue-600 text-white shadow-md shadow-blue-600/20';
+        nav.className = 'w-full flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-all bg-[#e20039] text-white shadow-md shadow-[#e20039]/20 font-semibold';
       } else {
         view.classList.add('hidden');
         nav.className = 'w-full flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm font-medium text-slate-400 hover:text-slate-200 hover:bg-slate-800/60 transition-all';
@@ -129,7 +129,7 @@ function renderExplorerArticles() {
       <div class="bg-slate-950/80 border border-slate-800 hover:border-blue-500/50 transition-all rounded-xl p-4 flex flex-col justify-between shadow-sm">
         <div>
           <div class="flex items-center justify-between gap-2 mb-2">
-            <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-blue-500/10 text-blue-400 border border-blue-500/20">
+            <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-[#e20039]/15 text-[#f42c4b] border border-[#e20039]/30 font-semibold">
               ${pilar}
             </span>
             <span class="text-[11px] text-slate-500">${date}</span>
@@ -152,7 +152,7 @@ function renderExplorerArticles() {
               <i data-lucide="book-open" class="w-3 h-3 text-blue-400"></i>
               <span>Leer</span>
             </button>
-            <button onclick="askAboutDocByIndex(${realIndex})" class="px-2.5 py-1 rounded-lg bg-blue-600/20 hover:bg-blue-600/30 text-blue-400 font-medium flex items-center space-x-1 transition-all border border-blue-500/30 cursor-pointer">
+            <button onclick="askAboutDocByIndex(${realIndex})" class="px-2.5 py-1 rounded-lg bg-[#e20039]/15 hover:bg-[#e20039]/25 text-[#f42c4b] font-medium flex items-center space-x-1 transition-all border border-[#e20039]/30 cursor-pointer">
               <i data-lucide="message-square" class="w-3 h-3"></i>
               <span>Consultar</span>
             </button>
@@ -389,7 +389,7 @@ function addChatMessage(role, content, sources = []) {
 
   if (role === 'user') {
     msgDiv.innerHTML = `
-      <div class="bg-blue-600 text-white rounded-2xl rounded-tr-none px-4 py-3 text-sm shadow-md leading-relaxed font-medium">
+      <div class="bg-[#e20039] text-white rounded-2xl rounded-tr-none px-4 py-3 text-sm shadow-md leading-relaxed font-medium">
         ${escapeHtml(content)}
       </div>
       <div class="w-8 h-8 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center flex-shrink-0 text-slate-300 text-xs font-bold">
@@ -402,7 +402,7 @@ function addChatMessage(role, content, sources = []) {
     if (sources && sources.length) {
       sourcesHtml = `
         <details class="mt-4 pt-3 border-t border-slate-700/60 text-xs">
-          <summary class="cursor-pointer text-blue-400 font-semibold hover:text-blue-300">?? Fuentes Consultadas (${sources.length} documentos)</summary>
+          <summary class="cursor-pointer text-[#f42c4b] font-semibold hover:text-[#ff4c60]">?? Fuentes Consultadas (${sources.length} documentos)</summary>
           <div class="mt-2 space-y-2 text-slate-300">
             ${sources.map(s => {
               const docIdx = (knowledgeBase.documents || []).findIndex(d => d.metadata && d.metadata.title === s.title);
@@ -423,7 +423,7 @@ function addChatMessage(role, content, sources = []) {
     }
 
     msgDiv.innerHTML = `
-      <div class="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center flex-shrink-0 text-white shadow-md shadow-blue-500/20">
+      <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-[#b91f38] to-[#e20039] flex items-center justify-center flex-shrink-0 text-white shadow-md shadow-[#e20039]/20">
         <i data-lucide="bot" class="w-4 h-4"></i>
       </div>
       <div class="bg-slate-800/80 border border-slate-700/60 rounded-2xl rounded-tl-none p-5 text-sm text-slate-200 shadow-sm leading-relaxed prose-dark flex-1">
@@ -447,7 +447,7 @@ function addLoadingMessage() {
   msgDiv.id = id;
   msgDiv.className = 'flex items-start space-x-3.5 max-w-4xl';
   msgDiv.innerHTML = `
-    <div class="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center flex-shrink-0 text-white shadow-md shadow-blue-500/20">
+    <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-[#b91f38] to-[#e20039] flex items-center justify-center flex-shrink-0 text-white shadow-md shadow-[#e20039]/20">
       <i data-lucide="bot" class="w-4 h-4 animate-pulse"></i>
     </div>
     <div class="bg-slate-800/80 border border-slate-700/60 rounded-2xl rounded-tl-none p-4 text-xs text-slate-300 flex items-center space-x-3">
