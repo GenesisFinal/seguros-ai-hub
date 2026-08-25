@@ -1,4 +1,4 @@
-// Estado global de la aplicaci?n
+// Estado global de la aplicacion
 let knowledgeBase = { documents: [], chunks: [], total_docs: 0, total_chunks: 0 };
 let currentTab = 'chat';
 let selectedPilar = 'Todos';
@@ -8,7 +8,7 @@ let currentReaderDocIndex = null;
 // Clave activa de Gemini AI
 const _K = ['AQ.Ab8RN6Kxf5f', 'E_MaRVCZbiS5un', 'eiwqqWBWPrPiwg', 'lGfNtpApXbg'].join('');
 
-// Inicializaci?n al cargar el DOM
+// Inicializacion al cargar el DOM
 document.addEventListener('DOMContentLoaded', async () => {
   await loadKnowledgeBase();
   renderExplorerArticles();
@@ -28,7 +28,7 @@ async function loadKnowledgeBase() {
     
     if (statDocs) statDocs.innerText = knowledgeBase.total_docs || knowledgeBase.documents.length;
     if (statChunks) statChunks.innerText = knowledgeBase.total_chunks || knowledgeBase.chunks.length;
-    if (explorerCount) explorerCount.innerText = 'Mostrando ' + (knowledgeBase.documents ? knowledgeBase.documents.length : 0) + ' art?culos indexados';
+    if (explorerCount) explorerCount.innerText = 'Mostrando ' + (knowledgeBase.documents ? knowledgeBase.documents.length : 0) + ' art\u00edculos indexados';
   } catch (err) {
     console.error('Error cargando knowledge_base.json:', err);
     const badge = document.getElementById('sync-status-badge');
@@ -36,7 +36,7 @@ async function loadKnowledgeBase() {
   }
 }
 
-// Navegaci?n entre Pesta?as
+// Navegacion entre Pestanias
 function switchTab(tabId) {
   currentTab = tabId;
   const tabs = ['chat', 'explorer', 'briefing', 'guide'];
@@ -47,19 +47,19 @@ function switchTab(tabId) {
     if (view && nav) {
       if (t === tabId) {
         view.classList.remove('hidden');
-        nav.className = 'w-full flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-all bg-[#e20039] text-white shadow-md shadow-[#e20039]/20 font-semibold';
+        nav.className = 'w-full flex items-center space-x-3 px-3.5 py-2.5 rounded-xl text-sm font-semibold transition-all bg-[#e20039] text-white shadow-md shadow-[#e20039]/20';
       } else {
         view.classList.add('hidden');
-        nav.className = 'w-full flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm font-medium text-slate-400 hover:text-slate-200 hover:bg-slate-800/60 transition-all';
+        nav.className = 'w-full flex items-center space-x-3 px-3.5 py-2.5 rounded-xl text-sm font-medium text-slate-400 hover:text-white hover:bg-[#222228] transition-all';
       }
     }
   });
 
   const titles = {
-    chat: 'Chat con IA para L?deres de Seguros (Estilo NotebookLM)',
+    chat: 'Chat con IA para L\u00edderes de Seguros (Estilo NotebookLM)',
     explorer: 'Explorador del Repositorio de Documentos',
-    briefing: 'Briefing Estrat?gico Consolidado',
-    guide: 'Informaci?n y Gu?a del Repositorio'
+    briefing: 'Briefing Estrat\u00e9gico Consolidado',
+    guide: 'Informaci\u00f3n y Gu\u00eda del Repositorio'
   };
   
   const headerTitle = document.getElementById('header-title');
@@ -76,7 +76,7 @@ function applyFilters() {
   renderExplorerArticles();
 }
 
-// Renderizar Art?culos en el Explorador
+// Renderizar Articulos en el Explorador
 function renderExplorerArticles() {
   const container = document.getElementById('articles-grid');
   if (!container) return;
@@ -88,7 +88,10 @@ function renderExplorerArticles() {
   
   // Filtrar por pilar
   if (selectedPilar !== 'Todos') {
-    docs = docs.filter(d => d.metadata && d.metadata.pilar === selectedPilar);
+    docs = docs.filter(d => {
+      const p = (d.metadata && d.metadata.pilar) || '';
+      return p.includes(selectedPilar) || selectedPilar.includes(p) || p.slice(0, 4) === selectedPilar.slice(0, 4);
+    });
   }
   
   // Filtrar por ramo
@@ -108,33 +111,33 @@ function renderExplorerArticles() {
 
   const countEl = document.getElementById('explorer-count');
   if (countEl) {
-    countEl.innerText = 'Mostrando ' + docs.length + ' de ' + (knowledgeBase.documents ? knowledgeBase.documents.length : 0) + ' art?culos';
+    countEl.innerText = 'Mostrando ' + docs.length + ' de ' + (knowledgeBase.documents ? knowledgeBase.documents.length : 0) + ' art\u00edculos';
   }
 
   if (docs.length === 0) {
-    container.innerHTML = '<div class="col-span-2 text-center py-12 text-slate-500">No se encontraron art?culos con los filtros aplicados.</div>';
+    container.innerHTML = '<div class="col-span-2 text-center py-12 text-slate-500">No se encontraron art\u00edculos con los filtros aplicados.</div>';
     return;
   }
 
   container.innerHTML = docs.map((doc) => {
     const realIndex = knowledgeBase.documents.indexOf(doc);
     const meta = doc.metadata || {};
-    const title = escapeHtml(meta.title || 'Sin t?tulo');
+    const title = escapeHtml(meta.title || 'Sin t\u00edtulo');
     const pilar = escapeHtml(meta.pilar || 'Seguros');
     const date = escapeHtml(meta.date || '');
     const summary = escapeHtml(meta.summary || 'Sin resumen disponible');
     const ramosStr = escapeHtml((meta.ramos || []).join(', '));
 
     return `
-      <div class="bg-slate-950/80 border border-slate-800 hover:border-blue-500/50 transition-all rounded-xl p-4 flex flex-col justify-between shadow-sm">
+      <div class="bg-slate-950/80 border border-slate-800 hover:border-[#e20039]/50 transition-all rounded-xl p-4 flex flex-col justify-between shadow-sm">
         <div>
           <div class="flex items-center justify-between gap-2 mb-2">
-            <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-[#e20039]/15 text-[#f42c4b] border border-[#e20039]/30 font-semibold">
+            <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-[#e20039]/15 text-[#f42c4b] border border-[#e20039]/30">
               ${pilar}
             </span>
             <span class="text-[11px] text-slate-500">${date}</span>
           </div>
-          <h4 class="text-sm font-bold text-white mb-2 leading-snug hover:text-blue-400 cursor-pointer" onclick="openArticleReaderByIndex(${realIndex})">
+          <h4 class="text-sm font-bold text-white mb-2 leading-snug hover:text-[#f42c4b] cursor-pointer" onclick="openArticleReaderByIndex(${realIndex})">
             ${title}
           </h4>
           <p class="text-xs text-slate-400 line-clamp-3 mb-3 leading-relaxed">
@@ -148,8 +151,8 @@ function renderExplorerArticles() {
             <span class="truncate">${ramosStr}</span>
           </span>
           <div class="flex items-center space-x-2">
-            <button onclick="openArticleReaderByIndex(${realIndex})" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 font-medium flex items-center space-x-1 transition-all border border-slate-700 cursor-pointer">
-              <i data-lucide="book-open" class="w-3 h-3 text-blue-400"></i>
+            <button onclick="openArticleReaderByIndex(${realIndex})" class="px-2.5 py-1 rounded-lg bg-[#222228] hover:bg-[#2a2a32] text-slate-200 font-medium flex items-center space-x-1 transition-all border border-[#30303a] cursor-pointer">
+              <i data-lucide="book-open" class="w-3 h-3 text-[#f42c4b]"></i>
               <span>Leer</span>
             </button>
             <button onclick="askAboutDocByIndex(${realIndex})" class="px-2.5 py-1 rounded-lg bg-[#e20039]/15 hover:bg-[#e20039]/25 text-[#f42c4b] font-medium flex items-center space-x-1 transition-all border border-[#e20039]/30 cursor-pointer">
@@ -165,7 +168,7 @@ function renderExplorerArticles() {
   if (window.lucide) window.lucide.createIcons();
 }
 
-// Lector de Art?culos Completo
+// Lector de Articulos Completo
 function openArticleReaderByIndex(index) {
   if (!knowledgeBase.documents || !knowledgeBase.documents[index]) return;
   
@@ -181,11 +184,11 @@ function openArticleReaderByIndex(index) {
   const contentEl = document.getElementById('reader-content');
   const modalEl = document.getElementById('reader-modal');
 
-  if (titleEl) titleEl.innerText = meta.title || 'Art?culo';
+  if (titleEl) titleEl.innerText = meta.title || 'Art\u00edculo';
   if (pilarEl) pilarEl.innerText = meta.pilar || 'Seguros';
-  if (dateEl) dateEl.innerText = '?? ' + (meta.date || 'Sin fecha');
-  if (wordsEl) wordsEl.innerText = '?? ' + (meta.word_count || 0) + ' palabras';
-  if (ramosEl) ramosEl.innerHTML = '??? <strong>Ramos:</strong> ' + ((meta.ramos || []).join(', ') || 'General');
+  if (dateEl) dateEl.innerText = '\ud83d\udcc5 ' + (meta.date || 'Sin fecha');
+  if (wordsEl) wordsEl.innerText = '\u23f1\ufe0f ' + (meta.word_count || 0) + ' palabras';
+  if (ramosEl) ramosEl.innerHTML = '\ud83c\udff7\ufe0f <strong>Ramos:</strong> ' + ((meta.ramos || []).join(', ') || 'General');
 
   // Obtener texto completo garantizado
   let fullText = doc.full_text;
@@ -225,7 +228,7 @@ function askAboutDocByIndex(index) {
   if (!knowledgeBase.documents || !knowledgeBase.documents[index]) return;
   const title = knowledgeBase.documents[index].metadata.title;
   switchTab('chat');
-  setQuery('Expl?came a fondo, con rigor t?cnico y visi?n pr?ctica para l?deres, el contenido y las conclusiones de: ' + title);
+  setQuery('Expl\u00edcame a fondo, con rigor t\u00e9cnico y visi\u00f3n pr\u00e1ctica para l\u00edderes, el contenido y las conclusiones de: ' + title);
 }
 
 // Cerrar con tecla Escape
@@ -233,7 +236,7 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') closeArticleReader();
 });
 
-// B?squeda H?brida
+// Busqueda Hibrida
 function searchHybrid(query, pilarFilter = 'Todos', ramoFilter = 'Todos', topK = 6) {
   const chunks = knowledgeBase.chunks || [];
   if (!chunks.length) return [];
@@ -278,7 +281,7 @@ function searchHybrid(query, pilarFilter = 'Todos', ramoFilter = 'Todos', topK =
   return scored.slice(0, topK);
 }
 
-// Prompt estilo NotebookLM para l?deres
+// Prompt estilo NotebookLM para lideres
 function buildNotebookLMPrompt(query, retrievedChunks) {
   const context = retrievedChunks.map((c, i) => 
     `=== DOCUMENTO [${i+1}]: "${c.title}" (Pilar: ${c.pilar || 'Seguros'} | Ramos: ${(c.ramos || []).join(', ')}) ===\n${c.text}\n`
@@ -356,7 +359,7 @@ async function handleSend(e) {
     const retrieved = searchHybrid(query, selectedPilar, selectedRamo, 5);
     
     if (!retrieved.length) {
-      replaceLoadingMessage(loadingMsgId, 'No encontr? documentos relevantes en el repositorio para esa consulta. Prueba seleccionando "Todos los Pilares" o con otros t?rminos.');
+      replaceLoadingMessage(loadingMsgId, 'No encontr\u00e9 documentos relevantes en el repositorio para esa consulta. Prueba seleccionando "Todos los Pilares" o con otros t\u00e9rminos.');
       return;
     }
 
@@ -393,7 +396,7 @@ function addChatMessage(role, content, sources = []) {
         ${escapeHtml(content)}
       </div>
       <div class="w-8 h-8 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center flex-shrink-0 text-slate-300 text-xs font-bold">
-        T?
+        T\u00da
       </div>
     `;
   } else {
@@ -402,15 +405,15 @@ function addChatMessage(role, content, sources = []) {
     if (sources && sources.length) {
       sourcesHtml = `
         <details class="mt-4 pt-3 border-t border-slate-700/60 text-xs">
-          <summary class="cursor-pointer text-[#f42c4b] font-semibold hover:text-[#ff4c60]">?? Fuentes Consultadas (${sources.length} documentos)</summary>
+          <summary class="cursor-pointer text-[#f42c4b] font-semibold hover:text-[#ff4c60]">\ud83d\udcda Fuentes Consultadas (${sources.length} documentos)</summary>
           <div class="mt-2 space-y-2 text-slate-300">
             ${sources.map(s => {
               const docIdx = (knowledgeBase.documents || []).findIndex(d => d.metadata && d.metadata.title === s.title);
-              const readBtn = docIdx >= 0 ? `<button onclick="openArticleReaderByIndex(${docIdx})" class="px-2.5 py-1 rounded bg-slate-800 hover:bg-slate-700 text-blue-400 text-[11px] font-medium flex items-center space-x-1 flex-shrink-0 border border-slate-700 cursor-pointer"><i data-lucide="book-open" class="w-3 h-3"></i><span>Leer Completo</span></button>` : '';
+              const readBtn = docIdx >= 0 ? `<button onclick="openArticleReaderByIndex(${docIdx})" class="px-2.5 py-1 rounded bg-[#222228] hover:bg-[#2a2a32] text-[#f42c4b] text-[11px] font-medium flex items-center space-x-1 flex-shrink-0 border border-[#30303a] cursor-pointer"><i data-lucide="book-open" class="w-3 h-3"></i><span>Leer Completo</span></button>` : '';
               return `
                 <div class="bg-slate-900/80 p-3 rounded-lg border border-slate-800 flex items-start justify-between gap-3">
                   <div class="flex-1">
-                    <div class="font-bold text-white text-xs">? ${escapeHtml(s.title)} <span class="text-slate-500 font-normal">(${escapeHtml(s.date || '')} | ${escapeHtml(s.pilar || 'Seguros')})</span></div>
+                    <div class="font-bold text-white text-xs">&bull; ${escapeHtml(s.title)} <span class="text-slate-500 font-normal">(${escapeHtml(s.date || '')} | ${escapeHtml(s.pilar || 'Seguros')})</span></div>
                     <div class="text-slate-400 text-[11px] mt-1 line-clamp-2">${escapeHtml(s.text)}</div>
                   </div>
                   ${readBtn}
@@ -423,10 +426,10 @@ function addChatMessage(role, content, sources = []) {
     }
 
     msgDiv.innerHTML = `
-      <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-[#b91f38] to-[#e20039] flex items-center justify-center flex-shrink-0 text-white shadow-md shadow-[#e20039]/20">
+      <div class="w-8 h-8 rounded-xl bg-gradient-to-tr from-[#b91f38] to-[#e20039] flex items-center justify-center flex-shrink-0 text-white shadow-md shadow-[#e20039]/20">
         <i data-lucide="bot" class="w-4 h-4"></i>
       </div>
-      <div class="bg-slate-800/80 border border-slate-700/60 rounded-2xl rounded-tl-none p-5 text-sm text-slate-200 shadow-sm leading-relaxed prose-dark flex-1">
+      <div class="bg-[#1a1a20] border border-[#2a2a32] rounded-2xl rounded-tl-none p-5 text-sm text-slate-200 shadow-sm leading-relaxed prose-dark flex-1">
         ${htmlContent}
         ${sourcesHtml}
       </div>
@@ -447,11 +450,11 @@ function addLoadingMessage() {
   msgDiv.id = id;
   msgDiv.className = 'flex items-start space-x-3.5 max-w-4xl';
   msgDiv.innerHTML = `
-    <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-[#b91f38] to-[#e20039] flex items-center justify-center flex-shrink-0 text-white shadow-md shadow-[#e20039]/20">
+    <div class="w-8 h-8 rounded-xl bg-gradient-to-tr from-[#b91f38] to-[#e20039] flex items-center justify-center flex-shrink-0 text-white shadow-md shadow-[#e20039]/20">
       <i data-lucide="bot" class="w-4 h-4 animate-pulse"></i>
     </div>
-    <div class="bg-slate-800/80 border border-slate-700/60 rounded-2xl rounded-tl-none p-4 text-xs text-slate-300 flex items-center space-x-3">
-      <span class="w-2.5 h-2.5 rounded-full bg-blue-400 animate-ping"></span>
+    <div class="bg-[#1a1a20] border border-[#2a2a32] rounded-2xl rounded-tl-none p-4 text-xs text-slate-300 flex items-center space-x-3">
+      <span class="w-2.5 h-2.5 rounded-full bg-[#e20039] animate-ping"></span>
       <span class="font-medium">Leyendo documentos del repositorio y razonando respuesta explicativa con IA...</span>
     </div>
   `;
@@ -481,13 +484,13 @@ async function generateExecutiveBriefing() {
   
   container.innerHTML = `
     <div class="flex items-center space-x-3 text-sm text-slate-300 py-12 justify-center">
-      <span class="w-3 h-3 rounded-full bg-blue-500 animate-ping mr-2"></span>
-      <span>Gemini AI est? analizando los 51 art?culos y compilando el Briefing Estrat?gico...</span>
+      <span class="w-3 h-3 rounded-full bg-[#e20039] animate-ping mr-2"></span>
+      <span>Gemini AI est\u00e1 analizando los 51 art\u00edculos y compilando el Briefing Estrat\u00e9gico...</span>
     </div>
   `;
 
   try {
-    const briefQuery = "Genera un Briefing de Conocimiento para L?deres de Equipo estructurado en los 5 ejes: 1) Modelos Actuariales y Reservas (IBNR, Zillmer, Hattendorff), 2) Impacto Normativo SSN y NIIF 17 (CSM, Res 287/2025, Res 24/2025), 3) Rentabilidad Financiera (Combined Ratio, RAROC, EV/VNB, DuPont), 4) Transformaci?n Operativa, STP, Fraude e IA, 5) Liderazgo, Delegaci?n y Gesti?n de Mandos Medios (GROW, RACI, Lencioni). Sintetiza los aprendizajes clave.";
+    const briefQuery = "Genera un Briefing de Conocimiento para L\u00edderes de Equipo estructurado en los 5 ejes: 1) Modelos Actuariales y Reservas (IBNR, Zillmer, Hattendorff), 2) Impacto Normativo SSN y NIIF 17 (CSM, Res 287/2025, Res 24/2025), 3) Rentabilidad Financiera (Combined Ratio, RAROC, EV/VNB, DuPont), 4) Transformaci\u00f3n Operativa, STP, Fraude e IA, 5) Liderazgo, Delegaci\u00f3n y Gesti\u00f3n de Mandos Medios (GROW, RACI, Lencioni). Sintetiza los aprendizajes clave.";
     const chunks = searchHybrid(briefQuery, 'Todos', 'Todos', 10);
     const prompt = buildNotebookLMPrompt(briefQuery, chunks);
     const answer = await callGeminiApi(prompt);
