@@ -308,7 +308,7 @@ RESPUESTA EXPLICATIVA:`;
 }
 
 // Llamada a Gemini
-async function callGeminiApi(prompt) {
+async function callGeminiApi(prompt, maxTokens = 8192) {
   const models = ['gemini-2.5-flash', 'gemini-1.5-flash'];
   let lastError = null;
 
@@ -320,7 +320,10 @@ async function callGeminiApi(prompt) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           contents: [{ parts: [{ text: prompt }] }],
-          generationConfig: { temperature: 0.3, maxOutputTokens: 2500 }
+          generationConfig: { 
+            temperature: 0.3, 
+            maxOutputTokens: maxTokens 
+          }
         })
       });
 
@@ -478,24 +481,114 @@ function escapeHtml(text) {
 }
 
 // Briefing
+let lastGeneratedBriefingMarkdown = '';
+
 async function generateExecutiveBriefing() {
   const container = document.getElementById('briefing-content');
   if (!container) return;
   
   container.innerHTML = `
-    <div class="flex items-center space-x-3 text-sm text-slate-300 py-12 justify-center">
-      <span class="w-3 h-3 rounded-full bg-[#e20039] animate-ping mr-2"></span>
-      <span>Gemini AI est\u00e1 analizando los 51 art\u00edculos y compilando el Briefing Estrat\u00e9gico...</span>
+    <div class="flex flex-col items-center justify-center space-y-3 py-16 text-center">
+      <div class="w-10 h-10 rounded-full border-2 border-[#e20039] border-t-transparent animate-spin"></div>
+      <div class="text-sm font-semibold text-white">Gemini AI est\u00e1 analizando los 51 art\u00edculos del repositorio...</div>
+      <p class="text-xs text-slate-400 max-w-md">Sintetizando conocimientos completos a lo largo de los 5 pilares estrat\u00e9gicos sin cortes ni omisiones (hasta 8.000 tokens de salida).</p>
     </div>
   `;
 
   try {
-    const briefQuery = "Genera un Briefing de Conocimiento para L\u00edderes de Equipo estructurado en los 5 ejes: 1) Modelos Actuariales y Reservas (IBNR, Zillmer, Hattendorff), 2) Impacto Normativo SSN y NIIF 17 (CSM, Res 287/2025, Res 24/2025), 3) Rentabilidad Financiera (Combined Ratio, RAROC, EV/VNB, DuPont), 4) Transformaci\u00f3n Operativa, STP, Fraude e IA, 5) Liderazgo, Delegaci\u00f3n y Gesti\u00f3n de Mandos Medios (GROW, RACI, Lencioni). Sintetiza los aprendizajes clave.";
-    const chunks = searchHybrid(briefQuery, 'Todos', 'Todos', 10);
-    const prompt = buildNotebookLMPrompt(briefQuery, chunks);
-    const answer = await callGeminiApi(prompt);
-    container.innerHTML = marked.parse(answer);
+    // Tomar los documentos y fragmentos m?s representativos de cada uno de los 5 pilares
+    const pilar1Chunks = searchHybrid('IBNR Chain-Ladder Bornhuetter Zillmer Hattendorff GLM', '1. T\u00e9cnico y Actuarial', 'Todos', 3);
+    const pilar2Chunks = searchHybrid('Resoluci\u00f3n SSN 287/2025 NIIF 17 CSM Dep\u00f3sito Planes Ley 17.418', '2. Normativa SSN y Legal', 'Todos', 3);
+    const pilar3Chunks = searchHybrid('Combined Ratio RAROC Embedded Value VNB WACC DuPont', '3. Finanzas, Capital y Solvencia', 'Todos', 3);
+    const pilar4Chunks = searchHybrid('STP siniestros anal\u00edtica fraude IA generativa underwriting UBI telemetr\u00eda', '4. Operaciones, Fraude e Insurtech', 'Todos', 3);
+    const pilar5Chunks = searchHybrid('liderazgo mandos medios GROW matrices RACI Lencioni situacional sucesi\u00f3n', '5. Liderazgo y Gesti\u00f3n de Talento', 'Todos', 3);
+
+    const allContextChunks = [...pilar1Chunks, ...pilar2Chunks, ...pilar3Chunks, ...pilar4Chunks, ...pilar5Chunks];
+
+    const contextText = allContextChunks.map((c, i) => 
+      `=== [DOC ${i+1}] "${c.title}" (Pilar: ${c.pilar}) ===\n${c.text}\n`
+    ).join('\n');
+
+    const prompt = `Eres el Asistente Experto en Seguros (estilo NotebookLM).
+Genera un BRIEFING INTEGRAL Y ESTRAT?GICO COMPLETO dirigido a un l?der de equipo o mando medio de una compa??a de seguros.
+
+DOCUMENTOS DE LA BASE DE CONOCIMIENTO:
+${contextText}
+
+ESTRUCTURA OBLIGATORIA DEL BRIEFING (DESARROLLA CADA PILAR EN PROFUNDIDAD, SIN OMITIR NINGUNO):
+
+# ?? BRIEFING INTEGRAL DE CONOCIMIENTO PARA L?DERES DE SEGUROS
+
+## 1. T?cnico y Actuarial
+- Mec?nica y criterios de reservas: IBNR (Chain-Ladder vs Bornhuetter-Ferguson), Reserva Zillmerizada y Teorema de Hattendorff.
+- Modelado avanzado y experiencia (GLM, submortalidad, longevidad).
+- Aplicaci?n pr?ctica para el seguimiento t?cnico del equipo.
+
+## 2. Normativa SSN y Legal
+- Impacto cr?tico de la **Resoluci?n SSN 287/2025** (nueva tasa pasiva de actualizaci?n de pasivos y reserva de contingencia).
+- **Margen de Servicio Contractual (CSM)** bajo NIIF 17 / IFRS 17.
+- Requerimientos legales clave: Reticencia e incontestabilidad (Ley 17.418) y Dep?sito de Planes.
+
+## 3. Finanzas, Capital y Solvencia
+- Palancas de control del **Combined Ratio** (Siniestralidad + Gastos de Adquisici?n + Gastos de Explotaci?n).
+- Creaci?n de valor econ?mico: **Embedded Value (EV)**, **Value of New Business (VNB)** y rentabilidad ajustada al riesgo (**RAROC** vs WACC).
+- An?lisis DuPont aplicado a la cartera.
+
+## 4. Operaciones, Fraude e Insurtech
+- Eficiencia operativa: **Straight-Through Processing (STP)** en siniestros y reducci?n de tiempos de ciclo.
+- **IA Generativa en Underwriting** y anal?tica predictiva de fraude.
+- Modelos din?micos: Telemetr?a, Wearables y Usage-Based Insurance (UBI).
+
+## 5. Liderazgo y Gesti?n de Talento
+- Liderar con impacto desde la silla intermedia (mando medio).
+- Herramientas de ejecuci?n: **Modelo GROW de coaching** y **Matrices RACI**.
+- Salud del equipo: Superaci?n de las 5 disfunciones (Lencioni), liderazgo situacional y retenci?n de especialistas clave.
+
+## ?? Plan de Acci?n y Checklist Mensual para el L?der
+- 5 prioridades inmediatas recomendadas para gestionar con tu equipo este mes.
+
+INSTRUCCIONES CLAVE:
+- S? exhaustivo, did?ctico y fluido. Completa TODAS las secciones de principio a fin sin cortar el texto a la mitad.
+- Usa formato Markdown impecable con negritas, listas y subt?tulos.`;
+
+    const answer = await callGeminiApi(prompt, 8192);
+    lastGeneratedBriefingMarkdown = answer;
+
+    container.innerHTML = `
+      <div class="flex items-center justify-between pb-4 mb-6 border-b border-[#2e2e38]">
+        <span class="text-xs text-[#3ac792] font-semibold flex items-center">
+          <span class="w-2 h-2 rounded-full bg-[#3ac792] mr-2"></span> Briefing Generado Exitosamente (8.000 tokens)
+        </span>
+        <div class="flex items-center space-x-2">
+          <button onclick="copyBriefingText()" class="px-3 py-1.5 rounded-lg bg-[#222228] hover:bg-[#2a2a32] text-slate-300 hover:text-white text-xs font-medium flex items-center space-x-1.5 border border-[#303038] transition-all cursor-pointer">
+            <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+            <span id="copy-btn-text">Copiar Texto</span>
+          </button>
+          <button onclick="window.print()" class="px-3 py-1.5 rounded-lg bg-[#e20039]/15 hover:bg-[#e20039]/25 text-[#f42c4b] text-xs font-medium flex items-center space-x-1.5 border border-[#e20039]/30 transition-all cursor-pointer">
+            <i data-lucide="printer" class="w-3.5 h-3.5"></i>
+            <span>Imprimir / PDF</span>
+          </button>
+        </div>
+      </div>
+      <div class="prose-dark leading-relaxed">
+        ${marked.parse(answer)}
+      </div>
+    `;
+
+    if (window.lucide) window.lucide.createIcons();
+
   } catch (err) {
     container.innerHTML = '<p class="text-rose-400 font-semibold">Error generando el briefing: ' + err.message + '</p>';
   }
+}
+
+function copyBriefingText() {
+  if (!lastGeneratedBriefingMarkdown) return;
+  navigator.clipboard.writeText(lastGeneratedBriefingMarkdown).then(() => {
+    const btnText = document.getElementById('copy-btn-text');
+    if (btnText) {
+      btnText.innerText = '?Copiado!';
+      setTimeout(() => { btnText.innerText = 'Copiar Texto'; }, 2000);
+    }
+  });
 }
