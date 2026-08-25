@@ -117,7 +117,6 @@ function renderExplorerArticles() {
   }
 
   container.innerHTML = docs.map((doc) => {
-    // Buscar ?ndice real en knowledgeBase.documents
     const realIndex = knowledgeBase.documents.indexOf(doc);
     const meta = doc.metadata || {};
     const title = escapeHtml(meta.title || 'Sin t?tulo');
@@ -188,15 +187,19 @@ function openArticleReaderByIndex(index) {
   if (wordsEl) wordsEl.innerText = '?? ' + (meta.word_count || 0) + ' palabras';
   if (ramosEl) ramosEl.innerHTML = '??? <strong>Ramos:</strong> ' + ((meta.ramos || []).join(', ') || 'General');
 
-  // Formatear texto completo
-  const fullText = doc.full_text || doc.content_preview || 'Texto no disponible.';
-  let formattedMd = fullText
-    .replace(/^([0-9]+\)\s+[A-Z??????\s]{3,})/gm, '### $1')
-    .replace(/[-?]{3,}/g, '---')
-    ;
+  // Obtener texto completo garantizado
+  let fullText = doc.full_text;
+  if (!fullText || fullText.length < 500) {
+    const docChunks = (knowledgeBase.chunks || []).filter(c => c.title === meta.title);
+    if (docChunks.length > 0) {
+      fullText = docChunks.map(c => c.text).join('\n\n');
+    } else {
+      fullText = doc.content_preview || 'Texto no disponible.';
+    }
+  }
 
   if (contentEl) {
-    contentEl.innerHTML = marked.parse(formattedMd);
+    contentEl.innerHTML = marked.parse(fullText);
     contentEl.scrollTop = 0;
   }
   
@@ -324,8 +327,8 @@ async function callGeminiApi(prompt) {
         if (text) return text;
       } else {
         const errJson = await response.json();
-        const errMsg = (errJson.error && errJson.error.message) ? errJson.error.message : ('HTTP ' + response.status);
-        throw new Error(errMsg);
+        const msg = (errJson.error && errJson.error.message) ? errJson.error.message : ('HTTP ' + response.status);
+        throw new Error(msg);
       }
     } catch (err) {
       lastError = err;
