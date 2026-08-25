@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SegurosAI - Hub de Conocimiento para L?deres</title>
+  <title>SegurosAI - Hub de Conocimiento para L&iacute;deres</title>
   
   <!-- Fuente Institucional Sora (Google Fonts) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -48,9 +48,7 @@
   
   <style>
     body { font-family: 'Sora', sans-serif; }
-    .prose-dark {
-      color: #cbd5e1;
-    }
+    .prose-dark { color: #cbd5e1; }
     .prose-dark h1, .prose-dark h2, .prose-dark h3, .prose-dark strong {
       color: #ffffff;
       font-weight: 700;
@@ -67,33 +65,26 @@
     .custom-scrollbar::-webkit-scrollbar { width: 6px; height: 6px; }
     .custom-scrollbar::-webkit-scrollbar-track { background: #111113; }
     .custom-scrollbar::-webkit-scrollbar-thumb { background: #303038; border-radius: 4px; }
-    .mosaic-pattern {
-      background-image: radial-gradient(#e20039 0.75px, transparent 0.75px), radial-gradient(#3ac792 0.75px, #111113 0.75px);
-      background-size: 30px 30px;
-      background-position: 0 0, 15px 15px;
-      opacity: 0.05;
-    }
   </style>
 </head>
 <body class="h-full flex overflow-hidden bg-[#111113]">
 
   <!-- BARRA LATERAL (SIDEBAR) -->
   <aside class="w-80 bg-[#161619] border-r border-[#26262d] flex flex-col flex-shrink-0 z-20">
-    <!-- Header Sidebar con acento de marca -->
+    <!-- Header Sidebar -->
     <div class="p-5 border-b border-[#26262d] flex items-center justify-between">
       <div class="flex items-center space-x-3">
-        <!-- ?cono con Rojo Institucional -->
         <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#b91f38] to-[#e20039] flex items-center justify-center shadow-lg shadow-[#e20039]/25 flex-shrink-0">
           <i data-lucide="shield-check" class="w-6 h-6 text-white"></i>
         </div>
         <div>
           <h1 class="font-bold text-white text-base leading-tight tracking-tight">SegurosAI Hub</h1>
-          <p class="text-xs text-[#f42c4b] font-medium tracking-wide">Gesti?n & Conocimiento</p>
+          <p class="text-xs text-[#f42c4b] font-medium tracking-wide">Gesti&oacute;n &amp; Conocimiento</p>
         </div>
       </div>
     </div>
 
-    <!-- M?tricas con Mosaico Sutil -->
+    <!-- M&eacute;tricas -->
     <div class="p-4 bg-[#1e1e24] m-3 rounded-xl border border-[#2e2e38] shadow-sm">
       <div class="flex justify-between items-center text-xs text-slate-400 mb-2.5">
         <span class="font-semibold text-slate-200">Base de Conocimiento</span>
@@ -103,17 +94,17 @@
       </div>
       <div class="grid grid-cols-2 gap-2">
         <div class="bg-[#161619] p-2.5 rounded-lg border border-[#2a2a32]">
-          <div class="text-[11px] text-slate-400 font-medium">Art?culos</div>
+          <div class="text-[11px] text-slate-400 font-medium">Art&iacute;culos</div>
           <div id="stat-docs" class="text-lg font-bold text-white mt-0.5">51</div>
         </div>
         <div class="bg-[#161619] p-2.5 rounded-lg border border-[#2a2a32]">
           <div class="text-[11px] text-slate-400 font-medium">Fragmentos</div>
-          <div id="stat-chunks" class="text-lg font-bold text-white mt-0.5">390</div>
+          <div id="stat-chunks" class="text-lg font-bold text-white mt-0.5">348</div>
         </div>
       </div>
     </div>
 
-    <!-- Navegaci?n de Pesta?as -->
+    <!-- Navegaci&oacute;n de Pesta&ntilde;as -->
     <nav class="px-3 space-y-1.5 mt-1">
       <button onclick="switchTab('chat')" id="nav-chat" class="w-full flex items-center space-x-3 px-3.5 py-2.5 rounded-xl text-sm font-semibold transition-all bg-[#e20039] text-white shadow-md shadow-[#e20039]/20">
         <i data-lucide="message-square" class="w-4 h-4"></i>
@@ -121,29 +112,29 @@
       </button>
       <button onclick="switchTab('explorer')" id="nav-explorer" class="w-full flex items-center space-x-3 px-3.5 py-2.5 rounded-xl text-sm font-medium text-slate-400 hover:text-white hover:bg-[#222228] transition-all">
         <i data-lucide="book-open" class="w-4 h-4"></i>
-        <span>Explorador (51 Art?culos)</span>
+        <span>Explorador (51 Art&iacute;culos)</span>
       </button>
       <button onclick="switchTab('briefing')" id="nav-briefing" class="w-full flex items-center space-x-3 px-3.5 py-2.5 rounded-xl text-sm font-medium text-slate-400 hover:text-white hover:bg-[#222228] transition-all">
         <i data-lucide="sparkles" class="w-4 h-4"></i>
-        <span>Briefing Estrat?gico</span>
+        <span>Briefing Estrat&eacute;gico</span>
       </button>
       <button onclick="switchTab('guide')" id="nav-guide" class="w-full flex items-center space-x-3 px-3.5 py-2.5 rounded-xl text-sm font-medium text-slate-400 hover:text-white hover:bg-[#222228] transition-all">
         <i data-lucide="info" class="w-4 h-4"></i>
-        <span>Informaci?n & Pilares</span>
+        <span>Informaci&oacute;n &amp; Pilares</span>
       </button>
     </nav>
 
-    <!-- Filtros de B?squeda -->
+    <!-- Filtros de B&uacute;squeda -->
     <div class="px-4 mt-5 space-y-3.5">
       <div>
         <label class="text-[11px] font-bold text-slate-400 uppercase tracking-wider block mb-1.5">Filtrar por Pilar</label>
         <select id="filter-pilar" onchange="applyFilters()" class="w-full bg-[#1e1e24] border border-[#30303a] rounded-xl px-3 py-2 text-xs text-slate-200 focus:outline-none focus:border-[#e20039] cursor-pointer">
           <option value="Todos">Todos los Pilares</option>
-          <option value="1. T?cnico y Actuarial">1. T?cnico y Actuarial</option>
+          <option value="1. T&eacute;cnico y Actuarial">1. T&eacute;cnico y Actuarial</option>
           <option value="2. Normativa SSN y Legal">2. Normativa SSN y Legal</option>
           <option value="3. Finanzas, Capital y Solvencia">3. Finanzas y Capital</option>
-          <option value="4. Operaciones, Fraude e Insurtech">4. Operaciones & Insurtech</option>
-          <option value="5. Liderazgo y Gesti?n de Talento">5. Liderazgo & Talento</option>
+          <option value="4. Operaciones, Fraude e Insurtech">4. Operaciones &amp; Insurtech</option>
+          <option value="5. Liderazgo y Gesti&oacute;n de Talento">5. Liderazgo &amp; Talento</option>
         </select>
       </div>
 
@@ -168,7 +159,7 @@
           <span class="w-2 h-2 rounded-full bg-[#3ac792]"></span>
           <span class="font-medium text-slate-300">IA Gemini Activa</span>
         </span>
-        <span class="text-[11px] text-slate-500 font-mono">v2.2</span>
+        <span class="text-[11px] text-slate-500 font-mono">v2.3</span>
       </div>
     </div>
   </aside>
@@ -179,8 +170,8 @@
     <!-- HEADER SUPERIOR -->
     <header class="h-16 border-b border-[#26262d] px-6 flex items-center justify-between bg-[#161619]/90 backdrop-blur-md flex-shrink-0">
       <div class="flex items-center space-x-3">
-        <h2 id="header-title" class="text-base font-bold text-white tracking-tight">Chat con IA para L?deres de Seguros</h2>
-        <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[#e20039]/15 text-[#f42c4b] border border-[#e20039]/30">51 Art?culos Especializados</span>
+        <h2 id="header-title" class="text-base font-bold text-white tracking-tight">Chat con IA para L&iacute;deres de Seguros</h2>
+        <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[#e20039]/15 text-[#f42c4b] border border-[#e20039]/30">51 Art&iacute;culos Especializados</span>
       </div>
       <div class="flex items-center space-x-3 text-xs text-slate-400">
         <span class="flex items-center space-x-1.5 bg-[#1e1e24] px-3 py-1.5 rounded-xl border border-[#2e2e38]">
@@ -196,20 +187,20 @@
       <div class="px-6 pt-4 pb-3 border-b border-[#26262d] bg-[#141417] flex-shrink-0">
         <div class="text-xs font-semibold text-slate-400 mb-2 flex items-center space-x-1.5">
           <i data-lucide="lightbulb" class="w-3.5 h-3.5 text-[#f8cc59]"></i>
-          <span>Consultas sugeridas para l?deres de equipo y mandos medios:</span>
+          <span>Consultas sugeridas para l&iacute;deres de equipo y mandos medios:</span>
         </div>
         <div class="grid grid-cols-2 lg:grid-cols-4 gap-2">
-          <button onclick="setQuery('?C?mo optimizar el Combined Ratio y qu? palancas operativas y de IA en suscripci?n podemos activar?')" class="text-left text-xs p-2.5 bg-[#1e1e24] hover:bg-[#282830] hover:border-[#e20039]/50 rounded-xl border border-[#2e2e38] text-slate-300 transition-all truncate cursor-pointer font-medium">
-            ?? Combined Ratio & IA
+          <button onclick="setQuery('&iquest;C&oacute;mo optimizar el Combined Ratio y qu&eacute; palancas operativas y de IA en suscripci&oacute;n podemos activar?')" class="text-left text-xs p-2.5 bg-[#1e1e24] hover:bg-[#282830] hover:border-[#e20039]/50 rounded-xl border border-[#2e2e38] text-slate-300 transition-all truncate cursor-pointer font-medium">
+            &#128200; Combined Ratio &amp; IA
           </button>
-          <button onclick="setQuery('?Qu? cambios introduce la Resoluci?n SSN 287/2025 en reservas t?cnicas y c?mo se relaciona con el Margen de Servicio Contractual (CSM) bajo NIIF 17?')" class="text-left text-xs p-2.5 bg-[#1e1e24] hover:bg-[#282830] hover:border-[#e20039]/50 rounded-xl border border-[#2e2e38] text-slate-300 transition-all truncate cursor-pointer font-medium">
-            ?? Res. SSN 287/2025 & CSM
+          <button onclick="setQuery('&iquest;Qu&eacute; cambios introduce la Resoluci&oacute;n SSN 287/2025 en reservas t&eacute;cnicas y c&oacute;mo se relaciona con el Margen de Servicio Contractual (CSM) bajo NIIF 17?')" class="text-left text-xs p-2.5 bg-[#1e1e24] hover:bg-[#282830] hover:border-[#e20039]/50 rounded-xl border border-[#2e2e38] text-slate-300 transition-all truncate cursor-pointer font-medium">
+            &#128220; Res. SSN 287/2025 &amp; CSM
           </button>
-          <button onclick="setQuery('Compara los m?todos Chain-Ladder y Bornhuetter-Ferguson para el c?lculo de IBNR en seguros y cu?ndo conviene cada uno.')" class="text-left text-xs p-2.5 bg-[#1e1e24] hover:bg-[#282830] hover:border-[#e20039]/50 rounded-xl border border-[#2e2e38] text-slate-300 transition-all truncate cursor-pointer font-medium">
-            ?? IBNR: Chain-Ladder vs B-F
+          <button onclick="setQuery('Compara los m&eacute;todos Chain-Ladder y Bornhuetter-Ferguson para el c&aacute;lculo de IBNR en seguros y cu&aacute;ndo conviene cada uno.')" class="text-left text-xs p-2.5 bg-[#1e1e24] hover:bg-[#282830] hover:border-[#e20039]/50 rounded-xl border border-[#2e2e38] text-slate-300 transition-all truncate cursor-pointer font-medium">
+            &#129518; IBNR: Chain-Ladder vs B-F
           </button>
-          <button onclick="setQuery('?C?mo aplicar el modelo GROW y las matrices RACI para mejorar la delegaci?n y liderazgo en mandos medios t?cnicos?')" class="text-left text-xs p-2.5 bg-[#1e1e24] hover:bg-[#282830] hover:border-[#e20039]/50 rounded-xl border border-[#2e2e38] text-slate-300 transition-all truncate cursor-pointer font-medium">
-            ?? Modelo GROW & RACI
+          <button onclick="setQuery('&iquest;C&oacute;mo aplicar el modelo GROW y las matrices RACI para mejorar la delegaci&oacute;n y liderazgo en mandos medios t&eacute;cnicos?')" class="text-left text-xs p-2.5 bg-[#1e1e24] hover:bg-[#282830] hover:border-[#e20039]/50 rounded-xl border border-[#2e2e38] text-slate-300 transition-all truncate cursor-pointer font-medium">
+            &#128101; Modelo GROW &amp; RACI
           </button>
         </div>
       </div>
@@ -221,8 +212,8 @@
             <i data-lucide="bot" class="w-5 h-5"></i>
           </div>
           <div class="bg-[#1a1a20] border border-[#2a2a32] rounded-2xl rounded-tl-none p-5 text-sm text-slate-200 shadow-sm leading-relaxed">
-            <p class="font-bold text-white text-base mb-1.5">?Hola, l?der!</p>
-            <p>He indexado los <strong>51 art?culos y normativas</strong> de tu repositorio de seguros en los 5 pilares estrat?gicos. Puedes preguntarme sobre conceptos t?cnicos, m?todos actuariales (IBNR, Zillmer, Hattendorff, GLM), normativas de la SSN (Res. 287/2025, 24/2025), rentabilidad o gesti?n de tus equipos.</p>
+            <p class="font-bold text-white text-base mb-1.5">&iexcl;Hola, l&iacute;der!</p>
+            <p>He indexado los <strong>51 art&iacute;culos y normativas</strong> de tu repositorio de seguros en los 5 pilares estrat&eacute;gicos. Puedes preguntarme sobre conceptos t&eacute;cnicos, m&eacute;todos actuariales (IBNR, Zillmer, Hattendorff, GLM), normativas de la SSN (Res. 287/2025, 24/2025), rentabilidad o gesti&oacute;n de tus equipos.</p>
             <p class="mt-2.5 text-slate-300">Escribe tu pregunta abajo o pulsa en cualquiera de las consultas sugeridas.</p>
           </div>
         </div>
@@ -232,7 +223,7 @@
       <div class="p-4 bg-[#141417] border-t border-[#26262d] flex-shrink-0">
         <form id="chat-form" onsubmit="handleSend(event)" class="max-w-4xl mx-auto flex items-center space-x-3">
           <div class="relative flex-1">
-            <input type="text" id="user-input" placeholder="Haz una pregunta t?cnica, actuarial o de gesti?n..." class="w-full bg-[#1e1e24] border border-[#30303a] rounded-xl px-4 py-3.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-[#e20039] focus:ring-1 focus:ring-[#e20039] transition-all font-medium" autocomplete="off" />
+            <input type="text" id="user-input" placeholder="Haz una pregunta t&eacute;cnica, actuarial o de gesti&oacute;n..." class="w-full bg-[#1e1e24] border border-[#30303a] rounded-xl px-4 py-3.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-[#e20039] focus:ring-1 focus:ring-[#e20039] transition-all font-medium" autocomplete="off" />
           </div>
           <button type="submit" id="send-btn" class="px-5 py-3.5 rounded-xl bg-[#e20039] hover:bg-[#f42c4b] text-white font-semibold text-sm flex items-center space-x-2 transition-all shadow-lg shadow-[#e20039]/25 disabled:opacity-50 cursor-pointer">
             <span>Consultar</span>
@@ -242,23 +233,23 @@
       </div>
     </section>
 
-    <!-- VISTA 2: EXPLORADOR DE ART?CULOS -->
+    <!-- VISTA 2: EXPLORADOR DE ART&Iacute;CULOS -->
     <section id="view-explorer" class="flex-1 overflow-y-auto p-6 custom-scrollbar hidden">
       <div class="max-w-6xl mx-auto space-y-4">
         <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
           <div>
-            <h3 class="text-lg font-bold text-white">Art?culos del Repositorio</h3>
-            <p class="text-xs text-slate-400" id="explorer-count">Mostrando 51 art?culos indexados</p>
+            <h3 class="text-lg font-bold text-white">Art&iacute;culos del Repositorio</h3>
+            <p class="text-xs text-slate-400" id="explorer-count">Mostrando 51 art&iacute;culos indexados</p>
           </div>
           <div class="relative w-full sm:w-80">
             <i data-lucide="search" class="w-4 h-4 text-slate-500 absolute left-3 top-3"></i>
-            <input type="text" id="explorer-search" oninput="renderExplorerArticles()" placeholder="Buscar por t?tulo o concepto..." class="w-full bg-[#1a1a20] border border-[#2e2e38] rounded-xl pl-9 pr-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-[#e20039]" />
+            <input type="text" id="explorer-search" oninput="renderExplorerArticles()" placeholder="Buscar por t&iacute;tulo o concepto..." class="w-full bg-[#1a1a20] border border-[#2e2e38] rounded-xl pl-9 pr-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-[#e20039]" />
           </div>
         </div>
 
-        <!-- Grid de Tarjetas de Art?culos -->
+        <!-- Grid de Tarjetas de Art&iacute;culos -->
         <div id="articles-grid" class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <!-- Insertado din?micamente -->
+          <!-- Insertado din&aacute;micamente -->
         </div>
       </div>
     </section>
@@ -272,8 +263,8 @@
               <i data-lucide="sparkles" class="w-6 h-6"></i>
             </div>
             <div>
-              <h3 class="text-lg font-bold text-white">Briefing Estrat?gico Consolidado</h3>
-              <p class="text-xs text-slate-300">Genera una s?ntesis ejecutiva compilando los 51 art?culos en los 5 pilares de gesti?n.</p>
+              <h3 class="text-lg font-bold text-white">Briefing Estrat&eacute;gico Consolidado</h3>
+              <p class="text-xs text-slate-300">Genera una s&iacute;ntesis ejecutiva compilando los 51 art&iacute;culos en los 5 pilares de gesti&oacute;n.</p>
             </div>
           </div>
           <div class="mt-4">
@@ -290,7 +281,7 @@
       </div>
     </section>
 
-    <!-- VISTA 4: GU?A & PILARES -->
+    <!-- VISTA 4: GU&Iacute;A &amp; PILARES -->
     <section id="view-guide" class="flex-1 overflow-y-auto p-6 custom-scrollbar hidden">
       <div class="max-w-3xl mx-auto space-y-6 text-sm text-slate-300">
         <div class="bg-[#18181d] p-6 rounded-2xl border border-[#2a2a32] space-y-4">
@@ -298,35 +289,35 @@
             <i data-lucide="info" class="w-5 h-5 text-[#f42c4b]"></i>
             <span>Acerca de este Hub de Conocimiento</span>
           </h3>
-          <p class="text-slate-300 leading-relaxed">Este sistema permite a l?deres de equipo y mandos medios del sector seguros consultar, estudiar y extraer conclusiones pr?cticas de los 51 art?culos especializados del repositorio.</p>
+          <p class="text-slate-300 leading-relaxed">Este sistema permite a l&iacute;deres de equipo y mandos medios del sector seguros consultar, estudiar y extraer conclusiones pr&aacute;cticas de los 51 art&iacute;culos especializados del repositorio.</p>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
             <div class="p-3.5 bg-[#1e1e24] rounded-xl border border-[#2e2e38]">
               <div class="font-bold text-white text-xs mb-1 flex items-center space-x-1.5">
                 <span class="w-2 h-2 rounded-full bg-[#e20039]"></span>
-                <span>1. Actuarial & T?cnico</span>
+                <span>1. Actuarial &amp; T&eacute;cnico</span>
               </div>
-              <div class="text-[11px] text-slate-400">IBNR, Reservas matem?ticas, Zillmer, Hattendorff, GLM, Lee-Carter, Credibilidad B?hlmann.</div>
+              <div class="text-[11px] text-slate-400">IBNR, Reservas matem&aacute;ticas, Zillmer, Hattendorff, GLM, Lee-Carter, Credibilidad B&uuml;hlmann.</div>
             </div>
             <div class="p-3.5 bg-[#1e1e24] rounded-xl border border-[#2e2e38]">
               <div class="font-bold text-white text-xs mb-1 flex items-center space-x-1.5">
                 <span class="w-2 h-2 rounded-full bg-[#4183ca]"></span>
-                <span>2. Normativa SSN & NIIF 17</span>
+                <span>2. Normativa SSN &amp; NIIF 17</span>
               </div>
               <div class="text-[11px] text-slate-400">Res. SSN 287/2025, Res. 24/2025 (UVA), CSM bajo NIIF 17, Ley 17.418 (Reticencia).</div>
             </div>
             <div class="p-3.5 bg-[#1e1e24] rounded-xl border border-[#2e2e38]">
               <div class="font-bold text-white text-xs mb-1 flex items-center space-x-1.5">
                 <span class="w-2 h-2 rounded-full bg-[#f8cc59]"></span>
-                <span>3. Finanzas & Rentabilidad</span>
+                <span>3. Finanzas &amp; Rentabilidad</span>
               </div>
-              <div class="text-[11px] text-slate-400">Combined Ratio, RAROC, Embedded Value / VNB, WACC, An?lisis DuPont, BSC.</div>
+              <div class="text-[11px] text-slate-400">Combined Ratio, RAROC, Embedded Value / VNB, WACC, An&aacute;lisis DuPont, BSC.</div>
             </div>
             <div class="p-3.5 bg-[#1e1e24] rounded-xl border border-[#2e2e38]">
               <div class="font-bold text-white text-xs mb-1 flex items-center space-x-1.5">
                 <span class="w-2 h-2 rounded-full bg-[#3ac792]"></span>
-                <span>4. Liderazgo & Operaciones</span>
+                <span>4. Liderazgo &amp; Operaciones</span>
               </div>
-              <div class="text-[11px] text-slate-400">Modelo GROW, Matrices RACI, Lencioni, STP en Siniestros, IA en Suscripci?n.</div>
+              <div class="text-[11px] text-slate-400">Modelo GROW, Matrices RACI, Lencioni, STP en Siniestros, IA en Suscripci&oacute;n.</div>
             </div>
           </div>
         </div>
@@ -335,11 +326,11 @@
 
   </main>
 
-  <!-- MODAL LECTOR DE ART?CULO COMPLETO -->
+  <!-- MODAL LECTOR DE ART&Iacute;CULO COMPLETO -->
   <div id="reader-modal" class="fixed inset-0 bg-black/80 backdrop-blur-md z-50 flex items-center justify-center p-2 sm:p-4 md:p-6 hidden">
     <div class="bg-[#18181d] border border-[#2e2e38] rounded-2xl max-w-4xl w-full h-[90vh] flex flex-col shadow-2xl overflow-hidden">
       
-      <!-- Header del Lector con Rojo Institucional -->
+      <!-- Header del Lector -->
       <div class="p-4 sm:p-6 border-b border-[#26262d] flex items-start justify-between gap-4 bg-[#141417] flex-shrink-0">
         <div class="space-y-1.5 flex-1 pr-2">
           <div class="flex flex-wrap items-center gap-2">
@@ -362,7 +353,7 @@
 
       <!-- Contenido del Texto Completo -->
       <div id="reader-content" class="flex-1 overflow-y-auto p-5 sm:p-8 custom-scrollbar bg-[#161619]/60 text-slate-200 prose-dark text-sm sm:text-base leading-relaxed">
-        <!-- Renderizado din?micamente -->
+        <!-- Renderizado din&aacute;micamente -->
       </div>
 
       <!-- Footer del Lector -->
