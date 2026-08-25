@@ -124,23 +124,23 @@
       </button>
     </nav>
 
-    <!-- Filtros de B&uacute;squeda -->
+    <!-- Filtros de B&uacute;squeda con Nombres Can?nicos Coherentes -->
     <div class="px-4 mt-5 space-y-3.5">
       <div>
-        <label class="text-[11px] font-bold text-slate-400 uppercase tracking-wider block mb-1.5">Filtrar por Pilar</label>
-        <select id="filter-pilar" onchange="applyFilters()" class="w-full bg-[#1e1e24] border border-[#30303a] rounded-xl px-3 py-2 text-xs text-slate-200 focus:outline-none focus:border-[#e20039] cursor-pointer">
+        <label class="text-[11px] font-bold text-slate-400 uppercase tracking-wider block mb-1.5">Filtrar por Pilar (5 Ejes)</label>
+        <select id="filter-pilar" onchange="applyFilters()" class="w-full bg-[#1e1e24] border border-[#30303a] rounded-xl px-3 py-2 text-xs text-slate-200 focus:outline-none focus:border-[#e20039] cursor-pointer font-medium">
           <option value="Todos">Todos los Pilares</option>
           <option value="1. T&eacute;cnico y Actuarial">1. T&eacute;cnico y Actuarial</option>
           <option value="2. Normativa SSN y Legal">2. Normativa SSN y Legal</option>
-          <option value="3. Finanzas, Capital y Solvencia">3. Finanzas y Capital</option>
-          <option value="4. Operaciones, Fraude e Insurtech">4. Operaciones &amp; Insurtech</option>
-          <option value="5. Liderazgo y Gesti&oacute;n de Talento">5. Liderazgo &amp; Talento</option>
+          <option value="3. Finanzas, Capital y Solvencia">3. Finanzas, Capital y Solvencia</option>
+          <option value="4. Operaciones, Fraude e Insurtech">4. Operaciones, Fraude e Insurtech</option>
+          <option value="5. Liderazgo y Gesti&oacute;n de Talento">5. Liderazgo y Gesti&oacute;n de Talento</option>
         </select>
       </div>
 
       <div>
         <label class="text-[11px] font-bold text-slate-400 uppercase tracking-wider block mb-1.5">Filtrar por Ramo</label>
-        <select id="filter-ramo" onchange="applyFilters()" class="w-full bg-[#1e1e24] border border-[#30303a] rounded-xl px-3 py-2 text-xs text-slate-200 focus:outline-none focus:border-[#e20039] cursor-pointer">
+        <select id="filter-ramo" onchange="applyFilters()" class="w-full bg-[#1e1e24] border border-[#30303a] rounded-xl px-3 py-2 text-xs text-slate-200 focus:outline-none focus:border-[#e20039] cursor-pointer font-medium">
           <option value="Todos">Todos los Ramos</option>
           <option value="Vida">Vida</option>
           <option value="Retiro">Retiro / Rentas</option>
@@ -159,7 +159,7 @@
           <span class="w-2 h-2 rounded-full bg-[#3ac792]"></span>
           <span class="font-medium text-slate-300">IA Gemini Activa</span>
         </span>
-        <span class="text-[11px] text-slate-500 font-mono">v2.3</span>
+        <span class="text-[11px] text-slate-500 font-mono">v2.4</span>
       </div>
     </div>
   </aside>
@@ -281,43 +281,70 @@
       </div>
     </section>
 
-    <!-- VISTA 4: GU&Iacute;A &amp; PILARES -->
+    <!-- VISTA 4: INFORMACI?N & 5 PILARES ESTRAT?GICOS -->
     <section id="view-guide" class="flex-1 overflow-y-auto p-6 custom-scrollbar hidden">
-      <div class="max-w-3xl mx-auto space-y-6 text-sm text-slate-300">
-        <div class="bg-[#18181d] p-6 rounded-2xl border border-[#2a2a32] space-y-4">
-          <h3 class="text-base font-bold text-white flex items-center space-x-2">
-            <i data-lucide="info" class="w-5 h-5 text-[#f42c4b]"></i>
-            <span>Acerca de este Hub de Conocimiento</span>
-          </h3>
-          <p class="text-slate-300 leading-relaxed">Este sistema permite a l&iacute;deres de equipo y mandos medios del sector seguros consultar, estudiar y extraer conclusiones pr&aacute;cticas de los 51 art&iacute;culos especializados del repositorio.</p>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
-            <div class="p-3.5 bg-[#1e1e24] rounded-xl border border-[#2e2e38]">
-              <div class="font-bold text-white text-xs mb-1 flex items-center space-x-1.5">
-                <span class="w-2 h-2 rounded-full bg-[#e20039]"></span>
-                <span>1. Actuarial &amp; T&eacute;cnico</span>
-              </div>
-              <div class="text-[11px] text-slate-400">IBNR, Reservas matem&aacute;ticas, Zillmer, Hattendorff, GLM, Lee-Carter, Credibilidad B&uuml;hlmann.</div>
+      <div class="max-w-4xl mx-auto space-y-6 text-sm text-slate-300">
+        <div class="bg-[#18181d] p-6 rounded-2xl border border-[#2a2a32] space-y-4 shadow-md">
+          <div class="flex items-center space-x-3">
+            <div class="p-2.5 rounded-xl bg-[#e20039]/15 text-[#f42c4b] border border-[#e20039]/30">
+              <i data-lucide="layers" class="w-5 h-5"></i>
             </div>
-            <div class="p-3.5 bg-[#1e1e24] rounded-xl border border-[#2e2e38]">
-              <div class="font-bold text-white text-xs mb-1 flex items-center space-x-1.5">
-                <span class="w-2 h-2 rounded-full bg-[#4183ca]"></span>
-                <span>2. Normativa SSN &amp; NIIF 17</span>
-              </div>
-              <div class="text-[11px] text-slate-400">Res. SSN 287/2025, Res. 24/2025 (UVA), CSM bajo NIIF 17, Ley 17.418 (Reticencia).</div>
+            <div>
+              <h3 class="text-base font-bold text-white">Estructura del Repositorio: Los 5 Pilares Estrat&eacute;gicos</h3>
+              <p class="text-xs text-slate-400">Los 51 art&iacute;culos t&eacute;cnicos se organizan sistem&aacute;ticamente en 5 &aacute;reas clave de conocimiento asegurador:</p>
             </div>
-            <div class="p-3.5 bg-[#1e1e24] rounded-xl border border-[#2e2e38]">
-              <div class="font-bold text-white text-xs mb-1 flex items-center space-x-1.5">
-                <span class="w-2 h-2 rounded-full bg-[#f8cc59]"></span>
-                <span>3. Finanzas &amp; Rentabilidad</span>
+          </div>
+          
+          <!-- Grid de los 5 Pilares Armonizados -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3.5 pt-2">
+            <!-- Pilar 1 -->
+            <div class="p-4 bg-[#1e1e24] rounded-xl border border-[#2e2e38] hover:border-[#e20039]/40 transition-all">
+              <div class="font-bold text-white text-xs mb-1.5 flex items-center space-x-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-[#e20039]"></span>
+                <span class="text-[#f42c4b]">1. T&eacute;cnico y Actuarial</span>
               </div>
-              <div class="text-[11px] text-slate-400">Combined Ratio, RAROC, Embedded Value / VNB, WACC, An&aacute;lisis DuPont, BSC.</div>
+              <p class="text-xs text-slate-300 font-semibold mb-1">C&aacute;lculo, Modelos &amp; Reservas Matem&aacute;ticas</p>
+              <div class="text-[11px] text-slate-400 leading-relaxed">IBNR (Chain-Ladder, Bornhuetter-Ferguson), Reserva Zillmerizada, Teorema de Hattendorff, Modelos GLM, Lee-Carter, Credibilidad B&uuml;hlmann, Tasa T&eacute;cnica de Inter&eacute;s, Submortalidad y Longevidad.</div>
             </div>
-            <div class="p-3.5 bg-[#1e1e24] rounded-xl border border-[#2e2e38]">
-              <div class="font-bold text-white text-xs mb-1 flex items-center space-x-1.5">
-                <span class="w-2 h-2 rounded-full bg-[#3ac792]"></span>
-                <span>4. Liderazgo &amp; Operaciones</span>
+
+            <!-- Pilar 2 -->
+            <div class="p-4 bg-[#1e1e24] rounded-xl border border-[#2e2e38] hover:border-[#4183ca]/40 transition-all">
+              <div class="font-bold text-white text-xs mb-1.5 flex items-center space-x-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-[#4183ca]"></span>
+                <span class="text-[#4183ca]">2. Normativa SSN y Legal</span>
               </div>
-              <div class="text-[11px] text-slate-400">Modelo GROW, Matrices RACI, Lencioni, STP en Siniestros, IA en Suscripci&oacute;n.</div>
+              <p class="text-xs text-slate-300 font-semibold mb-1">Regulaci&oacute;n Argentina &amp; Marco Contable</p>
+              <div class="text-[11px] text-slate-400 leading-relaxed">Resoluci&oacute;n SSN 287/2025 (nuevos est&aacute;ndares de reservas y pasivos), Res. 24/2025 (UVA), Margen de Servicio Contractual (CSM) bajo NIIF 17, Sistema de Dep&oacute;sito de Planes, Ley 17.418 (Reticencia e Incontestabilidad).</div>
+            </div>
+
+            <!-- Pilar 3 -->
+            <div class="p-4 bg-[#1e1e24] rounded-xl border border-[#2e2e38] hover:border-[#f8cc59]/40 transition-all">
+              <div class="font-bold text-white text-xs mb-1.5 flex items-center space-x-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-[#f8cc59]"></span>
+                <span class="text-[#f8cc59]">3. Finanzas, Capital y Solvencia</span>
+              </div>
+              <p class="text-xs text-slate-300 font-semibold mb-1">Rentabilidad T&eacute;cnica &amp; Creaci&oacute;n de Valor</p>
+              <div class="text-[11px] text-slate-400 leading-relaxed">Combined Ratio y an&aacute;lisis de p&eacute;rdidas, RAROC y asignaci&oacute;n de capital, Embedded Value (EV) / Value of New Business (VNB), Costo de Capital (WACC), An&aacute;lisis DuPont, Balanced Scorecard y Presupuestaci&oacute;n.</div>
+            </div>
+
+            <!-- Pilar 4 -->
+            <div class="p-4 bg-[#1e1e24] rounded-xl border border-[#2e2e38] hover:border-[#3ac792]/40 transition-all">
+              <div class="font-bold text-white text-xs mb-1.5 flex items-center space-x-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-[#3ac792]"></span>
+                <span class="text-[#3ac792]">4. Operaciones, Fraude e Insurtech</span>
+              </div>
+              <p class="text-xs text-slate-300 font-semibold mb-1">Eficiencia Operativa, Tecnolog&iacute;a &amp; Prevenci&oacute;n</p>
+              <div class="text-[11px] text-slate-400 leading-relaxed">Straight-Through Processing (STP) en siniestros, Anal&iacute;tica y prevenci&oacute;n de Fraude, IA Generativa en Underwriting, Telemetr&iacute;a y UBI, Open Insurance &amp; APIs, Priorizaci&oacute;n y KPIs operativos.</div>
+            </div>
+
+            <!-- Pilar 5 (Ocupa las 2 columnas si pantalla ancha) -->
+            <div class="p-4 bg-[#1e1e24] rounded-xl border border-[#2e2e38] hover:border-[#ff593e]/40 transition-all md:col-span-2">
+              <div class="font-bold text-white text-xs mb-1.5 flex items-center space-x-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-[#ff593e]"></span>
+                <span class="text-[#ff593e]">5. Liderazgo y Gesti&oacute;n de Talento</span>
+              </div>
+              <p class="text-xs text-slate-300 font-semibold mb-1">Conducci&oacute;n de Mandos Medios &amp; Din&aacute;mica de Equipos T&eacute;cnicos</p>
+              <div class="text-[11px] text-slate-400 leading-relaxed">Liderar desde el mando medio, Delegaci&oacute;n efectiva, Modelo GROW de coaching, Matrices RACI para clarificar responsabilidades, Las 5 Disfunciones de un Equipo (Lencioni), Liderazgo Situacional (Hersey-Blanchard), Evaluaci&oacute;n del desempe&ntilde;o y Planes de sucesi&oacute;n.</div>
             </div>
           </div>
         </div>
