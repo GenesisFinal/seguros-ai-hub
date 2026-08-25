@@ -150,12 +150,16 @@ function renderExplorerArticles() {
             <i data-lucide="tag" class="w-3 h-3 text-slate-500 flex-shrink-0"></i>
             <span class="truncate">${ramosStr}</span>
           </span>
-          <div class="flex items-center space-x-2">
-            <button onclick="openArticleReaderByIndex(${realIndex})" class="px-2.5 py-1 rounded-lg bg-[#222228] hover:bg-[#2a2a32] text-slate-200 font-medium flex items-center space-x-1 transition-all border border-[#30303a] cursor-pointer">
+          <div class="flex items-center space-x-1.5 flex-wrap gap-y-1">
+            <button onclick="openArticleReaderByIndex(${realIndex})" title="Leer texto completo en pantalla completa" class="px-2.5 py-1 rounded-lg bg-[#222228] hover:bg-[#2a2a32] text-slate-200 font-medium flex items-center space-x-1 transition-all border border-[#30303a] cursor-pointer text-[11px]">
               <i data-lucide="book-open" class="w-3 h-3 text-[#f42c4b]"></i>
               <span>Leer</span>
             </button>
-            <button onclick="askAboutDocByIndex(${realIndex})" class="px-2.5 py-1 rounded-lg bg-[#e20039]/15 hover:bg-[#e20039]/25 text-[#f42c4b] font-medium flex items-center space-x-1 transition-all border border-[#e20039]/30 cursor-pointer">
+            <button onclick="downloadArticleByIndex(${realIndex}, 'docx')" title="Descargar archivo original en Word (.docx)" class="px-2.5 py-1 rounded-lg bg-[#222228] hover:bg-[#2a2a32] text-slate-200 hover:text-emerald-400 font-medium flex items-center space-x-1 transition-all border border-[#30303a] cursor-pointer text-[11px]">
+              <i data-lucide="download" class="w-3 h-3 text-[#3ac792]"></i>
+              <span>Bajar .docx</span>
+            </button>
+            <button onclick="askAboutDocByIndex(${realIndex})" title="Hacer preguntas a la IA sobre este documento" class="px-2.5 py-1 rounded-lg bg-[#e20039]/15 hover:bg-[#e20039]/25 text-[#f42c4b] font-medium flex items-center space-x-1 transition-all border border-[#e20039]/30 cursor-pointer text-[11px]">
               <i data-lucide="message-square" class="w-3 h-3"></i>
               <span>Consultar</span>
             </button>
@@ -591,4 +595,44 @@ function copyBriefingText() {
       setTimeout(() => { btnText.innerText = 'Copiar Texto'; }, 2000);
     }
   });
+}
+
+
+// ==========================================
+// FUNCIONES DE DESCARGA DE ART?CULOS ORIGINALES
+// ==========================================
+function downloadArticleByIndex(index, format = 'docx') {
+  if (!knowledgeBase.documents || !knowledgeBase.documents[index]) return;
+  const doc = knowledgeBase.documents[index];
+  const meta = doc.metadata || {};
+  const docId = meta.doc_id;
+
+  // Si tiene doc_id de Google Docs, descargar en el formato solicitado
+  if (docId) {
+    const exportUrl = `https://docs.google.com/document/d/${docId}/export?format=${format}`;
+    const a = document.createElement('a');
+    a.href = exportUrl;
+    a.target = '_blank';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    return;
+  }
+
+  // Fallback: descarga directa del texto como archivo en el navegador
+  const text = doc.full_text || doc.content_preview || 'Contenido no disponible.';
+  const blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
+  const cleanTitle = (meta.title || 'articulo').replace(/[/\\?%*:|"<>]/g, '_');
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = `${cleanTitle}.txt`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+}
+
+function downloadCurrentReaderDoc(format = 'docx') {
+  if (currentReaderDocIndex !== null) {
+    downloadArticleByIndex(currentReaderDocIndex, format);
+  }
 }
