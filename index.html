@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SegurosAI - Knowledge Hub para Líderes</title>
+  <title>SegurosAI - Hub de Conocimiento para Líderes</title>
   
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -33,7 +33,7 @@
   <!-- Marked.js para renderizar Markdown -->
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   
-  <!-- Estilos adicionales -->
+  <!-- Estilos tipográficos -->
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
     body { font-family: 'Plus Jakarta Sans', sans-serif; }
@@ -45,10 +45,12 @@
       margin-top: 1rem;
       margin-bottom: 0.5rem;
     }
-    .prose-dark p { margin-bottom: 0.75rem; line-height: 1.6; }
+    .prose-dark p { margin-bottom: 0.75rem; line-height: 1.65; }
     .prose-dark ul { list-style-type: disc; padding-left: 1.25rem; margin-bottom: 0.75rem; }
     .prose-dark ol { list-style-type: decimal; padding-left: 1.25rem; margin-bottom: 0.75rem; }
-    .prose-dark code { background: #1e293b; padding: 0.2rem 0.4rem; border-radius: 0.25rem; font-size: 0.9em; }
+    .prose-dark li { margin-bottom: 0.35rem; }
+    .prose-dark blockquote { border-left: 4px solid #3b82f6; padding-left: 1rem; color: #94a3b8; font-style: italic; margin: 1rem 0; background: rgba(30, 41, 59, 0.4); padding: 0.75rem 1rem; border-radius: 0.375rem; }
+    .prose-dark code { background: #1e293b; padding: 0.2rem 0.4rem; border-radius: 0.25rem; font-size: 0.9em; color: #93c5fd; }
     .prose-dark pre { background: #0f172a; padding: 1rem; border-radius: 0.5rem; overflow-x: auto; margin-bottom: 0.75rem; }
     .custom-scrollbar::-webkit-scrollbar { width: 6px; height: 6px; }
     .custom-scrollbar::-webkit-scrollbar-track { background: #0f172a; }
@@ -60,20 +62,20 @@
   <!-- BARRA LATERAL (SIDEBAR) -->
   <aside class="w-80 bg-slate-950 border-r border-slate-800 flex flex-col flex-shrink-0 z-20">
     <!-- Header Sidebar -->
-    <div class="p-5 border-b border-slate-800/80 flex items-center justify-between">
+    <div class="p-5 border-b border-slate-800 flex items-center justify-between">
       <div class="flex items-center space-x-3">
         <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center shadow-lg shadow-blue-500/20">
           <i data-lucide="shield-check" class="w-6 h-6 text-white"></i>
         </div>
         <div>
           <h1 class="font-bold text-slate-100 text-base leading-tight tracking-tight">SegurosAI Hub</h1>
-          <p class="text-xs text-blue-400 font-medium">Liderazgo & Conocimiento</p>
+          <p class="text-xs text-blue-400 font-medium">Gestión & Conocimiento</p>
         </div>
       </div>
     </div>
 
     <!-- Métricas -->
-    <div class="p-4 bg-slate-900/50 m-3 rounded-xl border border-slate-800/60">
+    <div class="p-4 bg-slate-900/60 m-3 rounded-xl border border-slate-800">
       <div class="flex justify-between items-center text-xs text-slate-400 mb-2">
         <span class="font-semibold text-slate-300">Base de Conocimiento</span>
         <span id="sync-status-badge" class="flex items-center text-emerald-400 font-medium">
@@ -93,10 +95,10 @@
     </div>
 
     <!-- Navegación de Pestañas -->
-    <nav class="px-3 space-y-1 mt-2">
+    <nav class="px-3 space-y-1 mt-1">
       <button onclick="switchTab('chat')" id="nav-chat" class="w-full flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-all bg-blue-600 text-white shadow-md shadow-blue-600/20">
         <i data-lucide="message-square" class="w-4 h-4"></i>
-        <span>Chat Estratégico</span>
+        <span>Chat con IA</span>
       </button>
       <button onclick="switchTab('explorer')" id="nav-explorer" class="w-full flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm font-medium text-slate-400 hover:text-slate-200 hover:bg-slate-800/60 transition-all">
         <i data-lucide="book-open" class="w-4 h-4"></i>
@@ -104,47 +106,51 @@
       </button>
       <button onclick="switchTab('briefing')" id="nav-briefing" class="w-full flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm font-medium text-slate-400 hover:text-slate-200 hover:bg-slate-800/60 transition-all">
         <i data-lucide="sparkles" class="w-4 h-4"></i>
-        <span>Briefing Ejecutivo</span>
+        <span>Briefing Estratégico</span>
       </button>
       <button onclick="switchTab('guide')" id="nav-guide" class="w-full flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm font-medium text-slate-400 hover:text-slate-200 hover:bg-slate-800/60 transition-all">
-        <i data-lucide="cloud" class="w-4 h-4"></i>
-        <span>Guía de GitHub Pages</span>
+        <i data-lucide="info" class="w-4 h-4"></i>
+        <span>Información & Guía</span>
       </button>
     </nav>
 
     <!-- Filtros de Búsqueda -->
-    <div class="px-4 mt-5 space-y-3">
-      <label class="text-xs font-semibold text-slate-400 uppercase tracking-wider block">Filtro por Pilar</label>
-      <select id="filter-pilar" onchange="applyFilters()" class="w-full bg-slate-900 border border-slate-700/80 rounded-lg px-3 py-2 text-xs text-slate-200 focus:outline-none focus:border-blue-500">
-        <option value="Todos">Todos los Pilares</option>
-        <option value="1. Técnico y Actuarial">1. Técnico y Actuarial</option>
-        <option value="2. Normativa SSN y Legal">2. Normativa SSN y Legal</option>
-        <option value="3. Finanzas, Capital y Solvencia">3. Finanzas y Capital</option>
-        <option value="4. Operaciones, Fraude e Insurtech">4. Operaciones & Insurtech</option>
-        <option value="5. Liderazgo y Gestión de Talento">5. Liderazgo & Talento</option>
-      </select>
+    <div class="px-4 mt-4 space-y-3">
+      <div>
+        <label class="text-[11px] font-bold text-slate-400 uppercase tracking-wider block mb-1">Filtrar por Pilar</label>
+        <select id="filter-pilar" onchange="applyFilters()" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-xs text-slate-200 focus:outline-none focus:border-blue-500 cursor-pointer">
+          <option value="Todos">Todos los Pilares</option>
+          <option value="1. Técnico y Actuarial">1. Técnico y Actuarial</option>
+          <option value="2. Normativa SSN y Legal">2. Normativa SSN y Legal</option>
+          <option value="3. Finanzas, Capital y Solvencia">3. Finanzas y Capital</option>
+          <option value="4. Operaciones, Fraude e Insurtech">4. Operaciones & Insurtech</option>
+          <option value="5. Liderazgo y Gestión de Talento">5. Liderazgo & Talento</option>
+        </select>
+      </div>
 
-      <label class="text-xs font-semibold text-slate-400 uppercase tracking-wider block">Filtro por Ramo</label>
-      <select id="filter-ramo" onchange="applyFilters()" class="w-full bg-slate-900 border border-slate-700/80 rounded-lg px-3 py-2 text-xs text-slate-200 focus:outline-none focus:border-blue-500">
-        <option value="Todos">Todos los Ramos</option>
-        <option value="Vida">Vida</option>
-        <option value="Retiro">Retiro / Rentas</option>
-        <option value="Accidentes Personales">Accidentes Personales</option>
-        <option value="Salud">Salud</option>
-        <option value="Automotores">Automotores / Flotas</option>
-        <option value="Patrimoniales">Patrimoniales</option>
-      </select>
+      <div>
+        <label class="text-[11px] font-bold text-slate-400 uppercase tracking-wider block mb-1">Filtrar por Ramo</label>
+        <select id="filter-ramo" onchange="applyFilters()" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-xs text-slate-200 focus:outline-none focus:border-blue-500 cursor-pointer">
+          <option value="Todos">Todos los Ramos</option>
+          <option value="Vida">Vida</option>
+          <option value="Retiro">Retiro / Rentas</option>
+          <option value="Accidentes Personales">Accidentes Personales</option>
+          <option value="Salud">Salud</option>
+          <option value="Automotores">Automotores / Flotas</option>
+          <option value="Patrimoniales">Patrimoniales</option>
+        </select>
+      </div>
     </div>
 
-    <!-- Footer API Key -->
-    <div class="mt-auto p-4 border-t border-slate-800/80 bg-slate-950/80">
-      <button onclick="openApiKeyModal()" class="w-full flex items-center justify-between px-3 py-2 rounded-lg bg-slate-900 hover:bg-slate-800 border border-slate-700/60 text-xs text-slate-300 transition-all">
+    <!-- Footer Estado -->
+    <div class="mt-auto p-4 border-t border-slate-800 bg-slate-950/80">
+      <div class="flex items-center justify-between text-xs text-slate-400">
         <span class="flex items-center space-x-2">
-          <i data-lucide="key" class="w-3.5 h-3.5 text-blue-400"></i>
-          <span id="api-key-status-text">Configurar Gemini API</span>
+          <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+          <span>IA Gemini 2.5 Activa</span>
         </span>
-        <span id="api-key-badge" class="w-2 h-2 rounded-full bg-amber-400"></span>
-      </button>
+        <span class="text-[11px] text-slate-500">v2.1</span>
+      </div>
     </div>
   </aside>
 
@@ -152,65 +158,64 @@
   <main class="flex-1 flex flex-col h-full overflow-hidden bg-slate-900 relative">
 
     <!-- HEADER SUPERIOR -->
-    <header class="h-16 border-b border-slate-800/80 px-6 flex items-center justify-between bg-slate-900/60 backdrop-blur-md flex-shrink-0">
+    <header class="h-16 border-b border-slate-800 px-6 flex items-center justify-between bg-slate-900/70 backdrop-blur-md flex-shrink-0">
       <div class="flex items-center space-x-3">
-        <h2 id="header-title" class="text-base font-bold text-white tracking-tight">Chat Estratégico para Líderes de Seguros</h2>
-        <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-blue-500/10 text-blue-400 border border-blue-500/20">51 Fuentes Indexadas</span>
+        <h2 id="header-title" class="text-base font-bold text-white tracking-tight">Chat con IA para Líderes de Seguros</h2>
+        <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-blue-500/10 text-blue-400 border border-blue-500/20">51 Artículos Especializados</span>
       </div>
       <div class="flex items-center space-x-3 text-xs text-slate-400">
         <span class="flex items-center space-x-1.5 bg-slate-800 px-3 py-1.5 rounded-lg border border-slate-700/60">
-          <i data-lucide="server" class="w-3.5 h-3.5 text-emerald-400"></i>
-          <span>100% Serverless en GitHub Pages</span>
+          <i data-lucide="sparkles" class="w-3.5 h-3.5 text-blue-400"></i>
+          <span>Respuestas Explicativas</span>
         </span>
       </div>
     </header>
 
-    <!-- VISTA 1: CHAT ESTRATÉGICO -->
+    <!-- VISTA 1: CHAT -->
     <section id="view-chat" class="flex-1 flex flex-col h-full overflow-hidden">
       <!-- Sugerencias de Consultas -->
-      <div class="px-6 pt-4 pb-2 border-b border-slate-800/50 bg-slate-950/20 flex-shrink-0">
+      <div class="px-6 pt-4 pb-3 border-b border-slate-800/50 bg-slate-950/30 flex-shrink-0">
         <div class="text-xs font-semibold text-slate-400 mb-2 flex items-center space-x-1.5">
           <i data-lucide="lightbulb" class="w-3.5 h-3.5 text-amber-400"></i>
-          <span>Consultas recomendadas para l?deres de equipo y jefes:</span>
+          <span>Consultas sugeridas para líderes de equipo y jefes:</span>
         </div>
         <div class="grid grid-cols-2 lg:grid-cols-4 gap-2">
           <button onclick="setQuery('¿Cómo optimizar el Combined Ratio y qué palancas operativas y de IA en suscripción podemos activar?')" class="text-left text-xs p-2.5 bg-slate-800/50 hover:bg-slate-800 hover:border-blue-500/50 rounded-lg border border-slate-700/50 text-slate-300 transition-all truncate">
-            📈 Combined Ratio & IA en Suscripción
+            📈 Combined Ratio & IA
           </button>
           <button onclick="setQuery('¿Qué cambios introduce la Resolución SSN 287/2025 en reservas técnicas y cómo se relaciona con el Margen de Servicio Contractual (CSM) bajo NIIF 17?')" class="text-left text-xs p-2.5 bg-slate-800/50 hover:bg-slate-800 hover:border-blue-500/50 rounded-lg border border-slate-700/50 text-slate-300 transition-all truncate">
-            📜 Res. SSN 287/2025 & NIIF 17 (CSM)
+            📜 Res. SSN 287/2025 & CSM
           </button>
           <button onclick="setQuery('Compara los métodos Chain-Ladder y Bornhuetter-Ferguson para el cálculo de IBNR en seguros y cuándo conviene cada uno.')" class="text-left text-xs p-2.5 bg-slate-800/50 hover:bg-slate-800 hover:border-blue-500/50 rounded-lg border border-slate-700/50 text-slate-300 transition-all truncate">
-            🧮 IBNR: Chain-Ladder vs Bornhuetter-Ferguson
+            🧮 IBNR: Chain-Ladder vs B-F
           </button>
           <button onclick="setQuery('¿Cómo aplicar el modelo GROW y las matrices RACI para mejorar la delegación y liderazgo en mandos medios técnicos?')" class="text-left text-xs p-2.5 bg-slate-800/50 hover:bg-slate-800 hover:border-blue-500/50 rounded-lg border border-slate-700/50 text-slate-300 transition-all truncate">
-            👥 Modelo GROW & Matrices RACI
+            👥 Modelo GROW & RACI
           </button>
         </div>
       </div>
 
       <!-- Historial de Mensajes -->
       <div id="chat-messages" class="flex-1 overflow-y-auto p-6 space-y-6 custom-scrollbar">
-        <!-- Mensaje de bienvenida -->
         <div class="flex items-start space-x-3.5 max-w-4xl">
           <div class="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center flex-shrink-0 text-white font-bold shadow-md shadow-blue-500/20">
             <i data-lucide="bot" class="w-5 h-5"></i>
           </div>
           <div class="bg-slate-800/80 border border-slate-700/60 rounded-2xl rounded-tl-none p-4 text-sm text-slate-200 shadow-sm leading-relaxed">
-            <p class="font-semibold text-white mb-1">¡Bienvenido al Centro de Inteligencia en Seguros!</p>
-            <p>He indexado los <strong>51 artículos y normativas</strong> de tu repositorio organizados en los 5 pilares estratégicos (Actuarial, Regulación SSN/NIIF 17, Finanzas/Capital, Operaciones/Insurtech y Liderazgo).</p>
-            <p class="mt-2 text-slate-300">Haz clic en cualquiera de las consultas sugeridas arriba o escribe tu pregunta técnica/estratégica en el cuadro inferior.</p>
+            <p class="font-semibold text-white mb-1">¡Hola, líder!</p>
+            <p>He indexado los <strong>51 artículos y normativas</strong> de tu repositorio de seguros en los 5 pilares estratégicos. Puedes preguntarme sobre conceptos técnicos, métodos actuariales (IBNR, Zillmer, etc.), normativas de la SSN (Res. 287/2025, 24/2025), rentabilidad o gestión de tus equipos.</p>
+            <p class="mt-2 text-slate-300">Escribe tu pregunta abajo o pulsa en cualquiera de las consultas sugeridas.</p>
           </div>
         </div>
       </div>
 
       <!-- Input de Consulta -->
-      <div class="p-4 bg-slate-950/80 border-t border-slate-800/80 flex-shrink-0">
+      <div class="p-4 bg-slate-950/80 border-t border-slate-800 flex-shrink-0">
         <form id="chat-form" onsubmit="handleSend(event)" class="max-w-4xl mx-auto flex items-center space-x-3">
           <div class="relative flex-1">
-            <input type="text" id="user-input" placeholder="Pregunta sobre reservas, IBNR, SSN, Combined Ratio, liderazgo..." class="w-full bg-slate-900 border border-slate-700/80 rounded-xl px-4 py-3.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all" autocomplete="off" />
+            <input type="text" id="user-input" placeholder="Haz una pregunta técnica, actuarial o de gestión..." class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all" autocomplete="off" />
           </div>
-          <button type="submit" id="send-btn" class="px-5 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-medium text-sm flex items-center space-x-2 transition-all shadow-lg shadow-blue-600/30 disabled:opacity-50">
+          <button type="submit" id="send-btn" class="px-5 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-medium text-sm flex items-center space-x-2 transition-all shadow-lg shadow-blue-600/30 disabled:opacity-50 cursor-pointer">
             <span>Consultar</span>
             <i data-lucide="send" class="w-4 h-4"></i>
           </button>
@@ -228,18 +233,18 @@
           </div>
           <div class="relative w-full sm:w-80">
             <i data-lucide="search" class="w-4 h-4 text-slate-500 absolute left-3 top-3"></i>
-            <input type="text" id="explorer-search" oninput="renderExplorerArticles()" placeholder="Buscar por título o concepto..." class="w-full bg-slate-950 border border-slate-700/80 rounded-xl pl-9 pr-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-blue-500" />
+            <input type="text" id="explorer-search" oninput="renderExplorerArticles()" placeholder="Buscar por título o concepto..." class="w-full bg-slate-950 border border-slate-700 rounded-xl pl-9 pr-4 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-blue-500" />
           </div>
         </div>
 
-        <!-- Lista de Artículos -->
+        <!-- Grid de Tarjetas de Artículos -->
         <div id="articles-grid" class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <!-- Insertado dinámicamente por JS -->
+          <!-- Insertado dinámicamente -->
         </div>
       </div>
     </section>
 
-    <!-- VISTA 3: BRIEFING EJECUTIVO -->
+    <!-- VISTA 3: BRIEFING -->
     <section id="view-briefing" class="flex-1 overflow-y-auto p-6 custom-scrollbar hidden">
       <div class="max-w-4xl mx-auto space-y-6">
         <div class="bg-gradient-to-r from-blue-900/40 via-indigo-900/30 to-slate-900 p-6 rounded-2xl border border-blue-700/40 shadow-xl">
@@ -249,51 +254,48 @@
             </div>
             <div>
               <h3 class="text-lg font-bold text-white">Briefing Estratégico Consolidado</h3>
-              <p class="text-xs text-slate-300">Genera una síntesis ejecutiva de inteligencia en 5 pilares para la Dirección.</p>
+              <p class="text-xs text-slate-300">Genera una síntesis ejecutiva compilando los 51 artículos en los 5 pilares de gestión.</p>
             </div>
           </div>
-          <div class="mt-4 flex space-x-3">
-            <button onclick="generateExecutiveBriefing()" class="px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-medium text-xs flex items-center space-x-2 transition-all shadow-md">
+          <div class="mt-4">
+            <button onclick="generateExecutiveBriefing()" class="px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-medium text-xs flex items-center space-x-2 transition-all shadow-md cursor-pointer">
               <i data-lucide="play" class="w-4 h-4"></i>
-              <span>Generar Briefing Ahora</span>
+              <span>Generar Briefing con IA</span>
             </button>
           </div>
         </div>
 
         <div id="briefing-content" class="bg-slate-950/60 p-6 rounded-2xl border border-slate-800 text-slate-200 prose-dark text-sm min-h-[300px]">
-          <p class="text-slate-400 italic">Haz clic en "Generar Briefing Ahora" para compilar y analizar los conocimientos más relevantes de todo el repositorio...</p>
+          <p class="text-slate-400 italic">Haz clic en "Generar Briefing con IA" para sintetizar los conocimientos de todo el repositorio...</p>
         </div>
       </div>
     </section>
 
-    <!-- VISTA 4: GUÍA GITHUB PAGES -->
+    <!-- VISTA 4: GUÍA -->
     <section id="view-guide" class="flex-1 overflow-y-auto p-6 custom-scrollbar hidden">
       <div class="max-w-3xl mx-auto space-y-6 text-sm text-slate-300">
         <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800 space-y-4">
           <h3 class="text-base font-bold text-white flex items-center space-x-2">
-            <i data-lucide="github" class="w-5 h-5 text-blue-400"></i>
-            <span>Cómo publicar este Hub en GitHub Pages (Paso a Paso)</span>
+            <i data-lucide="info" class="w-5 h-5 text-blue-400"></i>
+            <span>Acerca de este Hub de Conocimiento</span>
           </h3>
-          
-          <div class="space-y-3">
-            <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-800">
-              <h4 class="font-semibold text-white mb-1">1. Crear repositorio en GitHub</h4>
-              <p class="text-xs text-slate-400">Crea un repositorio en tu cuenta de GitHub (ej. <code>repositorio-seguros</code>).</p>
+          <p>Este sistema permite a líderes de equipo y mandos medios del sector seguros consultar, estudiar y extraer conclusiones prácticas de los 51 artículos especializados del repositorio.</p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+            <div class="p-3 bg-slate-900 rounded-xl border border-slate-800">
+              <div class="font-bold text-white text-xs mb-1">📐 Actuarial & Técnico</div>
+              <div class="text-[11px] text-slate-400">IBNR, Reservas matemáticas, Zillmer, Hattendorff, GLM, Lee-Carter, Credibilidad Bühlmann.</div>
             </div>
-
-            <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-800">
-              <h4 class="font-semibold text-white mb-1">2. Subir estos archivos</h4>
-              <p class="text-xs text-slate-400">Sube todos los archivos (<code>index.html</code>, <code>app.js</code>, <code>knowledge_base.json</code>, etc.) a la rama <code>main</code> de tu repositorio.</p>
+            <div class="p-3 bg-slate-900 rounded-xl border border-slate-800">
+              <div class="font-bold text-white text-xs mb-1">📜 Normativa SSN & NIIF 17</div>
+              <div class="text-[11px] text-slate-400">Res. SSN 287/2025, Res. 24/2025 (UVA), CSM bajo NIIF 17, Ley 17.418 (Reticencia).</div>
             </div>
-
-            <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-800">
-              <h4 class="font-semibold text-white mb-1">3. Activar GitHub Pages</h4>
-              <p class="text-xs text-slate-400">Ve a <strong>Settings > Pages</strong> en GitHub, selecciona la fuente <strong>Deploy from a branch</strong>, rama <code>main</code> y carpeta <code>/ (root)</code>.</p>
+            <div class="p-3 bg-slate-900 rounded-xl border border-slate-800">
+              <div class="font-bold text-white text-xs mb-1">📈 Finanzas & Rentabilidad</div>
+              <div class="text-[11px] text-slate-400">Combined Ratio, RAROC, Embedded Value / VNB, WACC, Análisis DuPont, BSC.</div>
             </div>
-
-            <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-800">
-              <h4 class="font-semibold text-white mb-1">4. Compartir el enlace con los líderes</h4>
-              <p class="text-xs text-slate-400">Tu web estará disponible en <code>https://tu-usuario.github.io/repositorio-seguros/</code> lista para ser usada en cualquier navegador.</p>
+            <div class="p-3 bg-slate-900 rounded-xl border border-slate-800">
+              <div class="font-bold text-white text-xs mb-1">👥 Liderazgo & Operaciones</div>
+              <div class="text-[11px] text-slate-400">Modelo GROW, Matrices RACI, Lencioni, STP en Siniestros, IA en Suscripción.</div>
             </div>
           </div>
         </div>
@@ -302,42 +304,45 @@
 
   </main>
 
-  <!-- MODAL CONFIGURACIÓN API KEY -->
-  <div id="api-modal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
-    <div class="bg-slate-900 border border-slate-800 rounded-2xl max-w-md w-full p-6 space-y-4 shadow-2xl">
-      <div class="flex items-center justify-between">
-        <h3 class="font-bold text-white text-base flex items-center space-x-2">
-          <i data-lucide="key" class="w-5 h-5 text-blue-400"></i>
-          <span>Configurar Gemini API Key</span>
-        </h3>
-        <button onclick="closeApiKeyModal()" class="text-slate-400 hover:text-white">
-          <i data-lucide="x" class="w-5 h-5"></i>
-        </button>
-      </div>
-      <p class="text-xs text-slate-400 leading-relaxed">
-        Ingresa tu clave de <strong>Google Gemini API</strong> para habilitar las respuestas con razonamiento profundo y citas automáticas. La clave se almacena de forma segura únicamente en tu navegador (<code>localStorage</code>).
-      </p>
-      <div>
-        <label class="text-xs font-semibold text-slate-300 block mb-1.5">Gemini API Key</label>
-        <input type="password" id="modal-api-key-input" placeholder="AIzaSy..." class="w-full bg-slate-950 border border-slate-700/80 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-600 focus:outline-none focus:border-blue-500" />
-      </div>
-      <div class="flex justify-between items-center pt-2">
-        <a href="https://aistudio.google.com/app/apikey" target="_blank" class="text-xs text-blue-400 hover:underline flex items-center space-x-1">
-          <span>Obtener clave gratis</span>
-          <i data-lucide="external-link" class="w-3 h-3"></i>
-        </a>
-        <div class="flex space-x-2">
-          <button onclick="closeApiKeyModal()" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs font-medium text-slate-300">Cancelar</button>
-          <button onclick="saveApiKey()" class="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-xs font-medium text-white shadow-md">Guardar</button>
+  <!-- MODAL LECTOR DE ARTÍCULO COMPLETO -->
+  <div id="reader-modal" class="fixed inset-0 bg-slate-950/90 backdrop-blur-md z-50 flex items-center justify-center p-2 sm:p-4 md:p-6 hidden">
+    <div class="bg-slate-900 border border-slate-700 rounded-2xl max-w-4xl w-full h-[90vh] flex flex-col shadow-2xl overflow-hidden">
+      
+      <!-- Header del Lector -->
+      <div class="p-4 sm:p-6 border-b border-slate-800 flex items-start justify-between gap-4 bg-slate-950/80 flex-shrink-0">
+        <div class="space-y-1.5 flex-1 pr-2">
+          <div class="flex flex-wrap items-center gap-2">
+            <span id="reader-pilar" class="px-2.5 py-0.5 rounded text-[11px] font-semibold bg-blue-500/10 text-blue-400 border border-blue-500/20"></span>
+            <span id="reader-date" class="text-xs text-slate-400"></span>
+            <span id="reader-words" class="text-xs text-slate-500"></span>
+          </div>
+          <h2 id="reader-title" class="text-base sm:text-lg md:text-xl font-bold text-white leading-snug"></h2>
         </div>
+        <div class="flex items-center space-x-2 flex-shrink-0">
+          <button onclick="askFromReader()" class="px-3.5 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-medium text-xs flex items-center space-x-1.5 transition-all shadow-md cursor-pointer">
+            <i data-lucide="message-square" class="w-3.5 h-3.5"></i>
+            <span class="hidden sm:inline">Consultar con IA</span>
+          </button>
+          <button onclick="closeArticleReader()" class="p-2 rounded-xl text-slate-400 hover:text-white hover:bg-slate-800 transition-all cursor-pointer">
+            <i data-lucide="x" class="w-5 h-5"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Contenido del Texto Completo -->
+      <div id="reader-content" class="flex-1 overflow-y-auto p-5 sm:p-8 custom-scrollbar bg-slate-900/50 text-slate-200 prose-dark text-sm sm:text-base leading-relaxed">
+        <!-- Renderizado dinámicamente -->
+      </div>
+
+      <!-- Footer del Lector -->
+      <div class="p-3.5 px-6 border-t border-slate-800 bg-slate-950/80 flex items-center justify-between text-xs text-slate-400 flex-shrink-0">
+        <span id="reader-ramos" class="flex items-center space-x-1.5"></span>
+        <button onclick="closeArticleReader()" class="text-slate-400 hover:text-slate-200 cursor-pointer">Cerrar Lector (ESC)</button>
       </div>
     </div>
   </div>
 
   <!-- Script Principal -->
   <script src="app.js"></script>
-  <script>
-    lucide.createIcons();
-  </script>
 </body>
 </html>
