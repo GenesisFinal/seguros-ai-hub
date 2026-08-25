@@ -105,7 +105,7 @@ function renderExplorerArticles() {
             </span>
             <span class="text-[11px] text-slate-500">${meta.date || ''}</span>
           </div>
-          <h4 class="text-sm font-bold text-white mb-2 leading-snug hover:text-blue-400 cursor-pointer" onclick="askAboutDoc('${escapeQuote(meta.title)}')">
+          <h4 class="text-sm font-bold text-white mb-2 leading-snug hover:text-blue-400 cursor-pointer" onclick="openArticleReader('${escapeQuote(meta.title)}')">
             ${meta.title}
           </h4>
           <p class="text-xs text-slate-400 line-clamp-3 mb-3 leading-relaxed">
@@ -114,14 +114,20 @@ function renderExplorerArticles() {
         </div>
         
         <div class="pt-3 border-t border-slate-800/80 flex items-center justify-between text-[11px] text-slate-400">
-          <span class="flex items-center space-x-1">
-            <i data-lucide="tag" class="w-3 h-3 text-slate-500"></i>
-            <span>${(meta.ramos || []).join(', ')}</span>
+          <span class="flex items-center space-x-1 truncate max-w-[150px]">
+            <i data-lucide="tag" class="w-3 h-3 text-slate-500 flex-shrink-0"></i>
+            <span class="truncate">${(meta.ramos || []).join(', ')}</span>
           </span>
-          <button onclick="askAboutDoc('${escapeQuote(meta.title)}')" class="text-blue-400 hover:text-blue-300 font-medium flex items-center space-x-1">
-            <span>Preguntar a la IA</span>
-            <i data-lucide="arrow-right" class="w-3 h-3"></i>
-          </button>
+          <div class="flex items-center space-x-2">
+            <button onclick="openArticleReader('${escapeQuote(meta.title)}')" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 font-medium flex items-center space-x-1 transition-all border border-slate-700">
+              <i data-lucide="book-open" class="w-3 h-3 text-blue-400"></i>
+              <span>Leer Completo</span>
+            </button>
+            <button onclick="openArticleReader('${escapeQuote(meta.title)}')" class="px-2.5 py-1 rounded-lg bg-blue-600/20 hover:bg-blue-600/30 text-blue-400 font-medium flex items-center space-x-1 transition-all border border-blue-500/30">
+              <i data-lucide="message-square" class="w-3 h-3"></i>
+              <span>Consultar</span>
+            </button>
+          </div>
         </div>
       </div>
     `;
@@ -311,9 +317,15 @@ function addChatMessage(role, content, sources = []) {
           <summary class="cursor-pointer text-blue-400 font-semibold hover:text-blue-300">?? Fuentes Consultadas (${sources.length} documentos)</summary>
           <div class="mt-2 space-y-2 text-slate-300">
             ${sources.map(s => `
-              <div class="bg-slate-900/80 p-2.5 rounded-lg border border-slate-800">
-                <div class="font-bold text-white">? ${s.title} <span class="text-slate-500 font-normal">(${s.date || ''} | ${s.pilar || 'Seguros'})</span></div>
-                <div class="text-slate-400 text-[11px] mt-1 line-clamp-2">${s.text}</div>
+              <div class="bg-slate-900/80 p-3 rounded-lg border border-slate-800 flex items-start justify-between gap-3">
+                <div class="flex-1">
+                  <div class="font-bold text-white text-xs">? ${s.title} <span class="text-slate-500 font-normal">(${s.date || ''} | ${s.pilar || 'Seguros'})</span></div>
+                  <div class="text-slate-400 text-[11px] mt-1 line-clamp-2">${s.text}</div>
+                </div>
+                <button onclick="openArticleReader('${escapeQuote(s.title)}')" class="px-2.5 py-1 rounded bg-slate-800 hover:bg-slate-700 text-blue-400 text-[11px] font-medium flex items-center space-x-1 flex-shrink-0 border border-slate-700">
+                  <i data-lucide="book-open" class="w-3 h-3"></i>
+                  <span>Leer Completo</span>
+                </button>
               </div>
             `).join('')}
           </div>
@@ -391,3 +403,65 @@ async function generateExecutiveBriefing() {
     container.innerHTML = `<p class="text-rose-400 font-semibold">Error generando el briefing: ${err.message}</p>`;
   }
 }
+
+
+// ==========================================
+// FUNCIONES DEL LECTOR DE ART?CULOS COMPLETOS
+// ==========================================
+let currentReaderDocTitle = '';
+
+function openArticleReader(docTitle) {
+  const doc = (knowledgeBase.documents || []).find(d => 
+    d.metadata.title.toLowerCase() === docTitle.toLowerCase() ||
+    d.metadata.title.includes(docTitle) ||
+    docTitle.includes(d.metadata.title)
+  );
+
+  if (!doc) {
+    alert('No se encontr? el documento en el repositorio.');
+    return;
+  }
+
+  currentReaderDocTitle = doc.metadata.title;
+  const meta = doc.metadata;
+
+  document.getElementById('reader-title').innerText = meta.title;
+  document.getElementById('reader-pilar').innerText = meta.pilar || 'Seguros';
+  document.getElementById('reader-date').innerText = `?? ${meta.date || 'Sin fecha'}`;
+  document.getElementById('reader-words').innerText = `?? ${meta.word_count || 0} palabras (~${Math.ceil((meta.word_count || 500) / 200)} min de lectura)`;
+  document.getElementById('reader-ramos').innerHTML = `??? <strong>Ramos:</strong> ${(meta.ramos || []).join(', ')}`;
+
+  // Formatear texto completo con Markdown
+  const fullText = doc.full_text || doc.content_preview || 'Contenido no disponible.';
+  
+  // Limpieza y estructuraci?n visual
+  let formattedMd = fullText
+    .replace(/^([0-9]+\)\s+[A-Z??????\s]{3,})/gm, '### $1')
+    .replace(/??+/g, '---')
+    .replace(/--+/g, '---');
+
+  document.getElementById('reader-content').innerHTML = marked.parse(formattedMd);
+  document.getElementById('reader-modal').classList.remove('hidden');
+  document.body.style.overflow = 'hidden';
+
+  lucide.createIcons();
+}
+
+function closeArticleReader() {
+  document.getElementById('reader-modal').classList.add('hidden');
+  document.body.style.overflow = '';
+}
+
+function askFromReader() {
+  if (currentReaderDocTitle) {
+    closeArticleReader();
+    askAboutDoc(currentReaderDocTitle);
+  }
+}
+
+// Cerrar lector con tecla ESC
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    closeArticleReader();
+  }
+});
