@@ -368,6 +368,14 @@
           <h2 id="reader-title" class="text-base sm:text-lg md:text-xl font-bold text-white leading-snug"></h2>
         </div>
         <div class="flex items-center space-x-2 flex-shrink-0">
+          <button onclick="downloadCurrentReaderDoc('docx')" title="Descargar en formato Word (.docx)" class="px-3 py-2 rounded-xl bg-[#222228] hover:bg-[#2a2a32] text-slate-200 hover:text-white font-medium text-xs flex items-center space-x-1.5 border border-[#30303a] transition-all cursor-pointer">
+            <i data-lucide="download" class="w-3.5 h-3.5 text-[#3ac792]"></i>
+            <span class="hidden sm:inline">Bajar Word (.docx)</span>
+          </button>
+          <button onclick="downloadCurrentReaderDoc('pdf')" title="Descargar en formato PDF" class="px-3 py-2 rounded-xl bg-[#222228] hover:bg-[#2a2a32] text-slate-200 hover:text-white font-medium text-xs flex items-center space-x-1.5 border border-[#30303a] transition-all cursor-pointer">
+            <i data-lucide="file-text" class="w-3.5 h-3.5 text-[#f8cc59]"></i>
+            <span class="hidden sm:inline">PDF</span>
+          </button>
           <button onclick="askFromReader()" class="px-3.5 py-2 rounded-xl bg-[#e20039] hover:bg-[#f42c4b] text-white font-semibold text-xs flex items-center space-x-1.5 transition-all shadow-md cursor-pointer">
             <i data-lucide="message-square" class="w-3.5 h-3.5"></i>
             <span class="hidden sm:inline">Consultar con IA</span>
