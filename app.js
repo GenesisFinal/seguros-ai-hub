@@ -3,30 +3,36 @@ let knowledgeBase = { documents: [], chunks: [], total_docs: 0, total_chunks: 0 
 let currentTab = 'chat';
 let selectedPilar = 'Todos';
 let selectedRamo = 'Todos';
+let currentReaderDocIndex = null;
 
-// Clave de API activa para generaci?n inteligente tipo NotebookLM
+// Clave activa de Gemini AI
 const _K = ['AQ.Ab8RN6Kxf5f', 'E_MaRVCZbiS5un', 'eiwqqWBWPrPiwg', 'lGfNtpApXbg'].join('');
 
 // Inicializaci?n al cargar el DOM
 document.addEventListener('DOMContentLoaded', async () => {
   await loadKnowledgeBase();
   renderExplorerArticles();
-  lucide.createIcons();
+  if (window.lucide) window.lucide.createIcons();
 });
 
-// Cargar la base de conocimiento desde el JSON est?tico
+// Cargar base de conocimiento
 async function loadKnowledgeBase() {
   try {
     const res = await fetch('knowledge_base.json');
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    if (!res.ok) throw new Error('HTTP ' + res.status);
     knowledgeBase = await res.json();
     
-    document.getElementById('stat-docs').innerText = knowledgeBase.total_docs || knowledgeBase.documents.length;
-    document.getElementById('stat-chunks').innerText = knowledgeBase.total_chunks || knowledgeBase.chunks.length;
-    document.getElementById('explorer-count').innerText = `Mostrando ${knowledgeBase.documents.length} art?culos indexados`;
+    const statDocs = document.getElementById('stat-docs');
+    const statChunks = document.getElementById('stat-chunks');
+    const explorerCount = document.getElementById('explorer-count');
+    
+    if (statDocs) statDocs.innerText = knowledgeBase.total_docs || knowledgeBase.documents.length;
+    if (statChunks) statChunks.innerText = knowledgeBase.total_chunks || knowledgeBase.chunks.length;
+    if (explorerCount) explorerCount.innerText = 'Mostrando ' + (knowledgeBase.documents ? knowledgeBase.documents.length : 0) + ' art?culos indexados';
   } catch (err) {
     console.error('Error cargando knowledge_base.json:', err);
-    document.getElementById('sync-status-badge').innerHTML = `<span class="w-2 h-2 rounded-full bg-rose-400 mr-1.5"></span> Error al cargar`;
+    const badge = document.getElementById('sync-status-badge');
+    if (badge) badge.innerHTML = '<span class="w-2 h-2 rounded-full bg-rose-400 mr-1.5"></span> Error al cargar';
   }
 }
 
@@ -36,31 +42,37 @@ function switchTab(tabId) {
   const tabs = ['chat', 'explorer', 'briefing', 'guide'];
   
   tabs.forEach(t => {
-    const view = document.getElementById(`view-${t}`);
-    const nav = document.getElementById(`nav-${t}`);
-    if (t === tabId) {
-      view.classList.remove('hidden');
-      nav.className = 'w-full flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-all bg-blue-600 text-white shadow-md shadow-blue-600/20';
-    } else {
-      view.classList.add('hidden');
-      nav.className = 'w-full flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm font-medium text-slate-400 hover:text-slate-200 hover:bg-slate-800/60 transition-all';
+    const view = document.getElementById('view-' + t);
+    const nav = document.getElementById('nav-' + t);
+    if (view && nav) {
+      if (t === tabId) {
+        view.classList.remove('hidden');
+        nav.className = 'w-full flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-all bg-blue-600 text-white shadow-md shadow-blue-600/20';
+      } else {
+        view.classList.add('hidden');
+        nav.className = 'w-full flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm font-medium text-slate-400 hover:text-slate-200 hover:bg-slate-800/60 transition-all';
+      }
     }
   });
 
   const titles = {
-    chat: 'Chat Estrat?gico para L?deres de Seguros (Estilo NotebookLM)',
+    chat: 'Chat con IA para L?deres de Seguros (Estilo NotebookLM)',
     explorer: 'Explorador del Repositorio de Documentos',
-    briefing: 'Briefing Ejecutivo Consolidado',
-    guide: 'Gu?a de Publicaci?n en GitHub Pages'
+    briefing: 'Briefing Estrat?gico Consolidado',
+    guide: 'Informaci?n y Gu?a del Repositorio'
   };
-  document.getElementById('header-title').innerText = titles[tabId] || 'SegurosAI Hub';
-  lucide.createIcons();
+  
+  const headerTitle = document.getElementById('header-title');
+  if (headerTitle) headerTitle.innerText = titles[tabId] || 'SegurosAI Hub';
+  if (window.lucide) window.lucide.createIcons();
 }
 
 // Filtros
 function applyFilters() {
-  selectedPilar = document.getElementById('filter-pilar').value;
-  selectedRamo = document.getElementById('filter-ramo').value;
+  const pilarEl = document.getElementById('filter-pilar');
+  const ramoEl = document.getElementById('filter-ramo');
+  if (pilarEl) selectedPilar = pilarEl.value;
+  if (ramoEl) selectedRamo = ramoEl.value;
   renderExplorerArticles();
 }
 
@@ -69,61 +81,79 @@ function renderExplorerArticles() {
   const container = document.getElementById('articles-grid');
   if (!container) return;
 
-  const searchTerm = (document.getElementById('explorer-search')?.value || '').toLowerCase();
-  let filtered = knowledgeBase.documents || [];
+  const searchEl = document.getElementById('explorer-search');
+  const searchTerm = (searchEl ? searchEl.value : '').toLowerCase().trim();
   
+  let docs = knowledgeBase.documents || [];
+  
+  // Filtrar por pilar
   if (selectedPilar !== 'Todos') {
-    filtered = filtered.filter(d => d.metadata.pilar === selectedPilar);
+    docs = docs.filter(d => d.metadata && d.metadata.pilar === selectedPilar);
   }
   
+  // Filtrar por ramo
   if (selectedRamo !== 'Todos') {
-    filtered = filtered.filter(d => (d.metadata.ramos || []).includes(selectedRamo));
+    docs = docs.filter(d => d.metadata && (d.metadata.ramos || []).includes(selectedRamo));
   }
   
+  // Filtrar por texto
   if (searchTerm) {
-    filtered = filtered.filter(d => 
-      d.metadata.title.toLowerCase().includes(searchTerm) || 
-      (d.metadata.summary || '').toLowerCase().includes(searchTerm)
-    );
+    docs = docs.filter(d => {
+      const meta = d.metadata || {};
+      const title = (meta.title || '').toLowerCase();
+      const summary = (meta.summary || '').toLowerCase();
+      return title.includes(searchTerm) || summary.includes(searchTerm);
+    });
   }
 
-  document.getElementById('explorer-count').innerText = `Mostrando ${filtered.length} de ${knowledgeBase.documents.length} art?culos`;
+  const countEl = document.getElementById('explorer-count');
+  if (countEl) {
+    countEl.innerText = 'Mostrando ' + docs.length + ' de ' + (knowledgeBase.documents ? knowledgeBase.documents.length : 0) + ' art?culos';
+  }
 
-  if (filtered.length === 0) {
-    container.innerHTML = `<div class="col-span-2 text-center py-12 text-slate-500">No se encontraron art?culos con los filtros aplicados.</div>`;
+  if (docs.length === 0) {
+    container.innerHTML = '<div class="col-span-2 text-center py-12 text-slate-500">No se encontraron art?culos con los filtros aplicados.</div>';
     return;
   }
 
-  container.innerHTML = filtered.map((doc) => {
-    const meta = doc.metadata;
+  container.innerHTML = docs.map((doc) => {
+    // Buscar ?ndice real en knowledgeBase.documents
+    const realIndex = knowledgeBase.documents.indexOf(doc);
+    const meta = doc.metadata || {};
+    const title = escapeHtml(meta.title || 'Sin t?tulo');
+    const pilar = escapeHtml(meta.pilar || 'Seguros');
+    const date = escapeHtml(meta.date || '');
+    const summary = escapeHtml(meta.summary || 'Sin resumen disponible');
+    const ramosStr = escapeHtml((meta.ramos || []).join(', '));
+
     return `
-      <div class="bg-slate-950/80 border border-slate-800/90 hover:border-blue-500/50 transition-all rounded-xl p-4 flex flex-col justify-between shadow-sm">
+      <div class="bg-slate-950/80 border border-slate-800 hover:border-blue-500/50 transition-all rounded-xl p-4 flex flex-col justify-between shadow-sm">
         <div>
           <div class="flex items-center justify-between gap-2 mb-2">
             <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-blue-500/10 text-blue-400 border border-blue-500/20">
-              ${meta.pilar || 'General'}
+              ${pilar}
             </span>
-            <span class="text-[11px] text-slate-500">${meta.date || ''}</span>
+            <span class="text-[11px] text-slate-500">${date}</span>
           </div>
-          <h4 class="text-sm font-bold text-white mb-2 leading-snug hover:text-blue-400 cursor-pointer" onclick="openArticleReader('${escapeQuote(meta.title)}')">
-            ${meta.title}
+          <h4 class="text-sm font-bold text-white mb-2 leading-snug hover:text-blue-400 cursor-pointer" onclick="openArticleReaderByIndex(${realIndex})">
+            ${title}
           </h4>
           <p class="text-xs text-slate-400 line-clamp-3 mb-3 leading-relaxed">
-            ${meta.summary || 'Sin resumen disponible'}
+            ${summary}
           </p>
         </div>
         
-        <div class="pt-3 border-t border-slate-800/80 flex items-center justify-between text-[11px] text-slate-400">
-          <span class="flex items-center space-x-1 truncate max-w-[150px]">
+        <div class="pt-3 border-t border-slate-800 flex items-center justify-between text-[11px] text-slate-400">
+          <span class="flex items-center space-x-1 truncate max-w-[140px]">
             <i data-lucide="tag" class="w-3 h-3 text-slate-500 flex-shrink-0"></i>
-            <span class="truncate">${(meta.ramos || []).join(', ')}</span>
+            <span class="truncate">${ramosStr}</span>
           </span>
           <div class="flex items-center space-x-2">
-            <button onclick="openArticleReader('${escapeQuote(meta.title)}')" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 font-medium flex items-center space-x-1 transition-all border border-slate-700">
+            <button onclick="openArticleReaderByIndex(${realIndex})" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 font-medium flex items-center space-x-1 transition-all border border-slate-700 cursor-pointer">
               <i data-lucide="book-open" class="w-3 h-3 text-blue-400"></i>
-              <span>Leer Completo</span>
+              <span>Leer</span>
             </button>
-            <button onclick="openArticleReader('${escapeQuote(meta.title)}')" class="px-2.5 py-1 rounded-lg bg-blue-600/20 hover:bg-blue-600/30 text-blue-400 font-medium flex items-center space-x-1 transition-all border border-blue-500/30">
+            <button onclick="askAboutDocByIndex(${realIndex})" class="px-2.5 py-1 rounded-lg bg-blue-600/20 hover:bg-blue-600/30 text-blue-400 font-medium flex items-center space-x-1 transition-all border border-blue-500/30 cursor-pointer">
               <i data-lucide="message-square" class="w-3 h-3"></i>
               <span>Consultar</span>
             </button>
@@ -133,19 +163,74 @@ function renderExplorerArticles() {
     `;
   }).join('');
 
-  lucide.createIcons();
+  if (window.lucide) window.lucide.createIcons();
 }
 
-function escapeQuote(str) {
-  return str.replace(/'/g, "\'");
+// Lector de Art?culos Completo
+function openArticleReaderByIndex(index) {
+  if (!knowledgeBase.documents || !knowledgeBase.documents[index]) return;
+  
+  currentReaderDocIndex = index;
+  const doc = knowledgeBase.documents[index];
+  const meta = doc.metadata || {};
+
+  const titleEl = document.getElementById('reader-title');
+  const pilarEl = document.getElementById('reader-pilar');
+  const dateEl = document.getElementById('reader-date');
+  const wordsEl = document.getElementById('reader-words');
+  const ramosEl = document.getElementById('reader-ramos');
+  const contentEl = document.getElementById('reader-content');
+  const modalEl = document.getElementById('reader-modal');
+
+  if (titleEl) titleEl.innerText = meta.title || 'Art?culo';
+  if (pilarEl) pilarEl.innerText = meta.pilar || 'Seguros';
+  if (dateEl) dateEl.innerText = '?? ' + (meta.date || 'Sin fecha');
+  if (wordsEl) wordsEl.innerText = '?? ' + (meta.word_count || 0) + ' palabras';
+  if (ramosEl) ramosEl.innerHTML = '??? <strong>Ramos:</strong> ' + ((meta.ramos || []).join(', ') || 'General');
+
+  // Formatear texto completo
+  const fullText = doc.full_text || doc.content_preview || 'Texto no disponible.';
+  let formattedMd = fullText
+    .replace(/^([0-9]+\)\s+[A-Z??????\s]{3,})/gm, '### $1')
+    .replace(/[-?]{3,}/g, '---')
+    ;
+
+  if (contentEl) {
+    contentEl.innerHTML = marked.parse(formattedMd);
+    contentEl.scrollTop = 0;
+  }
+  
+  if (modalEl) modalEl.classList.remove('hidden');
+  document.body.style.overflow = 'hidden';
+  if (window.lucide) window.lucide.createIcons();
 }
 
-function askAboutDoc(docTitle) {
+function closeArticleReader() {
+  const modalEl = document.getElementById('reader-modal');
+  if (modalEl) modalEl.classList.add('hidden');
+  document.body.style.overflow = '';
+}
+
+function askFromReader() {
+  if (currentReaderDocIndex !== null) {
+    closeArticleReader();
+    askAboutDocByIndex(currentReaderDocIndex);
+  }
+}
+
+function askAboutDocByIndex(index) {
+  if (!knowledgeBase.documents || !knowledgeBase.documents[index]) return;
+  const title = knowledgeBase.documents[index].metadata.title;
   switchTab('chat');
-  setQuery(`Expl?came a fondo, con visi?n ejecutiva y detalle t?cnico, el contenido y las conclusiones de: ${docTitle}`);
+  setQuery('Expl?came a fondo, con rigor t?cnico y visi?n pr?ctica para l?deres, el contenido y las conclusiones de: ' + title);
 }
 
-// B?squeda H?brida en Cliente (BM25 + TF-IDF)
+// Cerrar con tecla Escape
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeArticleReader();
+});
+
+// B?squeda H?brida
 function searchHybrid(query, pilarFilter = 'Todos', ramoFilter = 'Todos', topK = 6) {
   const chunks = knowledgeBase.chunks || [];
   if (!chunks.length) return [];
@@ -190,7 +275,7 @@ function searchHybrid(query, pilarFilter = 'Todos', ramoFilter = 'Todos', topK =
   return scored.slice(0, topK);
 }
 
-// Generador del Prompt Especializado para Respuestas Explicativas (Estilo NotebookLM)
+// Prompt estilo NotebookLM para l?deres
 function buildNotebookLMPrompt(query, retrievedChunks) {
   const context = retrievedChunks.map((c, i) => 
     `=== DOCUMENTO [${i+1}]: "${c.title}" (Pilar: ${c.pilar || 'Seguros'} | Ramos: ${(c.ramos || []).join(', ')}) ===\n${c.text}\n`
@@ -200,25 +285,25 @@ function buildNotebookLMPrompt(query, retrievedChunks) {
 
 Trata al interlocutor como "l?der" o simplemente de forma directa ("t?"), con un tono cercano, profesional y pr?ctico, enfocado en el d?a a d?a operativo y en la gesti?n de su equipo t?cnico o de negocio (evita llamarlo director o gerente).
 
-El usuario te formula la siguiente pregunta o consulta:
+PREGUNTA DEL L?DER:
 "${query}"
 
-A continuaci?n tienes los fragmentos y documentos extra?dos de la base de conocimiento corporativa:
+DOCUMENTOS DISPONIBLES DE LA BASE DE CONOCIMIENTO:
 ${context}
 
 INSTRUCCIONES DE RESPUESTA (ESTILO NOTEBOOKLM):
-1. **EXPLICACI?N CONVERSACIONAL Y PROFUNDA:** No te limites a citar o copiar texto. Explica los conceptos de forma fluida, did?ctica y completa, respondiendo directamente a lo que el l?der est? preguntando.
-2. **RIGOR T?CNICO Y ACTUARIAL:** Si hay f?rmulas, m?todos (ej. Chain-Ladder vs Bornhuetter-Ferguson, Zillmer, Hattendorff, GLM, etc.) o normativas (ej. Resoluciones SSN, NIIF 17 / IFRS 17 CSM, Ley 17.418), explica la mec?nica paso a paso y por qu? funciona as?.
-3. **IMPACTO EN EL NEGOCIO Y GESTI?N:** Incluye siempre c?mo esto impacta en la toma de decisiones, en el Combined Ratio, en la solvencia, en las operaciones o en la conducci?n de equipos.
-4. **ESTRUCTURA VISUAL CLARA:** Usa t?tulos descriptivos, subt?tulos, listas con vi?etas destacadas en negrita y tablas comparativas cuando sea pertinente.
-5. **CITAS DE FUENTES:** Indica de forma natural qu? documento o resoluci?n respalda cada punto clave (ej: "[Fuente: Combined Ratio en seguros de personas...]").
+1. **EXPLICACI?N CONVERSACIONAL Y PROFUNDA:** Explica los conceptos de forma did?ctica, completa y fluida. Responde con exactitud a lo que se pregunta.
+2. **RIGOR T?CNICO Y ACTUARIAL:** Si hay f?rmulas, m?todos (ej. Chain-Ladder vs Bornhuetter-Ferguson, Zillmer, Hattendorff, GLM, etc.) o normativas (ej. Resoluciones SSN 287/2025, 24/2025, NIIF 17 / IFRS 17 CSM, Ley 17.418), explica la mec?nica paso a paso.
+3. **PALANCAS DE GESTI?N PARA EL L?DER:** Incluye siempre recomendaciones pr?cticas sobre c?mo aplicarlo en el seguimiento mensual, en la operaci?n o en la conducci?n de sus colaboradores.
+4. **ESTRUCTURA VISUAL:** Usa t?tulos claros, vi?etas en negrita y tablas comparativas cuando aplique.
+5. **CITAS DE FUENTES:** Cita expl?citamente qu? documentos respaldan tus explicaciones (ej. "[Fuente: T?tulo]").
 
-RESPUESTA EXPLICATIVA Y COMPLETA:`;
+RESPUESTA EXPLICATIVA:`;
 }
 
-// Llamada Directa a Gemini API
+// Llamada a Gemini
 async function callGeminiApi(prompt) {
-  const models = ['gemini-2.5-flash', 'gemini-1.5-flash', 'gemini-1.5-pro'];
+  const models = ['gemini-2.5-flash', 'gemini-1.5-flash'];
   let lastError = null;
 
   for (const model of models) {
@@ -229,35 +314,32 @@ async function callGeminiApi(prompt) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           contents: [{ parts: [{ text: prompt }] }],
-          generationConfig: {
-            temperature: 0.3,
-            maxOutputTokens: 2500
-          }
+          generationConfig: { temperature: 0.3, maxOutputTokens: 2500 }
         })
       });
 
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.error?.message || `HTTP ${response.status}`);
+      if (response.ok) {
+        const data = await response.json();
+        const text = (data.candidates && data.candidates[0] && data.candidates[0].content && data.candidates[0].content.parts && data.candidates[0].content.parts[0]) ? data.candidates[0].content.parts[0].text : '';
+        if (text) return text;
+      } else {
+        const errJson = await response.json();
+        const errMsg = (errJson.error && errJson.error.message) ? errJson.error.message : ('HTTP ' + response.status);
+        throw new Error(errMsg);
       }
-
-      const data = await response.json();
-      const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
-      if (text) return text;
     } catch (err) {
       lastError = err;
-      console.warn(`Fallo modelo ${model}:`, err.message);
+      console.warn('Fallo con ' + model + ':', err.message);
     }
   }
-
   throw lastError;
 }
 
-// Manejador del Env?o de Chat
+// Chat
 async function handleSend(e) {
   if (e) e.preventDefault();
   const input = document.getElementById('user-input');
-  const query = input.value.trim();
+  const query = (input ? input.value : '').trim();
   if (!query) return;
 
   input.value = '';
@@ -265,37 +347,40 @@ async function handleSend(e) {
 
   const loadingMsgId = addLoadingMessage();
   const sendBtn = document.getElementById('send-btn');
-  sendBtn.disabled = true;
+  if (sendBtn) sendBtn.disabled = true;
 
   try {
     const retrieved = searchHybrid(query, selectedPilar, selectedRamo, 5);
     
     if (!retrieved.length) {
-      replaceLoadingMessage(loadingMsgId, 'No encontr? informaci?n relevante en el repositorio para esa consulta. Prueba con otros t?rminos o seleccionando "Todos los Pilares".');
+      replaceLoadingMessage(loadingMsgId, 'No encontr? documentos relevantes en el repositorio para esa consulta. Prueba seleccionando "Todos los Pilares" o con otros t?rminos.');
       return;
     }
 
     const prompt = buildNotebookLMPrompt(query, retrieved);
     const answer = await callGeminiApi(prompt);
-    
     replaceLoadingMessage(loadingMsgId, answer, retrieved);
 
   } catch (err) {
     console.error('Error generando respuesta:', err);
-    replaceLoadingMessage(loadingMsgId, `**Error al procesar la respuesta con IA:** ${err.message}. Por favor intenta de nuevo en unos momentos.`);
+    replaceLoadingMessage(loadingMsgId, '**Error al procesar con IA:** ' + err.message + '. Por favor intenta de nuevo.');
   } finally {
-    sendBtn.disabled = false;
+    if (sendBtn) sendBtn.disabled = false;
   }
 }
 
 function setQuery(text) {
-  document.getElementById('user-input').value = text;
-  handleSend();
+  const input = document.getElementById('user-input');
+  if (input) {
+    input.value = text;
+    handleSend();
+  }
 }
 
-// Renderizado de Mensajes en el Chat
 function addChatMessage(role, content, sources = []) {
   const container = document.getElementById('chat-messages');
+  if (!container) return;
+
   const msgDiv = document.createElement('div');
   msgDiv.className = role === 'user' ? 'flex items-start justify-end space-x-3 max-w-4xl ml-auto' : 'flex items-start space-x-3.5 max-w-4xl';
 
@@ -316,18 +401,19 @@ function addChatMessage(role, content, sources = []) {
         <details class="mt-4 pt-3 border-t border-slate-700/60 text-xs">
           <summary class="cursor-pointer text-blue-400 font-semibold hover:text-blue-300">?? Fuentes Consultadas (${sources.length} documentos)</summary>
           <div class="mt-2 space-y-2 text-slate-300">
-            ${sources.map(s => `
-              <div class="bg-slate-900/80 p-3 rounded-lg border border-slate-800 flex items-start justify-between gap-3">
-                <div class="flex-1">
-                  <div class="font-bold text-white text-xs">? ${s.title} <span class="text-slate-500 font-normal">(${s.date || ''} | ${s.pilar || 'Seguros'})</span></div>
-                  <div class="text-slate-400 text-[11px] mt-1 line-clamp-2">${s.text}</div>
+            ${sources.map(s => {
+              const docIdx = (knowledgeBase.documents || []).findIndex(d => d.metadata && d.metadata.title === s.title);
+              const readBtn = docIdx >= 0 ? `<button onclick="openArticleReaderByIndex(${docIdx})" class="px-2.5 py-1 rounded bg-slate-800 hover:bg-slate-700 text-blue-400 text-[11px] font-medium flex items-center space-x-1 flex-shrink-0 border border-slate-700 cursor-pointer"><i data-lucide="book-open" class="w-3 h-3"></i><span>Leer Completo</span></button>` : '';
+              return `
+                <div class="bg-slate-900/80 p-3 rounded-lg border border-slate-800 flex items-start justify-between gap-3">
+                  <div class="flex-1">
+                    <div class="font-bold text-white text-xs">? ${escapeHtml(s.title)} <span class="text-slate-500 font-normal">(${escapeHtml(s.date || '')} | ${escapeHtml(s.pilar || 'Seguros')})</span></div>
+                    <div class="text-slate-400 text-[11px] mt-1 line-clamp-2">${escapeHtml(s.text)}</div>
+                  </div>
+                  ${readBtn}
                 </div>
-                <button onclick="openArticleReader('${escapeQuote(s.title)}')" class="px-2.5 py-1 rounded bg-slate-800 hover:bg-slate-700 text-blue-400 text-[11px] font-medium flex items-center space-x-1 flex-shrink-0 border border-slate-700">
-                  <i data-lucide="book-open" class="w-3 h-3"></i>
-                  <span>Leer Completo</span>
-                </button>
-              </div>
-            `).join('')}
+              `;
+            }).join('')}
           </div>
         </details>
       `;
@@ -346,11 +432,13 @@ function addChatMessage(role, content, sources = []) {
 
   container.appendChild(msgDiv);
   container.scrollTop = container.scrollHeight;
-  lucide.createIcons();
+  if (window.lucide) window.lucide.createIcons();
 }
 
 function addLoadingMessage() {
   const container = document.getElementById('chat-messages');
+  if (!container) return 'loading';
+
   const id = 'loading-' + Date.now();
   const msgDiv = document.createElement('div');
   msgDiv.id = id;
@@ -366,7 +454,7 @@ function addLoadingMessage() {
   `;
   container.appendChild(msgDiv);
   container.scrollTop = container.scrollHeight;
-  lucide.createIcons();
+  if (window.lucide) window.lucide.createIcons();
   return id;
 }
 
@@ -377,14 +465,16 @@ function replaceLoadingMessage(id, content, sources = []) {
 }
 
 function escapeHtml(text) {
+  if (!text) return '';
   const div = document.createElement('div');
   div.innerText = text;
   return div.innerHTML;
 }
 
-// Briefing Ejecutivo Consolidado Generado por Gemini
+// Briefing
 async function generateExecutiveBriefing() {
   const container = document.getElementById('briefing-content');
+  if (!container) return;
   
   container.innerHTML = `
     <div class="flex items-center space-x-3 text-sm text-slate-300 py-12 justify-center">
@@ -394,74 +484,12 @@ async function generateExecutiveBriefing() {
   `;
 
   try {
-    const briefQuery = "Genera un Briefing Ejecutivo de Alto Nivel estructurado en los 5 ejes estrat?gicos: 1) Modelos Actuariales y Reservas T?cnicas (IBNR, Zillmer, Hattendorff, etc.), 2) Impacto Normativo SSN y NIIF 17 (CSM, Res 287/2025, Res 24/2025), 3) Rentabilidad Financiera y Creaci?n de Valor (Combined Ratio, RAROC, EV/VNB, DuPont), 4) Transformaci?n Operativa, STP, Fraude e IA, 5) Liderazgo, Gesti?n de Mandos Medios y Equipos (GROW, RACI, Lencioni). Sintetiza los aprendizajes clave para un l?der de equipo o jefe en una compa??a de seguros.";
+    const briefQuery = "Genera un Briefing de Conocimiento para L?deres de Equipo estructurado en los 5 ejes: 1) Modelos Actuariales y Reservas (IBNR, Zillmer, Hattendorff), 2) Impacto Normativo SSN y NIIF 17 (CSM, Res 287/2025, Res 24/2025), 3) Rentabilidad Financiera (Combined Ratio, RAROC, EV/VNB, DuPont), 4) Transformaci?n Operativa, STP, Fraude e IA, 5) Liderazgo, Delegaci?n y Gesti?n de Mandos Medios (GROW, RACI, Lencioni). Sintetiza los aprendizajes clave.";
     const chunks = searchHybrid(briefQuery, 'Todos', 'Todos', 10);
     const prompt = buildNotebookLMPrompt(briefQuery, chunks);
     const answer = await callGeminiApi(prompt);
     container.innerHTML = marked.parse(answer);
   } catch (err) {
-    container.innerHTML = `<p class="text-rose-400 font-semibold">Error generando el briefing: ${err.message}</p>`;
+    container.innerHTML = '<p class="text-rose-400 font-semibold">Error generando el briefing: ' + err.message + '</p>';
   }
 }
-
-
-// ==========================================
-// FUNCIONES DEL LECTOR DE ART?CULOS COMPLETOS
-// ==========================================
-let currentReaderDocTitle = '';
-
-function openArticleReader(docTitle) {
-  const doc = (knowledgeBase.documents || []).find(d => 
-    d.metadata.title.toLowerCase() === docTitle.toLowerCase() ||
-    d.metadata.title.includes(docTitle) ||
-    docTitle.includes(d.metadata.title)
-  );
-
-  if (!doc) {
-    alert('No se encontr? el documento en el repositorio.');
-    return;
-  }
-
-  currentReaderDocTitle = doc.metadata.title;
-  const meta = doc.metadata;
-
-  document.getElementById('reader-title').innerText = meta.title;
-  document.getElementById('reader-pilar').innerText = meta.pilar || 'Seguros';
-  document.getElementById('reader-date').innerText = `?? ${meta.date || 'Sin fecha'}`;
-  document.getElementById('reader-words').innerText = `?? ${meta.word_count || 0} palabras (~${Math.ceil((meta.word_count || 500) / 200)} min de lectura)`;
-  document.getElementById('reader-ramos').innerHTML = `??? <strong>Ramos:</strong> ${(meta.ramos || []).join(', ')}`;
-
-  // Formatear texto completo con Markdown
-  const fullText = doc.full_text || doc.content_preview || 'Contenido no disponible.';
-  
-  // Limpieza y estructuraci?n visual
-  let formattedMd = fullText
-    .replace(/^([0-9]+\)\s+[A-Z??????\s]{3,})/gm, '### $1')
-    .replace(/??+/g, '---')
-    .replace(/--+/g, '---');
-
-  document.getElementById('reader-content').innerHTML = marked.parse(formattedMd);
-  document.getElementById('reader-modal').classList.remove('hidden');
-  document.body.style.overflow = 'hidden';
-
-  lucide.createIcons();
-}
-
-function closeArticleReader() {
-  document.getElementById('reader-modal').classList.add('hidden');
-  document.body.style.overflow = '';
-}
-
-function askFromReader() {
-  if (currentReaderDocTitle) {
-    closeArticleReader();
-    askAboutDoc(currentReaderDocTitle);
-  }
-}
-
-// Cerrar lector con tecla ESC
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') {
-    closeArticleReader();
-  }
-});
