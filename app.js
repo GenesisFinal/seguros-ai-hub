@@ -494,7 +494,7 @@ async function generateExecutiveBriefing() {
   container.innerHTML = `
     <div class="flex flex-col items-center justify-center space-y-3 py-16 text-center">
       <div class="w-10 h-10 rounded-full border-2 border-[#e20039] border-t-transparent animate-spin"></div>
-      <div class="text-sm font-semibold text-white">Gemini AI est\u00e1 analizando los 51 art\u00edculos del repositorio...</div>
+      <div class="text-sm font-semibold text-white">Gemini AI est\u00e1 analizando los ${knowledgeBase.documents ? knowledgeBase.documents.length : 52} art\u00edculos del repositorio...</div>
       <p class="text-xs text-slate-400 max-w-md">Sintetizando conocimientos completos a lo largo de los 5 pilares estrat\u00e9gicos sin cortes ni omisiones (hasta 8.000 tokens de salida).</p>
     </div>
   `;
