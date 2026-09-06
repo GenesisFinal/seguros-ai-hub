@@ -16,11 +16,32 @@ document.addEventListener('DOMContentLoaded', async () => {
 });
 
 // Cargar base de conocimiento
+function updateAllDocumentCounters() {
+  if (!knowledgeBase) return;
+  const totalDocs = knowledgeBase.total_docs || (knowledgeBase.documents ? knowledgeBase.documents.length : 64);
+  const totalChunks = knowledgeBase.total_chunks || (knowledgeBase.chunks ? knowledgeBase.chunks.length : 430);
+  const statDocs = document.getElementById('stat-docs');
+  if (statDocs) statDocs.innerText = totalDocs;
+  const statChunks = document.getElementById('stat-chunks');
+  if (statChunks) statChunks.innerText = totalChunks;
+  const headerBadge = document.getElementById('header-badge-count');
+  if (headerBadge) headerBadge.innerText = totalDocs;
+  const navBadge = document.getElementById('nav-badge-count');
+  if (navBadge) navBadge.innerText = totalDocs;
+  const welcomeDocs = document.getElementById('welcome-docs-count');
+  if (welcomeDocs) welcomeDocs.innerText = totalDocs;
+  const briefingDocs = document.getElementById('briefing-docs-count');
+  if (briefingDocs) briefingDocs.innerText = totalDocs;
+  const guideDocs = document.getElementById('guide-docs-count');
+  if (guideDocs) guideDocs.innerText = totalDocs;
+}
+
 async function loadKnowledgeBase() {
   try {
     const res = await fetch('knowledge_base.json');
     if (!res.ok) throw new Error('HTTP ' + res.status);
     knowledgeBase = await res.json();
+    updateAllDocumentCounters();
     
     const statDocs = document.getElementById('stat-docs');
     const statChunks = document.getElementById('stat-chunks');
