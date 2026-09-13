@@ -133,7 +133,23 @@
     </nav>
 
     <!-- Filtros de B&uacute;squeda con Nombres Can?nicos Coherentes -->
-    <div class="px-4 mt-5 space-y-3.5">
+    <div class="px-4 mt-4 space-y-3">
+      <!-- Filtro Cronol?gico -->
+      <div>
+        <label class="text-[11px] font-bold text-slate-400 uppercase tracking-wider flex items-center justify-between mb-1.5">
+          <span>Per&iacute;odo Temporal</span>
+          <i data-lucide="calendar" class="w-3.5 h-3.5 text-[#e20039]"></i>
+        </label>
+        <select id="filter-date" onchange="setDateFilter(this.value)" class="w-full bg-[#1e1e24] border border-[#30303a] rounded-xl px-3 py-2 text-xs text-slate-200 focus:outline-none focus:border-[#e20039] cursor-pointer font-medium">
+          <option value="all">&#128197; Todo el hist&oacute;rico</option>
+          <option value="7">&#9889; &Uacute;ltima semana (7 d&iacute;as)</option>
+          <option value="15">&#128197; &Uacute;ltimos 15 d&iacute;as</option>
+          <option value="30">&#128198; &Uacute;ltimo mes (30 d&iacute;as)</option>
+          <option value="60">&#128198; &Uacute;ltimos 2 meses</option>
+        </select>
+      </div>
+
+      <!-- Filtro de Pilares -->
       <div>
         <label class="text-[11px] font-bold text-slate-400 uppercase tracking-wider block mb-1.5">Filtrar por Pilar (5 Ejes)</label>
         <select id="filter-pilar" onchange="applyFilters()" class="w-full bg-[#1e1e24] border border-[#30303a] rounded-xl px-3 py-2 text-xs text-slate-200 focus:outline-none focus:border-[#e20039] cursor-pointer font-medium">
@@ -146,6 +162,7 @@
         </select>
       </div>
 
+      <!-- Filtro de Ramos -->
       <div>
         <label class="text-[11px] font-bold text-slate-400 uppercase tracking-wider block mb-1.5">Filtrar por Ramo</label>
         <select id="filter-ramo" onchange="applyFilters()" class="w-full bg-[#1e1e24] border border-[#30303a] rounded-xl px-3 py-2 text-xs text-slate-200 focus:outline-none focus:border-[#e20039] cursor-pointer font-medium">
@@ -156,6 +173,15 @@
           <option value="Salud">Salud</option>
           <option value="Automotores">Automotores / Flotas</option>
           <option value="Patrimoniales">Patrimoniales</option>
+        </select>
+      </div>
+
+      <!-- Orden Cronol?gico -->
+      <div>
+        <label class="text-[11px] font-bold text-slate-400 uppercase tracking-wider block mb-1.5">Orden Cronol&oacute;gico</label>
+        <select id="filter-sort" onchange="setSortOrder(this.value)" class="w-full bg-[#1e1e24] border border-[#30303a] rounded-xl px-3 py-2 text-xs text-slate-200 focus:outline-none focus:border-[#e20039] cursor-pointer font-medium">
+          <option value="desc">&#11015;&#65039; M&aacute;s recientes primero (Novedades)</option>
+          <option value="asc">&#11014;&#65039; M&aacute;s antiguos primero</option>
         </select>
       </div>
     </div>
@@ -198,17 +224,18 @@
           <span>Consultas sugeridas para l&iacute;deres de equipo y mandos medios:</span>
         </div>
         <div class="grid grid-cols-2 lg:grid-cols-4 gap-2">
+          <button onclick="setQuery('&iquest;Cu&aacute;les son los art&iacute;culos m&aacute;s recientes y las novedades publicadas en la &uacute;ltima semana? Sintetiza sus conceptos clave.')" class="text-left text-xs p-2.5 bg-[#1e1e24] hover:bg-[#282830] hover:border-[#3ac792]/60 rounded-xl border border-[#2e2e38] text-slate-200 transition-all truncate cursor-pointer font-medium flex items-center space-x-1.5">
+            <span class="w-2 h-2 rounded-full bg-[#3ac792] animate-pulse"></span>
+            <span>Novedades de la Semana</span>
+          </button>
           <button onclick="setQuery('&iquest;C&oacute;mo optimizar el Combined Ratio y qu&eacute; palancas operativas y de IA en suscripci&oacute;n podemos activar?')" class="text-left text-xs p-2.5 bg-[#1e1e24] hover:bg-[#282830] hover:border-[#e20039]/50 rounded-xl border border-[#2e2e38] text-slate-300 transition-all truncate cursor-pointer font-medium">
             &#128200; Combined Ratio &amp; IA
           </button>
           <button onclick="setQuery('&iquest;Qu&eacute; cambios introduce la Resoluci&oacute;n SSN 287/2025 en reservas t&eacute;cnicas y c&oacute;mo se relaciona con el Margen de Servicio Contractual (CSM) bajo NIIF 17?')" class="text-left text-xs p-2.5 bg-[#1e1e24] hover:bg-[#282830] hover:border-[#e20039]/50 rounded-xl border border-[#2e2e38] text-slate-300 transition-all truncate cursor-pointer font-medium">
             &#128220; Res. SSN 287/2025 &amp; CSM
           </button>
-          <button onclick="setQuery('Compara los m&eacute;todos Chain-Ladder y Bornhuetter-Ferguson para el c&aacute;lculo de IBNR en seguros y cu&aacute;ndo conviene cada uno.')" class="text-left text-xs p-2.5 bg-[#1e1e24] hover:bg-[#282830] hover:border-[#e20039]/50 rounded-xl border border-[#2e2e38] text-slate-300 transition-all truncate cursor-pointer font-medium">
+          <button onclick="setQuery('Compara los m&eacute;todos Chain-Ladder y Bornhuetter-Ferguson para el c&aacute;lculo de IBNR en seguros.')" class="text-left text-xs p-2.5 bg-[#1e1e24] hover:bg-[#282830] hover:border-[#e20039]/50 rounded-xl border border-[#2e2e38] text-slate-300 transition-all truncate cursor-pointer font-medium">
             &#129518; IBNR: Chain-Ladder vs B-F
-          </button>
-          <button onclick="setQuery('&iquest;C&oacute;mo aplicar el modelo GROW y las matrices RACI para mejorar la delegaci&oacute;n y liderazgo en mandos medios t&eacute;cnicos?')" class="text-left text-xs p-2.5 bg-[#1e1e24] hover:bg-[#282830] hover:border-[#e20039]/50 rounded-xl border border-[#2e2e38] text-slate-300 transition-all truncate cursor-pointer font-medium">
-            &#128101; Modelo GROW &amp; RACI
           </button>
         </div>
       </div>
@@ -246,12 +273,43 @@
       <div class="max-w-6xl mx-auto space-y-4">
         <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
           <div>
-            <h3 class="text-lg font-bold text-white">Art&iacute;culos del Repositorio</h3>
-            <p class="text-xs text-slate-400" id="explorer-count">Mostrando <span id="explorer-count-val">52</span> art&iacute;culos indexados</p>
+            <h3 class="text-lg font-bold text-white flex items-center space-x-2">
+              <span>Art&iacute;culos del Repositorio</span>
+              <span id="date-filter-active-badge" class="hidden px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-[#e20039]/20 text-[#f42c4b] border border-[#e20039]/30"></span>
+            </h3>
+            <p class="text-xs text-slate-400 mt-0.5" id="explorer-count">Mostrando art&iacute;culos indexados</p>
           </div>
           <div class="relative w-full sm:w-80">
             <i data-lucide="search" class="w-4 h-4 text-slate-500 absolute left-3 top-3"></i>
             <input type="text" id="explorer-search" oninput="renderExplorerArticles()" placeholder="Buscar por t&iacute;tulo o concepto..." class="w-full bg-[#1a1a20] border border-[#2e2e38] rounded-xl pl-9 pr-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-[#e20039]" />
+          </div>
+        </div>
+
+        <!-- Barra de Acceso R?pido Cronol?gico -->
+        <div class="flex items-center justify-between flex-wrap gap-2 p-3 bg-[#18181d] rounded-xl border border-[#2a2a32]">
+          <div class="flex items-center space-x-1.5 flex-wrap gap-y-1.5">
+            <span class="text-xs font-semibold text-slate-400 mr-1 flex items-center">
+              <i data-lucide="clock" class="w-3.5 h-3.5 text-[#f8cc59] mr-1.5"></i> Per&iacute;odo:
+            </span>
+            <button onclick="setDateFilter('all')" id="pill-date-all" class="px-3 py-1 rounded-lg text-xs font-semibold transition-all bg-[#e20039] text-white shadow-sm cursor-pointer">
+              Todos
+            </button>
+            <button onclick="setDateFilter('7')" id="pill-date-7" class="px-3 py-1 rounded-lg text-xs font-medium transition-all bg-[#222228] text-slate-300 hover:text-white hover:bg-[#2c2c34] border border-[#303038] cursor-pointer flex items-center space-x-1">
+              <span class="w-1.5 h-1.5 rounded-full bg-[#3ac792]"></span>
+              <span>&Uacute;ltima Semana (7 d&iacute;as)</span>
+            </button>
+            <button onclick="setDateFilter('15')" id="pill-date-15" class="px-3 py-1 rounded-lg text-xs font-medium transition-all bg-[#222228] text-slate-300 hover:text-white hover:bg-[#2c2c34] border border-[#303038] cursor-pointer">
+              &Uacute;ltimos 15 d&iacute;as
+            </button>
+            <button onclick="setDateFilter('30')" id="pill-date-30" class="px-3 py-1 rounded-lg text-xs font-medium transition-all bg-[#222228] text-slate-300 hover:text-white hover:bg-[#2c2c34] border border-[#303038] cursor-pointer">
+              &Uacute;ltimo Mes (30 d&iacute;as)
+            </button>
+          </div>
+          <div class="flex items-center space-x-2">
+            <button onclick="toggleSortOrder()" id="btn-toggle-sort" class="px-3 py-1 rounded-lg text-xs font-medium bg-[#222228] hover:bg-[#2c2c34] text-slate-300 hover:text-white border border-[#303038] transition-all flex items-center space-x-1.5 cursor-pointer">
+              <i data-lucide="arrow-down-up" class="w-3.5 h-3.5 text-[#4183ca]"></i>
+              <span id="btn-sort-text">M&aacute;s recientes primero</span>
+            </button>
           </div>
         </div>
 
