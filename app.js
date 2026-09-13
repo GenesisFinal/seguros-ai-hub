@@ -3,6 +3,8 @@ let knowledgeBase = { documents: [], chunks: [], total_docs: 0, total_chunks: 0 
 let currentTab = 'chat';
 let selectedPilar = 'Todos';
 let selectedRamo = 'Todos';
+let selectedDateRange = 'all'; // 'all', '7', '15', '30', '60'
+let selectedSort = 'desc'; // 'desc', 'asc'
 let currentReaderDocIndex = null;
 
 // Clave activa de Gemini AI
@@ -92,9 +94,67 @@ function switchTab(tabId) {
 function applyFilters() {
   const pilarEl = document.getElementById('filter-pilar');
   const ramoEl = document.getElementById('filter-ramo');
+  const dateEl = document.getElementById('filter-date');
+  const sortEl = document.getElementById('filter-sort');
+  
   if (pilarEl) selectedPilar = pilarEl.value;
   if (ramoEl) selectedRamo = ramoEl.value;
+  if (dateEl) selectedDateRange = dateEl.value;
+  if (sortEl) selectedSort = sortEl.value;
+  
+  updateDatePillsUI();
   renderExplorerArticles();
+}
+
+function setDateFilter(days) {
+  selectedDateRange = days;
+  const dateEl = document.getElementById('filter-date');
+  if (dateEl) dateEl.value = days;
+  updateDatePillsUI();
+  renderExplorerArticles();
+}
+
+function setSortOrder(order) {
+  selectedSort = order;
+  const sortEl = document.getElementById('filter-sort');
+  if (sortEl) sortEl.value = order;
+  updateSortBtnUI();
+  renderExplorerArticles();
+}
+
+function toggleSortOrder() {
+  selectedSort = (selectedSort === 'desc') ? 'asc' : 'desc';
+  setSortOrder(selectedSort);
+}
+
+function updateSortBtnUI() {
+  const btnText = document.getElementById('btn-sort-text');
+  if (btnText) {
+    btnText.innerText = (selectedSort === 'desc') ? 'M\u00e1s recientes primero' : 'M\u00e1s antiguos primero';
+  }
+}
+
+function updateDatePillsUI() {
+  const pills = ['all', '7', '15', '30'];
+  pills.forEach(p => {
+    const el = document.getElementById('pill-date-' + p);
+    if (!el) return;
+    if (selectedDateRange === p) {
+      el.className = 'px-3 py-1 rounded-lg text-xs font-semibold transition-all bg-[#e20039] text-white shadow-sm cursor-pointer';
+    } else {
+      el.className = 'px-3 py-1 rounded-lg text-xs font-medium transition-all bg-[#222228] text-slate-300 hover:text-white hover:bg-[#2c2c34] border border-[#303038] cursor-pointer';
+    }
+  });
+
+  const badge = document.getElementById('date-filter-active-badge');
+  if (badge) {
+    if (selectedDateRange === 'all') {
+      badge.classList.add('hidden');
+    } else {
+      badge.classList.remove('hidden');
+      badge.innerText = `Filtrado: \u00daltimos ${selectedDateRange} d\u00edas`;
+    }
+  }
 }
 
 // Renderizar Articulos en el Explorador
