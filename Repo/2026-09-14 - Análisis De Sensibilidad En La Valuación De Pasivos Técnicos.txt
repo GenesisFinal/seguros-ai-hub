@@ -1,0 +1,88 @@
+ANÁLISIS DE SENSIBILIDAD EN LA VALUACIÓN DE PASIVOS TÉCNICOS
+
+Fecha: 2026-09-14 | Área: Técnico actuarial / seguros de personas | Lectura estimada: 12 minutos
+
+-----------------------------------------------------------------------
+1) CONCEPTO
+El análisis de sensibilidad en la valuación de pasivos técnicos es una herramienta actuarial fundamental que permite cuantificar el impacto de cambios en los supuestos clave sobre el valor de las reservas de una aseguradora. No se trata solo de calcular las reservas bajo un conjunto de hipótesis, sino de entender cómo variaciones en variables como la mortalidad, la tasa de interés, la caducidad (lapse) o los gastos, modifican la magnitud de estos pasivos. Su objetivo es evaluar la robustez de la valuación y la exposición de la compañía a los riesgos inherentes a cada uno de estos supuestos. En un entorno dinámico como el de los seguros de personas, donde los ciclos de vida de los productos son extensos y las condiciones económicas y demográficas pueden fluctuar significativamente, comprender la sensibilidad de los pasivos es crucial para una gestión financiera prudente y una toma de decisiones informada.
+
+-----------------------------------------------------------------------
+2) FÓRMULA / COMPONENTES / MECÁNICA
+La mecánica del análisis de sensibilidad implica recalcular los pasivos técnicos (principalmente las reservas matemáticas de Vida y Retiro, y en menor medida las de Siniestros Pendientes o Primas no Ganadas) modificando sistemáticamente uno o varios supuestos, manteniendo los demás constantes.
+
+Para una reserva matemática prospectiva de un seguro de vida, la fórmula general es:
+V = Sumatoria (Primas Futuras Netas * v^t * tPx) - Sumatoria (Beneficios Futuros * v^t * tPx * qx+t)
+Donde:
+V = Reserva matemática
+Primas Futuras Netas = Primas a recibir ajustadas por probabilidad de supervivencia
+Beneficios Futuros = Beneficios a pagar ajustados por probabilidad de fallecimiento
+v = Factor de descuento (1 / (1 + i)), donde i es la tasa de interés técnica
+tPx = Probabilidad de supervivencia desde el inicio hasta el tiempo t
+qx+t = Probabilidad de fallecimiento en el año t+1 para una persona de edad x+t
+
+Los principales supuestos sujetos a sensibilidad son:
+- Tasa de interés técnica (i): Un aumento o disminución de "i" impacta directamente el factor de descuento "v", modificando el valor presente de los flujos futuros.
+- Tablas de mortalidad/morbilidad (qx): Un cambio en las probabilidades de fallecimiento o enfermedad altera los flujos esperados de primas y beneficios.
+- Tasa de caducidad (lapse): La probabilidad de que una póliza sea cancelada antes de su vencimiento afecta la duración esperada de los flujos de primas y beneficios.
+- Gastos de administración y adquisición: Variaciones en estos costos pueden requerir ajustes en las primas o impactar la rentabilidad futura, indirectamente afectando la suficiencia de las reservas.
+
+El análisis se realiza creando escenarios: por ejemplo, "tasa de interés +1%", "tasa de interés -1%", "mortalidad +10%", "lapse +5%", etc., y recalculando las reservas para cada escenario. La diferencia entre el valor base y el valor del escenario representa la sensibilidad.
+
+-----------------------------------------------------------------------
+3) APLICABILIDAD POR RAMO / CONTEXTO
+- Seguros de Vida: Es donde el análisis de sensibilidad es más crítico. Las reservas matemáticas de Vida Entera, Temporarios o Dotales son altamente sensibles a la tasa de interés (por la larga duración de los pasivos) y a las tablas de mortalidad (por el riesgo de longevidad o fallecimiento prematuro). En productos con componente de ahorro, la tasa de interés garantizada es un factor clave.
+- Seguros de Retiro: Las rentas vitalicias son extremadamente sensibles a la tasa de interés (una baja en la tasa aumenta significativamente el valor presente de las rentas futuras) y a la longevidad (un aumento en la esperanza de vida implica más pagos). El riesgo de longevidad es un foco central.
+- Accidentes Personales y Salud: Aunque las reservas de Primas no Ganadas y Siniestros Pendientes tienen una duración menor, la sensibilidad a la frecuencia y severidad de los siniestros (morbilidad, duración de incapacidades) es relevante. Un cambio en los supuestos de desarrollo de siniestros puede impactar las reservas IBNR. La tasa de interés tiene un impacto menor debido a la corta duración de los pasivos.
+
+En el contexto argentino, la volatilidad económica y las regulaciones sobre tasas técnicas (como las establecidas por la SSN, por ejemplo, en la Resolución SSN 287/2025 que actualiza los estándares de reservas técnicas y tasas de actualización de pasivos) hacen que el análisis de sensibilidad a la tasa de interés sea particularmente relevante.
+
+-----------------------------------------------------------------------
+4) EJEMPLO NUMÉRICO O CASO CONCRETO
+Consideremos una cartera simplificada de seguros de Vida Entera con una reserva matemática total de $1.000.000.000 calculada con una tasa técnica del 4% anual y una tabla de mortalidad específica.
+
+Escenario Base:
+Reserva Matemática = $1.000.000.000
+
+Escenario 1: Aumento de la tasa de interés técnica en 0.50% (del 4% al 4.50%).
+Si los pasivos son de larga duración, un aumento en la tasa de descuento generalmente reduce el valor presente de los beneficios futuros.
+Nueva Reserva Matemática = $950.000.000
+Sensibilidad = -$50.000.000 (disminución del 5%)
+
+Escenario 2: Disminución de la tasa de interés técnica en 0.50% (del 4% al 3.50%).
+Una disminución en la tasa de descuento aumenta el valor presente de los beneficios futuros.
+Nueva Reserva Matemática = $1.060.000.000
+Sensibilidad = +$60.000.000 (aumento del 6%)
+
+Escenario 3: Aumento del 5% en la mortalidad esperada (manteniendo la tasa de interés base).
+Un aumento en la mortalidad esperada para seguros de vida (donde el beneficio se paga al fallecimiento) generalmente aumenta las reservas, ya que se espera pagar más beneficios antes.
+Nueva Reserva Matemática = $1.035.000.000
+Sensibilidad = +$35.000.000 (aumento del 3.5%)
+
+Estos números son ilustrativos, pero demuestran cómo pequeñas variaciones en los supuestos pueden generar impactos significativos en los pasivos, afectando la solvencia y los resultados de la compañía.
+
+-----------------------------------------------------------------------
+5) APLICACIÓN PRÁCTICA PARA UN LÍDER DE EQUIPO
+Como líder de un equipo técnico, tenés que utilizar el análisis de sensibilidad para:
+- Gestión de Riesgos: Identificá los supuestos más volátiles y los que generan mayor impacto en las reservas. Esto te permite priorizar los riesgos (tasa de interés, longevidad, caducidad) y desarrollar estrategias de mitigación, como coberturas de reaseguro o ajustes en la política de inversiones (ALM).
+- Planificación Estratégica y Presupuestación: Los resultados de sensibilidad deben alimentar los modelos de planificación financiera. Si sabés que una baja de tasas impacta fuertemente tus reservas, podés anticipar la necesidad de capital adicional o revisar la rentabilidad esperada de los productos.
+- Comunicación con la Dirección y Reguladores: Presentá los resultados de sensibilidad de manera clara y concisa a tu superior directo y al directorio. Esto demuestra una comprensión profunda de la posición financiera de la compañía y su exposición a los riesgos actuariales. Es una herramienta clave para justificar decisiones de capital o cambios en la estrategia de producto.
+- Diseño de Productos: Entendé cómo los supuestos de tarificación se traducen en la valuación de pasivos. Si un producto es excesivamente sensible a un supuesto, podrías considerar ajustes en el diseño o en la política de suscripción.
+- KPIs: Podrías establecer KPIs relacionados con la sensibilidad de las reservas, como "variación porcentual de reservas ante un cambio de 100 bps en la tasa de interés" o "impacto en el capital ante un aumento del 5% en la mortalidad".
+
+-----------------------------------------------------------------------
+6) ERRORES COMUNES O PUNTOS CIEGOS
+- Ignorar la correlación entre supuestos: A menudo, los supuestos no se mueven de forma aislada. Por ejemplo, una crisis económica puede afectar simultáneamente las tasas de interés y las tasas de caducidad. Un análisis unidimensional puede subestimar el riesgo real.
+- No considerar escenarios extremos: Limitar el análisis a variaciones marginales puede no capturar el impacto de eventos de "cola" o cisnes negros. Es crucial incluir escenarios de estrés severos.
+- Falta de documentación y justificación de supuestos: Si los supuestos base no están bien fundamentados y documentados, el análisis de sensibilidad pierde credibilidad.
+- No actualizar los supuestos regularmente: Las condiciones de mercado y demográficas cambian. Mantener supuestos desactualizados puede llevar a una valuación de reservas y un análisis de sensibilidad poco realistas.
+- Confundir sensibilidad con riesgo de mercado: Si bien la sensibilidad a la tasa de interés es un componente del riesgo de mercado, el análisis de sensibilidad es más amplio y abarca otros riesgos actuariales intrínsecos al negocio de seguros.
+
+-----------------------------------------------------------------------
+7) EN UNA LÍNEA
+El análisis de sensibilidad es la brújula actuarial que revela la vulnerabilidad de tus pasivos técnicos ante la incertidumbre de los supuestos clave.
+
+-----------------------------------------------------------------------
+FUENTES DE REFERENCIA
+- Resolución SSN 287/2025 (o la normativa vigente que establezca los estándares de reservas técnicas y tasas de actualización de pasivos para el año 2026, asumiendo una actualización futura).
+- Dickinson, G. (2007). Actuarial Models for Financial Management. Butterworth-Heinemann.
+- Bowers, N. L., Gerber, H. U., Hickman, J. C., Jones, D. A., & Nesbitt, C. J. (1997). Actuarial Mathematics (2nd ed.). Society of Actuaries.
