@@ -1,0 +1,77 @@
+LA PÓLIZA DIGITAL Y LA FIRMA ELECTRÓNICA EN SEGUROS: MARCO REGULATORIO DE LA SSN
+
+Fecha: 2026-09-15 | Área: Regulación argentina | Lectura estimada: 12 minutos
+
+-----------------------------------------------------------------------
+
+1) CONCEPTO
+La irrupción de la tecnología digital transformó la forma en que las aseguradoras interactúan con sus clientes y gestionan sus operaciones. En Argentina, el marco para la validez de los documentos y firmas digitales se asienta en la Ley 25.506 de Firma Digital, sancionada en 2001 y reglamentada por el Decreto 182/2019. Esta ley reconoce la eficacia jurídica tanto de la firma electrónica como de la firma digital, estableciendo las condiciones para su empleo y equiparando el documento digital firmado digitalmente al documento manuscrito.
+
+En el ámbito asegurador, la Superintendencia de Seguros de la Nación (SSN) ha trabajado para adaptar este marco general a la especificidad de la actividad, promoviendo la digitalización de procesos y documentos. La póliza digital es la representación electrónica de un contrato de seguro, que posee la misma validez legal que su contraparte en papel, siempre que cumpla con los requisitos de integridad, autenticidad y no repudio establecidos por la normativa vigente. Su implementación busca optimizar la gestión, reducir costos y mejorar la experiencia del asegurado.
+
+-----------------------------------------------------------------------
+
+2) FÓRMULA / COMPONENTES / MECÁNICA
+La Ley 25.506 distingue entre firma electrónica y firma digital. La firma digital es el resultado de aplicar a un documento digital un procedimiento matemático que requiere información de exclusivo conocimiento del firmante, bajo su absoluto control, y que es susceptible de verificación por terceros, permitiendo identificar al firmante y detectar cualquier alteración posterior del documento. Para que una firma digital tenga plena validez, requiere la emisión de un certificado digital por un certificador licenciado.
+
+La firma electrónica, en cambio, es un conjunto de datos electrónicos integrados, ligados o asociados de manera lógica a otros datos electrónicos, utilizado por el signatario como su medio de identificación, pero que carece de alguno de los requisitos legales para ser considerada firma digital. Si bien la firma electrónica es un medio de identificación, su validez probatoria es menor que la digital, ya que no goza de la presunción de autoría e inalterabilidad que sí tiene la firma digital.
+
+La mecánica para la emisión de una póliza digital implica:
+-   Consentimiento del asegurado: Fundamental para la aceptación de la póliza en formato digital.
+-   Integridad del documento: Garantizar que el contenido de la póliza no fue alterado desde su emisión. Esto se logra típicamente con mecanismos criptográficos.
+-   Autenticidad: Asegurar que la póliza fue emitida por la aseguradora y, si aplica, que la firma digital corresponde al emisor.
+-   No repudio: Que la aseguradora no pueda negar la emisión de la póliza ni el asegurado su recepción, si se utilizaron los mecanismos adecuados.
+-   Almacenamiento y acceso: La aseguradora debe garantizar la conservación segura de las pólizas digitales y el acceso a las mismas por parte del asegurado durante toda la vigencia del contrato y los plazos legales posteriores.
+
+Un ejemplo temprano de implementación por parte de la SSN fue el "Sistema de Póliza Digital" para el ramo Automotores, establecido por la Resolución SSN 36.326/2011, que buscaba optimizar la registración y control de pólizas.
+
+-----------------------------------------------------------------------
+
+3) APLICABILIDAD POR RAMO / CONTEXTO
+La regulación de la póliza digital y la firma electrónica tiene aplicabilidad transversal a todos los ramos de seguros de personas: Vida, Retiro, Accidentes Personales y Salud. Permite la emisión y gestión de contratos de forma totalmente digital, desde la solicitud hasta la emisión de la póliza y la gestión de siniestros.
+
+En el contexto de seguros de Vida y Retiro, facilita la suscripción de pólizas a distancia, agilizando los procesos y reduciendo la burocracia. Para Accidentes Personales y Salud, la rapidez en la emisión de pólizas digitales es crucial, especialmente en productos de alta rotación o para coberturas temporales.
+
+La SSN ha ratificado la plena validez jurídica de la póliza digital con firma digital en diversos contextos. Por ejemplo, en mayo de 2020, la Gerencia de Asuntos Jurídicos de la SSN estableció que la póliza de caución con firma digital cuenta con plena validez jurídica, sin necesidad de una habilitación especial, dado que existen normas de carácter superior que establecen su validez. Esto sienta un precedente importante para la aceptación generalizada en el mercado.
+
+-----------------------------------------------------------------------
+
+4) EJEMPLO NUMÉRICO O CASO CONCRETO
+Consideremos el caso de un cliente que desea contratar un seguro de Vida con ahorro a través del canal digital de tu compañía.
+1.  El cliente ingresa al portal web de la aseguradora y utiliza un cotizador online para configurar su póliza.
+2.  Completa la solicitud de seguro con sus datos personales y de salud, que se presenta como un documento digital.
+3.  Para la aceptación de las condiciones y la declaración de salud, el cliente utiliza una firma electrónica (por ejemplo, un clic en un botón de "Acepto" tras una verificación de identidad robusta, o un código OTP enviado a su celular, que se vincula lógicamente al documento).
+4.  Una vez aprobada la solicitud por suscripción, la aseguradora emite la póliza en formato digital, firmada digitalmente por un representante autorizado de la compañía (utilizando un certificado digital).
+5.  La póliza digital se envía al correo electrónico del cliente y se pone a disposición en un portal de autogestión, garantizando su acceso y descarga.
+6.  En caso de un siniestro futuro, el asegurado presenta la póliza digital, que es reconocida con plena validez legal para iniciar el trámite, sin necesidad de un documento físico.
+
+-----------------------------------------------------------------------
+
+5) APLICACIÓN PRÁCTICA PARA UN LÍDER DE EQUIPO
+Como líder de equipo en una gerencia de seguros de personas, tenés un rol clave en la implementación y gestión de la póliza digital y la firma electrónica:
+-   Revisión de procesos: Analizá los flujos de trabajo actuales para identificar oportunidades de digitalización. ¿Dónde podés reemplazar el papel por documentos digitales? ¿Cómo se integra la firma electrónica o digital en cada etapa?
+-   Capacitación del equipo: Asegurate de que tu equipo comprenda la normativa (Ley 25.506, resoluciones SSN pertinentes) y las diferencias entre firma electrónica y digital. Capacitalos en el uso de las herramientas tecnológicas para la emisión y gestión de pólizas digitales.
+-   Colaboración con IT y Legal: Trabajá de cerca con las áreas de Tecnología para implementar soluciones seguras y escalables, y con el área Legal para garantizar la estricta observancia de la normativa y la validez jurídica de los procesos.
+-   Experiencia del cliente: Diseñá procesos digitales que sean intuitivos y eficientes para el asegurado, priorizando la usabilidad y la seguridad. Medí KPIs como la tasa de adopción de pólizas digitales, el tiempo de emisión y la satisfacción del cliente con los canales digitales.
+-   Gestión del cambio: Liderá la transición cultural hacia un entorno menos dependiente del papel, comunicando los beneficios internos y externos de la digitalización.
+
+-----------------------------------------------------------------------
+
+6) ERRORES COMUNES O PUNTOS CIEGOS
+-   Confundir firma electrónica con firma digital: Asumir que cualquier aceptación digital tiene la misma validez legal que una firma digital certificada, lo cual no es cierto y puede generar vulnerabilidades legales.
+-   Falta de consentimiento explícito: No obtener el consentimiento claro y verificable del asegurado para la emisión de la póliza en formato digital.
+-   Seguridad deficiente: Implementar soluciones de póliza digital sin los protocolos de seguridad adecuados para garantizar la integridad y autenticidad del documento, exponiendo a la compañía a riesgos de fraude o repudio.
+-   Problemas de almacenamiento y acceso: No asegurar un sistema robusto para el almacenamiento a largo plazo de las pólizas digitales y la facilidad de acceso para los asegurados cuando lo requieran.
+-   Ignorar la normativa de protección de datos: No cumplir con la Ley 25.326 de Protección de Datos Personales al manejar información sensible en entornos digitales.
+-   Falta de interoperabilidad: Crear sistemas cerrados que no permiten la fácil integración con otros actores del ecosistema asegurador o con futuras regulaciones.
+
+-----------------------------------------------------------------------
+
+7) EN UNA LÍNEA
+La póliza digital y la firma electrónica, respaldadas por la Ley 25.506 y la regulación de la SSN, son pilares de la transformación digital que exigen a tu equipo rigor técnico y enfoque en la experiencia del cliente para asegurar su plena validez y eficiencia operativa.
+
+-----------------------------------------------------------------------
+FUENTES DE REFERENCIA
+- Ley 25.506 de Firma Digital.
+- Resolución SSN 36.326/2011 - Sistema de Póliza Digital para el ramo Automotores.
+- Providencia Nro. PV-2020-30541551-APN-GTYN#SSN del 07/05/2020 - Validez de la póliza de caución con firma digital.
