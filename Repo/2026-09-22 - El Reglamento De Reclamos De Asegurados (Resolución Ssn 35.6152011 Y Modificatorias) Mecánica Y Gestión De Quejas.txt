@@ -1,0 +1,59 @@
+EL REGLAMENTO DE RECLAMOS DE ASEGURADOS (RESOLUCIÓN SSN 35.615/2011 Y MODIFICATORIAS): MECÁNICA Y GESTIÓN DE QUEJAS
+
+Fecha: 2026-09-22 | Área: Regulación argentina | Lectura estimada: 12 minutos
+
+-----------------------------------------------------------------------
+1) CONCEPTO
+El Reglamento de Reclamos de Asegurados, establecido por la Resolución SSN 35.615/2011 y sus modificatorias, constituye el marco normativo que regula el procedimiento para la atención y resolución de quejas y reclamos presentados por los asegurados, tomadores o beneficiarios contra las entidades aseguradoras. Su objetivo principal es garantizar la transparencia, la celeridad y la equidad en la gestión de estas controversias, fortaleciendo la protección de los derechos de los consumidores de seguros. Este reglamento impone a las aseguradoras la obligación de contar con un procedimiento interno eficaz para la recepción, registro, tramitación y resolución de los reclamos, así como la de informar adecuadamente a los reclamantes sobre el estado de sus presentaciones y las instancias disponibles ante la Superintendencia de Seguros de la Nación (SSN) en caso de disconformidad con la respuesta de la compañía.
+
+-----------------------------------------------------------------------
+2) FÓRMULA / COMPONENTES / MECÁNICA
+La mecánica del Reglamento de Reclamos se estructura en dos niveles: el interno de la aseguradora y el externo ante la SSN.
+A nivel interno, la aseguradora debe:
+a) Designar un responsable de atención al asegurado y un área específica para la gestión de reclamos.
+b) Establecer un procedimiento claro y accesible para la recepción de reclamos, que puede ser presencial, telefónico, postal o electrónico.
+c) Registrar cada reclamo con un número de identificación único, fecha de recepción y datos del reclamante y del reclamo.
+d) Dar acuse de recibo al reclamante en un plazo máximo de 48 horas hábiles.
+e) Analizar el reclamo y emitir una respuesta fundada en un plazo máximo de 20 días hábiles desde su recepción. Este plazo puede extenderse por única vez por 10 días hábiles adicionales, previa comunicación y justificación al reclamante.
+f) Informar al reclamante sobre la posibilidad de recurrir a la SSN en caso de disconformidad con la respuesta o ante la falta de respuesta en los plazos establecidos, incluyendo los datos de contacto del Organismo de Control.
+A nivel externo, si el reclamante no está satisfecho con la respuesta de la aseguradora o no recibe una en el plazo, puede presentar su reclamo ante la SSN. La SSN, a través de su Departamento de Orientación y Asistencia al Asegurado, interviene como instancia mediadora o de control, solicitando informes a la aseguradora y evaluando la situación para determinar si hubo incumplimiento normativo.
+
+-----------------------------------------------------------------------
+3) APLICABILIDAD POR RAMO / CONTEXTO
+El Reglamento de Reclamos es de aplicación general para todos los ramos de seguros, incluyendo Vida, Retiro, Accidentes Personales (AP) y Salud. Sin embargo, la naturaleza de los reclamos puede variar significativamente.
+En Seguros de Vida y Retiro, los reclamos suelen estar relacionados con la interpretación de cláusulas contractuales, el cálculo de beneficios, la actualización de sumas aseguradas o rentas, la liquidación de siniestros (por ejemplo, por fallecimiento o invalidez) o la gestión de rescates y anticipos. La complejidad de los cálculos actuariales y la larga duración de estos contratos pueden generar reclamos que requieren un análisis técnico profundo.
+En Accidentes Personales y Salud, los reclamos a menudo se vinculan con la cobertura de prestaciones médicas, reintegros, exclusiones de póliza, demoras en la autorización de servicios o la liquidación de indemnizaciones por incapacidad. La urgencia y sensibilidad de estas situaciones exigen una gestión particularmente ágil y empática.
+En todos los casos, la aseguradora debe asegurar que su procedimiento de reclamos sea capaz de manejar la especificidad de cada ramo, garantizando la misma calidad de atención y cumplimiento de plazos.
+
+-----------------------------------------------------------------------
+4) EJEMPLO NUMÉRICO O CASO CONCRETO
+Imaginemos un asegurado de un seguro de Vida con Ahorro que, tras 10 años de vigencia, solicita el rescate de su póliza. La aseguradora le informa un valor de rescate que el asegurado considera inferior al esperado, basándose en sus cálculos y en la información precontractual que recibió.
+El asegurado presenta un reclamo formal ante la aseguradora el 1 de septiembre de 2026.
+1. La aseguradora debe acusar recibo antes del 3 de septiembre de 2026 (48 horas hábiles).
+2. El área de reclamos, en conjunto con el equipo técnico-actuarial, revisa el cálculo del valor de rescate, las condiciones contractuales, la tabla de valores de rescate y la información provista al asegurado.
+3. El 20 de septiembre de 2026 (dentro de los 20 días hábiles), la aseguradora emite una respuesta fundada, explicando el cálculo del valor de rescate según las condiciones de la póliza y la normativa vigente. Si el cálculo inicial fue erróneo, se corrige y se informa el nuevo valor. Si el cálculo es correcto, se explica detalladamente por qué el valor difiere de la expectativa del asegurado (por ejemplo, por gastos de adquisición o comisiones no amortizadas).
+4. En la respuesta, se informa al asegurado que, si no está conforme, puede recurrir a la SSN.
+Si la aseguradora no hubiera respondido el 20 de septiembre, o si el asegurado considera que la respuesta es insatisfactoria, podría escalar su reclamo a la SSN a partir del 21 de septiembre.
+
+-----------------------------------------------------------------------
+5) APLICACIÓN PRÁCTICA PARA UN LÍDER DE EQUIPO
+Como líder de equipo en una gerencia de seguros de personas, tenés un rol crucial en la implementación y supervisión de este reglamento.
+1. Capacitá a tu equipo: Asegurate de que todos los colaboradores que interactúan con asegurados (atención al cliente, siniestros, suscripción) conozcan el procedimiento de reclamos, los plazos y la importancia de la calidad de la respuesta.
+2. Monitoreá KPIs: Implementá indicadores clave de desempeño como el tiempo promedio de respuesta a reclamos, el porcentaje de reclamos resueltos en primera instancia, el número de reclamos escalados a la SSN y la satisfacción del reclamante.
+3. Fomentá la comunicación interna: Establecé canales fluidos entre tu equipo y el área de reclamos o legal para asegurar que la información necesaria para resolver los casos esté disponible de forma oportuna.
+4. Analizá las causas raíz: No te limites a resolver el reclamo individual. Analizá los reclamos recurrentes para identificar problemas sistémicos en productos, procesos o comunicación, y proponé mejoras a tu superior directo.
+5. Gestioná expectativas: Capacitá a tu equipo para comunicar de forma clara y empática, gestionando las expectativas de los asegurados desde el primer contacto.
+
+-----------------------------------------------------------------------
+6) ERRORES COMUNES O PUNTOS CIEGOS
+Uno de los errores más frecuentes es el incumplimiento de los plazos establecidos por la Resolución SSN 35.615/2011, lo que automáticamente habilita al asegurado a recurrir a la SSN y puede derivar en sanciones para la aseguradora. Otro punto ciego es la falta de registro adecuado de los reclamos, impidiendo un seguimiento eficaz y un análisis de tendencias. La emisión de respuestas genéricas o insuficientemente fundadas, que no abordan específicamente los puntos planteados por el reclamante, también es un error común que genera insatisfacción y escalamiento a la SSN. Finalmente, la falta de capacitación del personal que atiende los reclamos puede llevar a una comunicación ineficaz o a la provisión de información incorrecta.
+
+-----------------------------------------------------------------------
+7) EN UNA LÍNEA
+El Reglamento de Reclamos de Asegurados es una herramienta clave para la protección del consumidor y exige a las aseguradoras una gestión transparente y eficiente de las quejas, con plazos y procedimientos definidos.
+
+-----------------------------------------------------------------------
+FUENTES DE REFERENCIA
+- Resolución SSN 35.615/2011 - Reglamento de Reclamos de Asegurados.
+- Resolución SSN 38.052/2013 - Modificatoria de la Resolución SSN 35.615/2011.
+- Ley 17.418 - Ley de Seguros.
