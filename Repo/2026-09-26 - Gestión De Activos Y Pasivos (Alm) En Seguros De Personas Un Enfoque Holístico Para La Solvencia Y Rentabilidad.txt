@@ -1,0 +1,56 @@
+GESTIÓN DE ACTIVOS Y PASIVOS (ALM) EN SEGUROS DE PERSONAS: UN ENFOQUE HOLÍSTICO PARA LA SOLVENCIA Y RENTABILIDAD
+
+Fecha: 2026-09-26 | Área: Profundización técnica avanzada | Lectura estimada: 12 minutos
+
+-----------------------------------------------------------------------
+1) CONCEPTO
+La Gestión de Activos y Pasivos (Asset-Liability Management o ALM) es una disciplina estratégica y técnica fundamental para las aseguradoras, especialmente en el segmento de Personas y Retiro. Se trata de un proceso integral que busca optimizar la rentabilidad ajustada al riesgo de la compañía, al mismo tiempo que asegura su solvencia a largo plazo, mediante la gestión coordinada de la composición y características de sus activos y pasivos. El objetivo central es minimizar el riesgo de descalce (mismatch) entre los flujos de fondos, duraciones y sensibilidades a factores de mercado (como tasas de interés o inflación) de los activos que respaldan las obligaciones contractuales (pasivos). No es solo una función financiera, sino una estrategia que permea el diseño de productos, la suscripción y la gestión de riesgos.
+
+-----------------------------------------------------------------------
+2) FÓRMULA / COMPONENTES / MECÁNICA
+El ALM no se reduce a una única fórmula, sino a un conjunto de herramientas y modelos que interactúan. Sus componentes clave incluyen:
+a) Identificación y Valuación: Se valoran tanto los activos (inversiones en bonos, acciones, inmuebles, etc.) como los pasivos (reservas técnicas, obligaciones de siniestros, beneficios de retiro) utilizando metodologías consistentes, a menudo basadas en valores de mercado o modelos de flujos de fondos descontados.
+b) Modelado Estocástico: Se emplean modelos estocásticos para simular la evolución futura de variables de mercado (tasas de interés, inflación, volatilidad) y su impacto en los flujos de fondos de activos y pasivos. Esto permite proyectar escenarios de estrés y evaluar la robustez de la estrategia.
+c) Medición de Descalces: Se utilizan métricas como la duración (sensibilidad del valor a cambios en las tasas de interés) y la convexidad para cuantificar el descalce entre activos y pasivos. El "gap de duración" es una medida crítica que indica la diferencia en la sensibilidad a las tasas entre el valor presente de los activos y el de los pasivos. Un gap positivo significa que el valor de los activos cae más rápido que el de los pasivos ante un alza de tasas, y viceversa.
+d) Optimización: El proceso de ALM busca una cartera de activos que, dadas las características de los pasivos y las restricciones regulatorias (ej. Régimen de Inversiones de la SSN), maximice la rentabilidad esperada ajustada al riesgo, minimice el riesgo de ruina y asegure la liquidez. Esto a menudo implica técnicas de optimización matemática.
+
+-----------------------------------------------------------------------
+3) APLICABILIDAD POR RAMO / CONTEXTO
+La relevancia del ALM varía según el ramo:
+- Seguros de Vida y Retiro: Es absolutamente crítico. Los pasivos de estos ramos suelen tener duraciones muy largas (décadas), a menudo con garantías de tasa de interés o participación en utilidades. Un descalce en duración o en la sensibilidad a la inflación puede generar pérdidas significativas o incluso comprometer la solvencia. La gestión del riesgo de longevidad en Retiro también se integra en el ALM.
+- Seguros de Accidentes Personales y Salud: Si bien la duración de los pasivos es generalmente más corta, el ALM sigue siendo importante para asegurar la liquidez y el calce de los flujos de fondos esperados para el pago de siniestros. En ramos de Salud con coberturas de largo plazo o beneficios vitalicios, la complejidad del ALM aumenta considerablemente.
+En el contexto argentino, el ALM enfrenta desafíos adicionales: alta inflación, volatilidad de tasas de interés, restricciones cambiarias y un régimen de inversiones (Resolución SSN 38.708/2014 y sus modificatorias) que limita la diversificación y la inversión en activos de largo plazo. Esto exige modelos más sofisticados que incorporen estos factores macroeconómicos y regulatorios.
+
+-----------------------------------------------------------------------
+4) EJEMPLO NUMÉRICO O CASO CONCRETO
+Imaginá tu compañía de seguros de Vida, con un portafolio de pasivos (reservas matemáticas) que tiene una duración promedio de 10 años, debido a la larga vida de las pólizas. Para respaldar estos pasivos, tenés una cartera de activos compuesta principalmente por bonos del Tesoro Nacional con una duración promedio de 7 años.
+El "gap de duración" es de 10 - 7 = 3 años. Esto significa que los pasivos son más sensibles a los cambios en las tasas de interés que los activos.
+Si las tasas de interés de mercado suben 100 puntos básicos (1%), el valor presente de tus pasivos caerá aproximadamente un 10% (10 años * 1%). Sin embargo, el valor presente de tus activos solo caerá un 7% (7 años * 1%).
+El resultado es una reducción del 3% en el valor económico neto de tu compañía (Activos - Pasivos), lo que impacta directamente tu capital y solvencia. Este descalce te expone a un riesgo significativo de tasa de interés. La estrategia de ALM buscaría reducir este gap, por ejemplo, invirtiendo en activos de mayor duración o reestructurando los pasivos si fuera posible.
+
+-----------------------------------------------------------------------
+5) APLICACIÓN PRÁCTICA PARA UN LÍDER DE EQUIPO
+Como líder de equipo en una gerencia de seguros de Personas, es fundamental que comprendas los principios del ALM y sus implicancias:
+- Colaboración Inter-áreas: Fomentá la comunicación fluida entre tu equipo (suscripción, productos, siniestros), el área actuarial, finanzas e inversiones. Las decisiones de producto (garantías de tasa, opciones de rescate) impactan directamente la duración y el riesgo de los pasivos, y por ende, la estrategia de ALM.
+- Diseño de Productos: Considerá cómo las características de los nuevos productos afectan el perfil de riesgo-rendimiento de la cartera de pasivos. ¿Estás ofreciendo garantías de tasa que son difíciles de calzar con los activos disponibles en el mercado local?
+- Monitoreo de KPIs: Familiarizate con los indicadores clave de ALM (gap de duración, sensibilidad a tasas, liquidez, rentabilidad ajustada al riesgo) y solicitá informes periódicos. Entendé cómo los cambios en el entorno macroeconómico (inflación, tasas) afectan estos indicadores.
+- Diálogo con Superiores: Podés explicar a tu superior directo cómo las decisiones de tu equipo impactan la exposición al riesgo de ALM de la compañía y proponer ajustes en la estrategia de producto o suscripción para mitigar riesgos.
+
+-----------------------------------------------------------------------
+6) ERRORES COMUNES O PUNTOS CIEGOS
+- Cortoplacismo: Enfocarse únicamente en la rentabilidad de corto plazo sin considerar el impacto en la solvencia a largo plazo.
+- Modelos Simplistas: Utilizar modelos de ALM que no capturan adecuadamente la complejidad de los pasivos (ej. opciones implícitas en pólizas de Vida) o la volatilidad del mercado local.
+- Falta de Integración: Que las áreas de Actuarial, Inversiones y Productos trabajen de forma aislada, sin una visión holística del balance.
+- Ignorar Riesgos No Financieros: No integrar el riesgo operativo, de suscripción o de comportamiento del asegurado en el marco de ALM.
+- Desestimar el Contexto Regulatorio: No considerar las restricciones del Régimen de Inversiones de la SSN o los requisitos de capital mínimo (ej. Resolución SSN 24/2025) al diseñar la estrategia de activos.
+
+-----------------------------------------------------------------------
+7) EN UNA LÍNEA
+El ALM es la brújula estratégica que alinea activos y pasivos para asegurar la solvencia y maximizar la rentabilidad ajustada al riesgo de tu aseguradora a largo plazo.
+
+-----------------------------------------------------------------------
+FUENTES DE REFERENCIA
+- Resolución SSN 38.708/2014 y sus modificatorias (Régimen de Inversiones de las Entidades Aseguradoras y Reaseguradoras).
+- Resolución SSN 24/2025 (Régimen de Capitales Mínimos de las Entidades Aseguradoras y Reaseguradoras).
+- Bowers, N. L., Gerber, H. U., Hickman, J. C., Jones, D. A., & Nesbitt, C. J. (1997). Actuarial Mathematics. Society of Actuaries.
+- Fabozzi, F. J., & Modigliani, F. (1992). Mortgage and Mortgage-Backed Securities Markets. Harvard Business School Press.
