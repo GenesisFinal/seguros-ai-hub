@@ -1,0 +1,70 @@
+EL GOBIERNO SOCIETARIO EN ASEGURADORAS ARGENTINAS: LA RESOLUCIÓN SSN 1119/2018
+
+Fecha: 2026-09-29 | Área: Regulación argentina | Lectura estimada: 12 minutos
+
+-----------------------------------------------------------------------
+1) CONCEPTO
+El Gobierno Societario, o Gobierno Corporativo, en el contexto de la actividad aseguradora argentina, se refiere al conjunto de principios, normas y prácticas que regulan el diseño, la integración y el funcionamiento de los órganos de gobierno de una entidad, así como las relaciones entre sus accionistas, el Directorio, la alta gerencia y otros grupos de interés. Su objetivo primordial es asegurar una gestión sana y prudente de la compañía, proteger los intereses de los asegurados y terceros, y contribuir a la estabilidad y transparencia del mercado. En Argentina, el marco regulatorio fundamental en esta materia es la Resolución SSN 1119/2018, publicada el 5 de diciembre de 2018, que introdujo los "Principios y Recomendaciones de Gobierno Corporativo de Entidades Aseguradoras y Reaseguradoras" en el Reglamento General de la Actividad Aseguradora (RGAA). Esta normativa busca modernizar y profesionalizar la actividad, adoptando estándares internacionales y un modelo de supervisión basado en riesgos.
+
+-----------------------------------------------------------------------
+2) FÓRMULA / COMPONENTES / MECÁNICA
+La Resolución SSN 1119/2018 establece un sistema de gobierno societario basado en principios y recomendaciones, y fija requisitos específicos para los órganos de administración, fiscalización y la alta gerencia. Los componentes clave incluyen:
+
+a) Órgano de Administración (Directorio): Es el responsable último de la gestión y supervisión del gobierno corporativo. Debe establecer políticas y procedimientos claros, formalizados y suscriptos por sus miembros.
+b) Órgano de Fiscalización: Encargado de la supervisión interna de la entidad.
+c) Alta Gerencia: Responsable de la ejecución de las políticas y estrategias definidas.
+
+Entre los principios y recomendaciones se destacan:
+- Idoneidad y experiencia: Los miembros de los órganos de administración, fiscalización y alta gerencia deben poseer suficiente idoneidad técnica y ética, obrando con integridad, lealtad y diligencia. Al menos dos tercios de los miembros del órgano de administración deben contar con experiencia y capacitación comprobable en la actividad aseguradora o financiera.
+- Director Independiente: Se exige la designación obligatoria de al menos un director independiente, cuya trayectoria profesional, aptitud y conocimientos calificados aseguren un desempeño objetivo e imparcial.
+- Transparencia y rendición de cuentas: Se promueve la documentación de decisiones y acciones importantes para informar a los grupos de interés.
+- Gestión de Riesgos: El órgano de administración es responsable de establecer y vigilar la implementación de un sistema de gestión integral de riesgos.
+- Autoevaluación Anual: Las entidades deben confeccionar al cierre de cada ejercicio una autoevaluación sobre el grado de aplicación de los principios de gobierno corporativo, la cual debe ser aprobada por el órgano de administración y puesta a disposición de la SSN cuando esta lo requiera.
+- Declaración Jurada de Aptitud y Antecedentes: Los miembros de los órganos de administración, fiscalización y alta gerencia deben suscribir una declaración jurada con la información requerida y el compromiso de cumplimiento.
+
+-----------------------------------------------------------------------
+3) APLICABILIDAD POR RAMO / CONTEXTO
+El régimen de Gobierno Societario establecido por la Resolución SSN 1119/2018 es de aplicación obligatoria para todas las entidades aseguradoras y reaseguradoras sujetas a supervisión en Argentina, sin distinción de ramo.
+
+En el ámbito de los seguros de personas (Vida, Retiro, Accidentes Personales y Salud), la implementación de un robusto gobierno societario cobra una relevancia particular. Esto se debe a la naturaleza de los productos, que a menudo implican compromisos de largo plazo y una asimetría de información significativa con el asegurado. Un gobierno corporativo eficaz garantiza:
+- Protección al consumidor: Asegura que los productos ofrecidos sean solventes y que las prácticas de comercialización sean éticas y transparentes, especialmente en productos de ahorro y retiro.
+- Gestión de riesgos específicos: Permite una supervisión adecuada de los riesgos actuariales (longevidad, mortalidad, persistencia), de inversión y operativos inherentes a estos ramos.
+- Estabilidad financiera: Contribuye a la solidez de las entidades que gestionan pasivos de largo plazo, crucial para la confianza de los asegurados.
+
+El contexto de esta regulación se enmarca en la búsqueda de la SSN por alinear el mercado asegurador argentino con las mejores prácticas y recomendaciones de organismos internacionales como la Asociación Internacional de Supervisores de Seguros (IAIS) y la Organización para la Cooperación y el Desarrollo Económicos (OCDE), impulsando un modelo de supervisión basada en riesgos.
+
+-----------------------------------------------------------------------
+4) EJEMPLO NUMÉRICO O CASO CONCRETO
+Considerá el caso de "Futuro Seguro S.A.", una compañía especializada en seguros de Vida y Retiro. Tras la entrada en vigencia de la Resolución SSN 1119/2018, el Directorio de Futuro Seguro S.A. debió designar a un Director Independiente. Este director, un profesional con vasta experiencia en finanzas y sin vínculos comerciales o de dependencia con la compañía o sus accionistas, fue clave para fortalecer el Comité de Auditoría.
+
+En una de sus primeras tareas, el Comité de Auditoría, con la participación activa del Director Independiente, revisó los controles internos asociados al cálculo y la constitución de las reservas matemáticas de los planes de Retiro. Detectaron que, si bien el cálculo actuarial era correcto, la documentación de los supuestos demográficos y financieros utilizados no era suficientemente detallada para una auditoría externa rigurosa. El Director Independiente impulsó la creación de una política interna de documentación estandarizada para todos los supuestos actuariales, asegurando que cada cambio y su justificación quedaran registrados y fueran accesibles. Esta medida no solo mejoró la transparencia interna, sino que también facilitó la supervisión de la SSN y fortaleció la confianza de los auditores externos en la solidez de las reservas de la compañía.
+
+-----------------------------------------------------------------------
+5) APLICACIÓN PRÁCTICA PARA UN LÍDER DE EQUIPO
+Como líder de equipo en una gerencia de seguros de personas, tu rol es fundamental para la efectiva implementación del gobierno societario en la práctica diaria:
+- Internalizá la normativa: Asegurate de comprender los principios y requisitos de la Resolución SSN 1119/2018 y cómo se traducen en las políticas internas de tu compañía.
+- Fomentá la cultura de cumplimiento: Transmití a tu equipo la importancia de la transparencia, la ética y la rendición de cuentas en todas las operaciones, desde la suscripción hasta la liquidación de siniestros.
+- Alineá procesos: Revisá los procesos de tu área para asegurar que cumplan con las directrices de gobierno societario, especialmente en la gestión de riesgos, la protección al asegurado y la calidad de la información. Por ejemplo, en suscripción, asegurate de que las políticas de aceptación de riesgos estén claramente definidas y se apliquen consistentemente para evitar sesgos o conflictos de interés.
+- Colaborá con funciones de control: Mantené una comunicación fluida con las áreas de Auditoría Interna, Gestión de Riesgos y Compliance. Tu equipo es una fuente vital de información para estas funciones, y su retroalimentación es crucial para la mejora continua.
+- Prepará información precisa: Si tu equipo genera reportes o datos que son elevados al Directorio o a los Comités (ej., informes de siniestralidad, persistencia, resultados técnicos), asegurate de que sean precisos, completos y presentados de manera clara y concisa.
+- Desarrollá a tu equipo: Promové la capacitación continua de tus colaboradores en aspectos técnicos y éticos, garantizando la idoneidad requerida para sus funciones, especialmente en áreas críticas como la valuación actuarial o la gestión de siniestros complejos.
+
+-----------------------------------------------------------------------
+6) ERRORES COMUNES O PUNTOS CIEGOS
+La implementación del gobierno societario puede enfrentar desafíos y caer en errores comunes:
+- Enfoque "checklist": Limitarse a cumplir formalmente con los requisitos regulatorios sin una verdadera integración de los principios en la cultura y las operaciones de la compañía. Esto lleva a una burocratización sin impacto real en la gestión de riesgos o la toma de decisiones.
+- Falta de independencia real: Si bien se exige un Director Independiente, su rol puede verse diluido si no se le otorga el espacio y la autoridad necesarios para ejercer su función de manera crítica y objetiva.
+- Comités ineficaces: La creación de comités (Auditoría, Riesgos) sin miembros con la idoneidad adecuada o sin un mandato claro y recursos suficientes para operar de forma efectiva.
+- Desconexión con la gestión de riesgos: No integrar el gobierno societario con el sistema de gestión integral de riesgos, tratándolos como silos separados en lugar de elementos interdependientes.
+- Cultura organizacional deficiente: Una cultura interna que no valora la transparencia, la ética o la rendición de cuentas puede socavar los esfuerzos de gobierno societario, independientemente de la solidez de la normativa.
+- Documentación insuficiente o excesiva: Tanto la falta de documentación de decisiones clave como una sobrecarga burocrática sin valor añadido pueden obstaculizar la eficacia del gobierno corporativo.
+
+-----------------------------------------------------------------------
+7) EN UNA LÍNEA
+El Gobierno Societario en seguros, impulsado por la Resolución SSN 1119/2018, es el marco esencial para la transparencia, la gestión prudente y la protección del asegurado, profesionalizando la actividad y fortaleciendo la confianza del mercado.
+
+-----------------------------------------------------------------------
+FUENTES DE REFERENCIA
+- Resolución SSN 1119/2018 (Boletín Oficial, 5 de diciembre de 2018).
+- Ley 20.091 - Régimen Legal de las Entidades de Seguros y su Control.
+- Argentina.gob.ar - Superintendencia de Seguros de la Nación.
