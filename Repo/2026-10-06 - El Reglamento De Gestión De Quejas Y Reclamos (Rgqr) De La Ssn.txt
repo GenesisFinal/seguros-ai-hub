@@ -1,0 +1,73 @@
+EL REGLAMENTO DE GESTIÓN DE QUEJAS Y RECLAMOS (RGQR) DE LA SSN
+
+Fecha: 2026-10-06 | Área: Regulación argentina | Lectura estimada: 12 minutos
+
+-----------------------------------------------------------------------
+1) CONCEPTO
+El Reglamento de Gestión de Quejas y Reclamos (RGQR) es el marco normativo establecido por la Superintendencia de Seguros de la Nación (SSN) que obliga a todas las entidades aseguradoras a implementar un sistema interno eficiente y transparente para la atención y resolución de las quejas y reclamos presentados por asegurados, tomadores, beneficiarios y/o derechohabientes. Su objetivo primordial es fortalecer la protección del consumidor de seguros, garantizando un canal accesible y una respuesta oportuna y adecuada a sus inquietudes. Este reglamento se encuentra principalmente detallado en la Resolución SSN N° 38.708/2014, que aprueba el Reglamento General de la Actividad Aseguradora (RGAA), y sus posteriores modificaciones y complementarias. La SSN, en su rol de autoridad de aplicación de la Ley N° 20.091 de Entidades de Seguros y su Control, busca asegurar la solvencia y transparencia del mercado, así como la protección de los asegurados.
+
+-----------------------------------------------------------------------
+2) FÓRMULA / COMPONENTES / MECÁNICA
+La mecánica del RGQR no se expresa en una fórmula matemática, sino en un conjunto de principios y procedimientos que las aseguradoras deben adoptar. Sus componentes principales son:
+
+a) Designación de un Responsable: Cada entidad debe designar un "Responsable de Atención de Quejas y Reclamos", quien actúa como interlocutor principal con los reclamantes y con la SSN.
+
+b) Procedimientos claros y públicos: La aseguradora debe establecer y difundir procedimientos sencillos y accesibles para la presentación de quejas y reclamos, incluyendo canales de comunicación (presenciales, telefónicos, digitales). Esta información debe ser visible en sus oficinas, sitios web y en las pólizas.
+
+c) Plazos de respuesta: Se establece un plazo máximo de treinta (30) días hábiles para dar respuesta a la queja o reclamo desde su recepción. En casos excepcionales y debidamente justificados, este plazo puede extenderse, informando al reclamante.
+
+d) Registro de quejas y reclamos: Es obligatorio mantener un registro detallado de todas las quejas y reclamos recibidos, incluyendo la fecha de ingreso, el motivo, el área interviniente, el estado de la gestión y la resolución final. Este registro es clave para la supervisión de la SSN.
+
+e) Informes periódicos a la SSN: Las aseguradoras deben remitir a la SSN informes periódicos que sinteticen la gestión de quejas y reclamos, incluyendo estadísticas sobre tipos de reclamos, tiempos de respuesta y resultados. Esto permite a la SSN identificar patrones y posibles prácticas que contravengan la normativa.
+
+f) Mecanismos de escalamiento: Si la respuesta de la aseguradora no satisface al reclamante o si la entidad no responde en el plazo establecido, el asegurado tiene derecho a presentar su reclamo directamente ante la SSN, a través de sus canales de atención al asegurado.
+
+-----------------------------------------------------------------------
+3) APLICABILIDAD POR RAMO / CONTEXTO
+El RGQR es de aplicación universal para todas las entidades aseguradoras y reaseguradoras autorizadas a operar en Argentina, abarcando todos los ramos de seguros, incluyendo Seguros de Personas (Vida, Retiro, Accidentes Personales y Salud).
+
+En el contexto de seguros de personas, su relevancia es aún mayor debido a la naturaleza de los productos:
+*   Vida: Reclamos relacionados con el pago de siniestros por fallecimiento, rescates, valores de póliza o interpretaciones de cláusulas de exclusión.
+*   Retiro: Quejas sobre el cálculo de rentas, rescates anticipados, información sobre inversiones o demoras en los pagos.
+*   Accidentes Personales y Salud: Disconformidades con la cobertura de tratamientos, demoras en reembolsos, interpretaciones de preexistencias o alcance de las prestaciones.
+
+El RGQR se inscribe en un contexto de creciente demanda de transparencia y protección al consumidor, donde la SSN busca no solo la solvencia de las compañías, sino también la calidad del servicio y la confianza pública en el sistema asegurador.
+
+-----------------------------------------------------------------------
+4) EJEMPLO NUMÉRICO O CASO CONCRETO
+Imaginá que un asegurado de tu cartera de Vida Colectivo presenta un reclamo porque, tras el fallecimiento de un familiar cubierto, la liquidación del siniestro se demoró más de lo esperado y la suma asegurada pagada no coincide con lo que él entendía.
+
+1.  Recepción y Registro: El asegurado envía un correo electrónico a la dirección de reclamos de la compañía. Tu equipo de Siniestros de Vida, en coordinación con el área de Atención al Asegurado, registra el reclamo en el sistema interno, asignándole un número y una fecha de entrada.
+2.  Análisis Interno: Se revisa el expediente del siniestro, la póliza, las condiciones particulares y la comunicación con el asegurado. Se detecta que hubo una demora por falta de un documento específico y que la suma asegurada se ajustó por una cláusula de ajuste por edad que no fue comunicada claramente al inicio.
+3.  Respuesta: Dentro de los 30 días hábiles, la compañía envía una respuesta detallada al asegurado. Explica la demora, adjunta la documentación que faltaba y aclara la aplicación de la cláusula de ajuste, ofreciendo disculpas por la falta de claridad inicial y, si corresponde, un ajuste en la suma o una bonificación por el inconveniente.
+4.  Monitoreo: El Responsable de Atención de Quejas y Reclamos monitorea que la respuesta se haya enviado en tiempo y forma, y que el reclamo quede cerrado en el registro interno. Este caso se suma a los informes trimestrales que la compañía debe presentar a la SSN, mostrando la cantidad de reclamos por demora y por falta de información, y cómo fueron resueltos.
+
+-----------------------------------------------------------------------
+5) APLICACIÓN PRÁCTICA PARA UN LÍDER DE EQUIPO
+Como líder de equipo en una gerencia de seguros de personas, la aplicación práctica del RGQR es fundamental para la gestión diaria y la reputación de tu área:
+
+*   Capacitación Continua: Asegurate de que tu equipo conozca a fondo el RGQR, los procedimientos internos y los plazos. Realizá capacitaciones periódicas para reforzar la importancia de la calidad en la atención y respuesta.
+*   Monitoreo de KPIs: Implementá indicadores clave de rendimiento (KPIs) para la gestión de reclamos: tiempo promedio de respuesta, porcentaje de reclamos resueltos en plazo, tasa de resolución favorable, y motivos recurrentes de reclamo. Esto te permitirá identificar cuellos de botella y áreas de mejora.
+*   Análisis de Causas Raíz: No te quedes solo con la resolución individual. Analizá los reclamos recurrentes para identificar las causas raíz (ej. deficiencias en el producto, errores en la suscripción, fallas en la comunicación). Proponé mejoras de procesos o de producto a tu superior directo.
+*   Colaboración Inter-áreas: Fomentá una comunicación fluida con el Responsable de Atención de Quejas y Reclamos y otras áreas (legal, comercial, suscripción) para asegurar una gestión integral y coherente de las quejas.
+*   Comunicación con Superiores: Mantené informado a tu superior sobre el desempeño de tu equipo en la gestión de reclamos y las acciones correctivas implementadas. Esto demuestra proactividad y compromiso con la calidad del servicio.
+
+-----------------------------------------------------------------------
+6) ERRORES COMUNES O PUNTOS CIEGOS
+*   Subestimar la importancia: Considerar el RGQR como una mera formalidad regulatoria, en lugar de una herramienta estratégica para la mejora del servicio y la fidelización del cliente.
+*   Incumplimiento de plazos: No respetar los 30 días hábiles para la respuesta, lo que puede escalar el reclamo a la SSN y generar sanciones o desprestigio.
+*   Respuestas genéricas o incompletas: Ofrecer soluciones estandarizadas que no abordan la raíz del problema del asegurado, generando frustración y nuevas instancias de reclamo.
+*   Falta de registro o categorización: No registrar adecuadamente las quejas o no clasificarlas por motivo, impidiendo un análisis efectivo de las tendencias y causas.
+*   Desconocimiento del personal: Que el personal de primera línea no esté capacitado para identificar una queja o reclamo y derivarlo correctamente, o para brindar una primera respuesta adecuada.
+*   No aprender de los errores: Resolver el reclamo individual sin analizar por qué ocurrió, perdiendo la oportunidad de mejorar procesos y prevenir futuras quejas.
+
+-----------------------------------------------------------------------
+7) EN UNA LÍNEA
+El Reglamento de Gestión de Quejas y Reclamos es la columna vertebral regulatoria para la protección del asegurado, exigiendo a las aseguradoras un sistema interno eficiente y transparente para resolver sus inquietudes.
+
+-----------------------------------------------------------------------
+FUENTES DE REFERENCIA
+- Ley N° 17.418 de Seguros.
+- Ley N° 20.091 de Entidades de Seguros y su Control.
+- Resolución SSN N° 38.708/2014 (Reglamento General de la Actividad Aseguradora).
+- Resolución SSN N° 360/2024 (Manual Operativo y de Procedimientos para la Tramitación de Reclamos y Lineamientos para Publicidad y Cartelería).
