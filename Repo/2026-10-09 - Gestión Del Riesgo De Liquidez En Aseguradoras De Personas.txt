@@ -1,0 +1,59 @@
+GESTIÓN DEL RIESGO DE LIQUIDEZ EN ASEGURADORAS DE PERSONAS
+
+Fecha: 2026-10-09 | Área: Administración de empresas | Lectura estimada: 12 minutos
+
+-----------------------------------------------------------------------
+1) CONCEPTO
+El riesgo de liquidez en el contexto de una aseguradora de personas se define como la incapacidad de la entidad para cumplir con sus obligaciones financieras a medida que estas vencen, sin incurrir en pérdidas inaceptables al liquidar activos o al obtener financiamiento a costos desfavorables. En esencia, es el riesgo de no tener suficiente efectivo o activos fácilmente convertibles en efectivo para pagar siniestros, rescates, vencimientos de pólizas, gastos operativos y otras obligaciones contractuales en tiempo y forma. Este riesgo puede surgir por descalces entre los flujos de entrada (primas, rendimientos de inversiones) y los flujos de salida (siniestros, rescates, gastos), o por la imposibilidad de vender activos a precios justos en un mercado estresado. Su materialización puede erosionar la confianza de los asegurados, afectar la reputación y, en casos extremos, comprometer la solvencia de la compañía.
+
+-----------------------------------------------------------------------
+2) FÓRMULA / COMPONENTES / MECÁNICA
+La gestión del riesgo de liquidez no se basa en una única fórmula, sino en un conjunto de métricas, procesos y estrategias. Sus componentes clave incluyen:
+
+a) Proyecciones de Flujos de Caja: Es fundamental realizar proyecciones detalladas de entradas y salidas de efectivo a corto, mediano y largo plazo. Esto implica modelar primas esperadas, siniestros, rescates, vencimientos, gastos y rendimientos de inversiones bajo diferentes escenarios (normal, estresado).
+
+b) Ratios de Liquidez: Se utilizan indicadores como el ratio de activos líquidos sobre pasivos de corto plazo, o el ratio de activos de alta liquidez sobre el total de reservas técnicas. Estos ratios permiten monitorear la posición de liquidez de la compañía y compararla con umbrales internos o regulatorios.
+
+c) Gestión de Activos y Pasivos (ALM - Asset-Liability Management): Implica estructurar la cartera de inversiones de manera que la liquidez de los activos se alinee con las características de liquidez de los pasivos. Esto significa mantener una porción adecuada de activos líquidos (ej. bonos de corto plazo, depósitos a la vista) para cubrir las obligaciones más volátiles o de corto plazo, y diversificar la cartera para evitar concentraciones de riesgo. La Resolución SSN 38.708/2014, si bien se enfoca en solvencia, subraya la importancia de una gestión integral de riesgos que incluye la liquidez.
+
+d) Planes de Contingencia de Liquidez (PCL): Son protocolos preestablecidos para enfrentar situaciones de estrés de liquidez. Incluyen la identificación de fuentes de financiamiento alternativas (ej. líneas de crédito, venta de activos menos líquidos), la priorización de pagos y la comunicación con reguladores y stakeholders.
+
+-----------------------------------------------------------------------
+3) APLICABILIDAD POR RAMO / CONTEXTO
+El riesgo de liquidez se manifiesta de manera distinta en los diferentes ramos de seguros de personas:
+
+a) Seguros de Vida: Particularmente en productos con componente de ahorro o rescate (ej. Vida con Ahorro, Seguros de Retiro), el riesgo de liquidez es significativo debido a la posibilidad de rescates masivos o anticipados. Si bien la Ley 17.418 establece condiciones para el rescate, una ola de solicitudes puede generar presión. En Retiro, el pago de rentas vitalicias requiere una gestión de activos de largo plazo que garantice flujos constantes, pero también una porción líquida para los primeros años.
+
+b) Accidentes Personales (AP): Los siniestros suelen ser de ocurrencia más aleatoria y de montos variables. Una catástrofe o un evento con múltiples víctimas puede generar una demanda súbita de pagos, requiriendo una adecuada provisión de liquidez.
+
+c) Salud: Este ramo presenta alta frecuencia de siniestros y, en muchos casos, pagos directos a prestadores. La gestión de la liquidez es crítica para asegurar la continuidad de la cadena de pagos y el acceso a servicios médicos. Un aumento inesperado en la siniestralidad (ej. por una epidemia) puede tensionar severamente la posición de liquidez.
+
+-----------------------------------------------------------------------
+4) EJEMPLO NUMÉRICO O CASO CONCRETO
+Imaginemos una aseguradora de Vida y Retiro con un portafolio de 10.000 pólizas de Vida con Ahorro, con un valor de rescate promedio de $500.000 por póliza. En un escenario de estrés económico y alta incertidumbre, tu equipo de suscripción detecta un incremento inusual en las solicitudes de rescate. Si históricamente la tasa de rescate mensual es del 0,5% (50 pólizas), en el último mes se disparó al 2% (200 pólizas). Esto implica que, en lugar de necesitar $25.000.000 para rescates, la compañía debe afrontar $100.000.000. Si la cartera de inversiones de la aseguradora tiene una alta proporción de activos ilíquidos (ej. inmuebles, acciones de empresas no cotizadas) o bonos de largo plazo, la venta forzada de estos activos para cubrir la demanda de liquidez podría implicar pérdidas significativas (ej. vender un inmueble con un descuento del 15% o bonos por debajo de su valor contable), afectando el capital de la compañía y su rentabilidad.
+
+-----------------------------------------------------------------------
+5) APLICACIÓN PRÁCTICA PARA UN LÍDER DE EQUIPO
+Como líder de equipo en una gerencia de seguros de personas, tu rol es crucial para la gestión del riesgo de liquidez, aunque no seas el responsable directo de la tesorería. Considerá estas acciones:
+
+a) Monitoreo de Indicadores Clave: Colaborá con tu equipo técnico para identificar y monitorear KPIs que puedan ser precursores de problemas de liquidez, como el aumento de solicitudes de rescate, la variación en la frecuencia o severidad de siniestros, o cambios en los patrones de pago de primas.
+
+b) Comunicación y Coordinación: Mantené una comunicación fluida con las áreas de inversiones, finanzas y riesgos. Compartí información sobre tendencias de siniestralidad, proyecciones de rescates o cambios en el comportamiento del asegurado que puedan impactar los flujos de caja. Tu superior directo valorará tu visión integral.
+
+c) Diseño de Productos: Participá activamente en el diseño o revisión de productos, asegurando que las cláusulas de rescate, los períodos de carencia y las condiciones de pago de siniestros estén alineadas con la capacidad de liquidez de la compañía y los lineamientos de la SSN.
+
+d) Capacitación y Concientización: Fomentá en tu equipo la comprensión del riesgo de liquidez y su impacto en la estabilidad de la aseguradora. Un equipo consciente es más proactivo en la identificación de alertas tempranas.
+
+-----------------------------------------------------------------------
+6) ERRORES COMUNES O PUNTOS CIEGOS
+Uno de los errores más comunes es subestimar la correlación entre distintos eventos de riesgo. Por ejemplo, una crisis económica que aumenta los rescates en Vida también puede incrementar la siniestralidad en Salud o AP debido a la pérdida de empleo o la búsqueda de cobertura médica. Otro punto ciego es la excesiva dependencia de activos ilíquidos en la cartera de inversiones, creyendo que los flujos de caja operativos serán siempre suficientes. La falta de un Plan de Contingencia de Liquidez robusto y probado, o la ausencia de fuentes de financiamiento alternativas pre-acordadas, también son fallas críticas. Finalmente, no considerar el riesgo de reputación: la percepción de insolvencia o incapacidad de pago puede generar una corrida de rescates, independientemente de la posición real de liquidez.
+
+-----------------------------------------------------------------------
+7) EN UNA LÍNEA
+La gestión proactiva del riesgo de liquidez es vital para asegurar la capacidad de una aseguradora de personas de cumplir sus promesas a los asegurados y mantener su estabilidad financiera.
+
+-----------------------------------------------------------------------
+FUENTES DE REFERENCIA
+- Ley N° 17.418 de Seguros.
+- Resolución SSN N° 38.708/2014 - Régimen de Solvencia de las Entidades Aseguradoras y Reaseguradoras.
+- Principios para la Gestión del Riesgo de Liquidez del Comité de Basilea de Supervisión Bancaria (aplicables a instituciones financieras).
