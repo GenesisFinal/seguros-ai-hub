@@ -1,0 +1,96 @@
+SISTEMA DE GESTIÓN INTEGRAL DE RIESGOS (SGIR) EN ASEGURADORAS ARGENTINAS - RESOLUCIÓN SSN 40.835/2017
+
+Fecha: 2026-10-13 | Área: Regulación argentina | Lectura estimada: 12 minutos
+
+-----------------------------------------------------------------------
+1) CONCEPTO
+El Sistema de Gestión Integral de Riesgos (SGIR) es un componente fundamental del Régimen de Solvencia Basada en Riesgos (RSBR) establecido por la Superintendencia de Seguros de la Nación (SSN) a través de la Resolución SSN 40.835/2017. Su propósito es asegurar que las entidades aseguradoras y reaseguradoras identifiquen, midan, monitoreen, controlen y reporten de manera efectiva todos los riesgos significativos a los que están expuestas. Este enfoque proactivo busca fortalecer la solvencia y estabilidad del mercado, yendo más allá del mero cumplimiento normativo para integrar la gestión de riesgos en la estrategia y operación diaria de la compañía. La Ley 20.091, que rige las entidades de seguros y su control, sienta las bases para esta supervisión, buscando la estabilidad, solvencia y transparencia del mercado asegurador.
+
+-----------------------------------------------------------------------
+2) FÓRMULA / COMPONENTES / MECÁNICA
+El SGIR no se expresa en una fórmula matemática única, sino que se articula a través de un conjunto de componentes interrelacionados que conforman un ciclo continuo. La Resolución SSN 40.835/2017 detalla estos elementos clave:
+
+a) Marco de Gobierno de Riesgos: Define la estructura organizacional, roles y responsabilidades para la gestión de riesgos. Esto incluye la asignación de responsabilidades al Directorio, la creación de un Comité de Riesgos y la designación de un Responsable de Gestión de Riesgos. Se enfatiza la segregación de funciones para asegurar la independencia.
+
+b) Proceso de Gestión de Riesgos: Es el corazón del SGIR y comprende las siguientes etapas:
+    - Identificación de Riesgos: Reconocer y documentar todos los riesgos relevantes (suscripción, mercado, crédito, operacional, liquidez, estratégico, reputacional, etc.).
+    - Medición y Evaluación de Riesgos: Cuantificar la exposición a los riesgos identificados, utilizando metodologías apropiadas (ej. VaR, estrés testing, escenarios).
+    - Tratamiento de Riesgos: Desarrollar e implementar estrategias para mitigar, transferir, aceptar o evitar los riesgos.
+    - Monitoreo de Riesgos: Supervisar continuamente el perfil de riesgo de la entidad y la efectividad de los controles implementados.
+    - Reporte y Comunicación de Riesgos: Informar periódicamente a los órganos de gobierno, la SSN y otras partes interesadas sobre la exposición a riesgos y las acciones tomadas.
+
+c) Funciones Clave: La resolución exige la existencia de funciones clave independientes:
+    - Función de Gestión de Riesgos: Encargada de la implementación y mantenimiento del SGIR.
+    - Función de Cumplimiento: Asegura el acatamiento de la normativa interna y externa.
+    - Función Actuarial: Responsable de la valuación de pasivos, tarificación y análisis técnico de riesgos.
+    - Función de Auditoría Interna: Proporciona una evaluación independiente de la efectividad del SGIR.
+
+La mecánica implica una interacción constante entre estas funciones y los distintos niveles jerárquicos de la compañía, desde el Directorio hasta las áreas operativas.
+
+-----------------------------------------------------------------------
+3) APLICABILIDAD POR RAMO / CONTEXTO
+El SGIR es de aplicación transversal a todas las operaciones de una aseguradora, incluyendo los seguros de personas.
+
+- Seguros de Vida y Retiro: Los riesgos técnicos son centrales, como el riesgo de longevidad (en rentas vitalicias), mortalidad (en seguros de vida), persistencia (caducidad de pólizas), y riesgo de tasa de interés (impacto en las reservas y el ALM). El SGIR permite modelar estos riesgos, establecer límites y estrategias de cobertura. Los riesgos de inversión asociados a los fondos de retiro también son críticos.
+
+- Seguros de Accidentes Personales y Salud: Aquí predominan los riesgos de frecuencia y severidad de siniestros, riesgo de suscripción (selección adversa), riesgo de fraude y riesgo operacional. El SGIR ayuda a identificar patrones de siniestralidad, optimizar la tarificación, implementar controles antifraude y mejorar la eficiencia operativa.
+
+En todos los ramos, los riesgos de mercado (variaciones en tasas de interés, tipo de cambio, precios de activos), crédito (incumplimiento de reaseguradores o deudores), liquidez (incapacidad para hacer frente a obligaciones a corto plazo), operacionales (fallas en procesos, sistemas o personas) y estratégicos (decisiones erróneas) deben ser gestionados bajo el paraguas del SGIR.
+
+-----------------------------------------------------------------------
+4) EJEMPLO NUMÉRICO O CASO CONCRETO
+Consideremos una aseguradora de Vida que planea lanzar un nuevo producto de Vida con Ahorro.
+
+1. Identificación de Riesgos: El equipo de Riesgos, junto con el área de Producto y Actuarial, identifica riesgos clave:
+    - Riesgo de Suscripción: Posible selección adversa si los criterios de salud no son adecuados.
+    - Riesgo de Tasa de Interés: Descalce entre los rendimientos de las inversiones y las tasas garantizadas a los asegurados.
+    - Riesgo de Persistencia: Mayor o menor caducidad de lo esperado, afectando la rentabilidad y la liberación de reservas.
+    - Riesgo Operacional: Fallas en los sistemas de administración de pólizas o en la emisión.
+
+2. Medición y Evaluación:
+    - Se realizan proyecciones actuariales y pruebas de estrés para el riesgo de tasa, simulando escenarios de suba y baja.
+    - Se analiza la experiencia histórica de productos similares para estimar la persistencia y la siniestralidad esperada.
+    - Se evalúa la capacidad de los sistemas existentes para manejar el volumen y la complejidad del nuevo producto.
+
+3. Tratamiento de Riesgos:
+    - Suscripción: Se definen cuestionarios de salud detallados y límites de suma asegurada por edad.
+    - Tasa de Interés: Se establece una política de inversión que busca un calce de plazos y se considera el uso de instrumentos de cobertura.
+    - Persistencia: Se diseñan incentivos para la permanencia y se monitorean los ratios de caducidad.
+    - Operacional: Se realizan pruebas exhaustivas de los sistemas y se capacita al personal.
+
+4. Monitoreo y Reporte: Mensualmente, se monitorean los KPIs de suscripción, persistencia, rentabilidad del portafolio de inversiones asociado y se generan informes para el Comité de Riesgos y el Directorio, alertando sobre cualquier desvío significativo.
+
+-----------------------------------------------------------------------
+5) APLICACIÓN PRÁCTICA PARA UN LÍDER DE EQUIPO
+Como líder de equipo en una gerencia de seguros de personas, tu rol en el SGIR es crucial para su efectividad:
+
+1. Fomentá la Cultura de Riesgos: Asegurate de que tu equipo comprenda la importancia de identificar, evaluar y comunicar los riesgos inherentes a sus tareas. Promové un ambiente donde se sientan seguros de reportar problemas o debilidades sin temor a represalias.
+
+2. Alineá Procesos con el SGIR: Revisá los procedimientos operativos de tu área para garantizar que estén en línea con las políticas y manuales de gestión de riesgos de la compañía. Por ejemplo, en suscripción, verificá que se apliquen correctamente las políticas de aceptación de riesgos; en siniestros, que se sigan los protocolos de detección de fraude.
+
+3. Identificá y Reportá Riesgos: Capacitá a tu equipo para que sea una primera línea de defensa en la identificación de riesgos emergentes o cambios en el perfil de riesgo (ej. un aumento inusual en la siniestralidad de un producto, una nueva tendencia de fraude, fallas recurrentes en un sistema). Establecé canales claros para escalar esta información.
+
+4. Participá en la Definición de Apetito de Riesgo: Colaborá con la función de Riesgos y tu superior directo en la definición del apetito de riesgo y los límites para tu área. Entendé cómo las decisiones de tu equipo impactan en el perfil de riesgo general de la compañía.
+
+5. Utilizá los Reportes de Riesgos: No veas los informes de riesgos como un mero requisito. Usalos como una herramienta para la toma de decisiones. Si un reporte indica una alta exposición a un riesgo específico en tu ramo, considerá ajustar estrategias de producto, suscripción o procesos.
+
+-----------------------------------------------------------------------
+6) ERRORES COMUNES O PUNTOS CIEGOS
+1. Enfoque Meramente de Cumplimiento: Considerar el SGIR solo como una obligación regulatoria, sin integrarlo genuinamente en la estrategia y la toma de decisiones. Esto lo convierte en un ejercicio burocrático, perdiendo su valor como herramienta de gestión.
+
+2. Falta de Integración: No lograr una articulación efectiva entre las distintas funciones clave (Riesgos, Cumplimiento, Actuarial, Auditoría) y las áreas de negocio. Los silos de información impiden una visión holística del perfil de riesgo.
+
+3. Cultura de Riesgos Débil: Un equipo que no comprende o no valora la gestión de riesgos es un punto ciego. Si los colaboradores no se sienten empoderados para identificar y reportar riesgos, la efectividad del SGIR se ve comprometida.
+
+4. Identificación de Riesgos Estática: No actualizar periódicamente el mapa de riesgos y las evaluaciones, ignorando los cambios en el entorno de mercado, la tecnología o el propio portafolio de productos. Los riesgos evolucionan y el SGIR debe ser dinámico.
+
+5. Reportes No Accionables: Generar informes de riesgos complejos o poco claros que no proporcionan información relevante para la toma de decisiones a los distintos niveles de la organización. Un buen reporte debe ser conciso, relevante y orientar a la acción.
+
+-----------------------------------------------------------------------
+7) EN UNA LÍNEA
+El SGIR es el marco regulatorio esencial para la gestión proactiva de riesgos en aseguradoras argentinas, transformando el cumplimiento en una ventaja estratégica.
+
+-----------------------------------------------------------------------
+FUENTES DE REFERENCIA
+- Resolución SSN 40.835/2017 - Régimen de Solvencia Basada en Riesgos (RSBR) y el Sistema de Gestión Integral de Riesgos (SGIR).
+- Ley 20.091 - Régimen Legal de las Entidades de Seguros y su Control.
