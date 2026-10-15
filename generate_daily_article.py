@@ -150,7 +150,19 @@ FUENTES DE REFERENCIA
     # Extraer título del artículo
     lines = [l.strip() for l in clean_content.splitlines() if l.strip()]
     first_line = lines[0] if lines else "Artículo de Seguros"
-    
+
+    # Si la primera línea empieza con Fecha: o separadores, el modelo olvidó el título en la línea 1
+    if first_line.startswith('Fecha:') or first_line.startswith('---') or first_line.startswith('1)'):
+        candidate_title = None
+        for l in lines[:5]:
+            if not l.startswith('Fecha:') and not l.startswith('---') and not any(l.startswith(f"{i})") for i in range(1, 8)):
+                candidate_title = l
+                break
+        if not candidate_title:
+            candidate_title = f"{area_tematica}"
+        first_line = candidate_title
+        clean_content = f"{first_line.upper()}\n\n" + clean_content
+
     # Limpiar título para nombre de archivo
     title_for_file = re.sub(r'[\\/*?:"<>|]', '', first_line)
     title_for_file = title_for_file.replace('TÍTULO:', '').replace('TITULO:', '').strip()
