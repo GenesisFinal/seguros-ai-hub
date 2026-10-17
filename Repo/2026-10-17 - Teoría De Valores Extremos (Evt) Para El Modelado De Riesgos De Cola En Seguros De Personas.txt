@@ -1,0 +1,84 @@
+TEORÍA DE VALORES EXTREMOS (EVT) PARA EL MODELADO DE RIESGOS DE COLA EN SEGUROS DE PERSONAS
+
+Fecha: 2026-10-17 | Área: Profundización técnica avanzada | Lectura estimada: 12 minutos
+
+-----------------------------------------------------------------------
+1) CONCEPTO
+La Teoría de Valores Extremos (EVT, por sus siglas en inglés) es una rama de la estadística que se enfoca en el comportamiento de las observaciones más grandes o más pequeñas de una muestra, es decir, los eventos que residen en las "colas" de una distribución de probabilidad. A diferencia de los métodos estadísticos tradicionales que se centran en el promedio o la parte central de los datos, la EVT provee herramientas robustas para modelar y cuantificar la probabilidad y magnitud de eventos raros y de alto impacto. En el ámbito de los seguros, donde los siniestros catastróficos o las desviaciones extremas pueden tener consecuencias financieras significativas, la EVT es fundamental para una gestión de riesgos de cola proactiva, ayudando a estimar la probabilidad de fallas críticas o pérdidas excepcionales.
+
+Existen dos enfoques principales dentro de la EVT:
+a)  Máximos por Bloques (Block Maxima - BM): Consiste en dividir la serie de datos en bloques de igual duración (por ejemplo, anuales) y registrar el valor máximo (o mínimo) dentro de cada bloque. La distribución límite de estos máximos se aproxima por la Distribución Generalizada de Valores Extremos (GEV).
+b)  Picos sobre Umbral (Peaks Over Threshold - POT): Este método es más eficiente en el uso de los datos, ya que considera todos los valores que superan un umbral predefinido. La distribución límite de estos excesos sobre el umbral se aproxima por la Distribución Generalizada de Pareto (GPD). El enfoque POT es generalmente preferido en aplicaciones actuariales por su mayor eficiencia de datos.
+
+-----------------------------------------------------------------------
+2) FÓRMULA / COMPONENTES / MECÁNICA
+La mecánica de la EVT se basa en la convergencia de las distribuciones de los valores extremos a formas específicas, independientemente de la distribución subyacente de los datos originales.
+
+a)  Distribución Generalizada de Valores Extremos (GEV):
+    La función de distribución acumulada (CDF) de la GEV para los máximos de bloques es:
+    F(x; μ, σ, ξ) = exp{-[1 + ξ((x - μ)/σ)]^(-1/ξ)} para 1 + ξ((x - μ)/σ) > 0.
+    Donde:
+    -   μ (mu): Parámetro de localización.
+    -   σ (sigma): Parámetro de escala (σ > 0).
+    -   ξ (xi): Parámetro de forma, también conocido como índice de cola. Este parámetro es crucial, ya que determina el tipo de cola:
+        -   ξ > 0: Distribución de Fréchet (cola pesada, sin límite superior).
+        -   ξ = 0: Distribución de Gumbel (cola ligera, tipo exponencial).
+        -   ξ < 0: Distribución de Weibull (cola finita, con límite superior).
+
+b)  Distribución Generalizada de Pareto (GPD):
+    La CDF de la GPD para los excesos sobre un umbral 'u' es:
+    F_u(y; σ_u, ξ) = 1 - [1 + ξ(y/σ_u)]^(-1/ξ) para y > 0 y 1 + ξ(y/σ_u) > 0.
+    Donde 'y = x - u' son los excesos sobre el umbral 'u'.
+    -   σ_u (sigma_u): Parámetro de escala modificado, dependiente del umbral.
+    -   ξ (xi): Parámetro de forma, idéntico al de la GEV, que caracteriza la pesadez de la cola.
+    La estimación de los parámetros (μ, σ, ξ para GEV; σ_u, ξ para GPD) se realiza comúnmente mediante métodos como la máxima verosimilitud.
+
+-----------------------------------------------------------------------
+3) APLICABILIDAD POR RAMO / CONTEXTO
+La EVT es una herramienta invaluable para la gestión de riesgos en seguros de personas:
+-   Seguros de Vida: Permite modelar eventos de mortalidad catastrófica (ej., pandemias, desastres naturales con alta pérdida de vidas) o, en el extremo opuesto, el riesgo de longevidad extrema en productos de rentas vitalicias, donde la supervivencia más allá de las expectativas puede generar pasivos significativos.
+-   Accidentes Personales (AP): Útil para cuantificar la probabilidad de siniestros de alta severidad, como accidentes con múltiples víctimas o invalideces permanentes complejas que implican pagos muy elevados.
+-   Salud: Fundamental para el modelado de costos médicos extremadamente altos, asociados a enfermedades raras, tratamientos innovadores de alto costo o eventos de salud con complicaciones severas que superan los límites de los modelos tradicionales.
+-   Retiro: Complementa el análisis del riesgo de longevidad, permitiendo una estimación más precisa de las colas de la distribución de supervivencia para los asegurados de mayor edad, impactando en la suficiencia de las reservas de rentas vitalicias.
+En el contexto argentino, la aplicación de EVT es relevante para el Sistema de Gestión Integral de Riesgos (SGIR) establecido por la Resolución SSN 40.835/2017, que exige a las aseguradoras identificar, medir, monitorear y controlar sus riesgos, incluyendo los de cola, para el cálculo de capital basado en riesgos y pruebas de estrés.
+
+-----------------------------------------------------------------------
+4) EJEMPLO NUMÉRICO O CASO CONCRETO
+Imaginá que tu equipo de actuarios en una aseguradora de Salud está analizando los siniestros anuales para un producto de alta cobertura. Los modelos tradicionales (ej., log-normal, gamma) ajustan bien la mayoría de los siniestros, pero subestiman consistentemente los costos de los tratamientos más caros. Decidís aplicar EVT usando el método POT a los siniestros que exceden un umbral de $1.000.000.
+
+Supongamos que, tras ajustar una GPD a los excesos sobre este umbral, obtenés los siguientes parámetros estimados:
+-   Umbral (u) = $1.000.000
+-   Parámetro de escala (σ_u) = $500.000
+-   Parámetro de forma (ξ) = 0.3 (indicando una cola pesada, tipo Fréchet).
+
+Con estos parámetros, podés estimar la probabilidad de que un siniestro exceda un valor mucho mayor, o calcular un Valor en Riesgo (VaR) a un nivel de confianza muy alto (ej., 99.9%).
+Por ejemplo, para calcular el VaR del 99.9% de los excesos (es decir, el valor que solo se excede el 0.1% de las veces por encima del umbral), la fórmula de la GPD te permitiría proyectar que un siniestro podría alcanzar, por ejemplo, los $8.000.000 (valor hipotético resultante de la aplicación de la fórmula con los parámetros dados), un número que los modelos tradicionales difícilmente habrían predicho con la misma robustez. Esto te da una medida más precisa del riesgo extremo para la planificación de reservas y reaseguro.
+
+-----------------------------------------------------------------------
+5) APLICACIÓN PRÁCTICA PARA UN LÍDER DE EQUIPO
+Como líder de equipo, tenés que traducir esta sofisticación técnica en decisiones estratégicas:
+-   Mejorá la definición de retenciones y capas de reaseguro: Utilizá las estimaciones de EVT para negociar contratos de reaseguro más eficientes, especialmente para las capas de exceso de pérdida, asegurando que tu compañía esté protegida contra los siniestros más severos.
+-   Fortalecé el diálogo con la alta gerencia: Presentá los resultados de EVT para ilustrar la exposición real a riesgos catastróficos, justificando la necesidad de capital adicional o ajustes en la política de suscripción.
+-   Validá la robustez de las reservas técnicas: Asegurate de que las reservas de tu equipo consideren adecuadamente los escenarios de cola, especialmente en ramos con alta volatilidad o potencial de siniestros masivos.
+-   Fomentá la capacitación: Impulsá que tu equipo técnico se familiarice con la EVT y otras técnicas avanzadas de modelado de riesgos, promoviendo una cultura de análisis profundo y mejora continua.
+-   Desarrollá escenarios de estrés realistas: Las distribuciones de cola pesada obtenidas con EVT son insumos ideales para construir escenarios de estrés que pongan a prueba la solvencia de la aseguradora bajo condiciones extremas.
+
+-----------------------------------------------------------------------
+6) ERRORES COMUNES O PUNTOS CIEGOS
+-   Selección inadecuada del umbral (método POT): Elegir un umbral demasiado bajo puede contaminar la muestra de excesos con datos no extremos, mientras que un umbral demasiado alto puede dejar muy pocos datos para un ajuste robusto de la GPD. Es un balance crítico.
+-   Insuficiencia de datos extremos: Aunque la EVT está diseñada para datos escasos en la cola, si la cantidad de observaciones por encima del umbral es muy limitada, la estimación de los parámetros puede ser inestable.
+-   Ignorar la dependencia temporal: La EVT asume independencia de los eventos. Si los eventos extremos están correlacionados en el tiempo (ej., una serie de desastres naturales), los modelos univariados de EVT podrían subestimar el riesgo.
+-   Extrapolación excesiva: Aunque la EVT permite estimar probabilidades muy lejanas en la cola, extrapolar demasiado más allá de la experiencia observable siempre conlleva incertidumbre.
+-   Confundir EVT con modelos de distribución completa: La EVT modela *solo* la cola, no toda la distribución. Integrar los resultados de EVT con modelos para la parte central de la distribución requiere cuidado.
+
+-----------------------------------------------------------------------
+7) EN UNA LÍNEA
+La Teoría de Valores Extremos permite cuantificar la probabilidad y magnitud de eventos raros y severos, crucial para una gestión de riesgos de cola robusta en seguros de personas.
+
+-----------------------------------------------------------------------
+FUENTES DE REFERENCIA
+- Embrechts, P., Klüppelberg, C., & Mikosch, T. (1997). Modelling Extremal Events for Insurance and Finance. Springer.
+- Resolución SSN 40.835/2017 - Sistema de Gestión Integral de Riesgos (SGIR).
+- McNeil, A. J., Frey, R., & Embrechts, P. (2005). Quantitative Risk Management: Concepts, Techniques and Tools. Princeton University Press.
+- Reed, J. (2021). Modeling Extreme Events. Society of Actuaries.
+- Menaldo, S. (2026). Extreme Value Theory: A Framework for Managing Tail Risk. Medium.
