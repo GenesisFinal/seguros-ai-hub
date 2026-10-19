@@ -1,0 +1,75 @@
+ASSET-LIABILITY MANAGEMENT (ALM) EN SEGUROS DE PERSONAS: GESTIÓN INTEGRAL DEL BALANCE Y RIESGOS
+
+Fecha: 2026-10-19 | Área: Técnico actuarial / seguros de personas | Lectura estimada: 12 minutos
+
+-----------------------------------------------------------------------
+1) CONCEPTO
+El Asset-Liability Management (ALM) es un proceso estratégico y continuo de formulación, implementación, monitoreo y revisión de las estrategias relacionadas con los activos y pasivos de una aseguradora. Su objetivo fundamental es gestionar los riesgos financieros derivados de los descalces entre activos y pasivos, asegurando la solvencia a largo plazo, optimizando la rentabilidad y cumpliendo con los objetivos financieros bajo un conjunto de restricciones y tolerancias al riesgo. En seguros de personas, donde los pasivos suelen ser de muy largo plazo y con garantías, el ALM es crítico para alinear las promesas de la compañía con las realidades financieras y de mercado.
+
+-----------------------------------------------------------------------
+2) FÓRMULA / COMPONENTES / MECÁNICA
+El ALM no se reduce a una única fórmula, sino que es un marco de gestión que integra diversos modelos y métricas. Sus componentes clave incluyen:
+
+*   Modelado de Pasivos: Proyecciones actuariales detalladas de los flujos de caja de las obligaciones (reservas, siniestros, beneficios, gastos) bajo diferentes supuestos demográficos (mortalidad, longevidad, morbilidad, persistencia) y financieros (tasas de interés, inflación). Esto incluye la sensibilidad de los pasivos a cambios en estas variables.
+*   Modelado de Activos: Proyecciones de los flujos de caja (intereses, dividendos, amortizaciones), rendimientos y volatilidad de la cartera de inversiones (renta fija, renta variable, inmuebles, etc.).
+*   Generación de Escenarios Estocásticos: Utilización de modelos económicos estocásticos (ESG - Economic Scenario Generators) para simular miles de posibles evoluciones futuras de las variables de mercado (tasas de interés, inflación, precios de acciones, tipos de cambio) que impactan tanto a activos como a pasivos.
+*   Optimización y Simulación: Aplicación de técnicas de optimización (ej. programación lineal/no lineal) o simulación Monte Carlo para determinar la asignación estratégica de activos (SAA - Strategic Asset Allocation) que mejor calce con los pasivos bajo los escenarios proyectados, considerando el apetito de riesgo de la compañía.
+*   Métricas de Descalce y Riesgo: Medición de la sensibilidad de activos y pasivos a cambios en las tasas de interés mediante métricas como la duración (Macaulay o modificada) y la convexidad. El objetivo es minimizar el "duration gap" y el "convexity gap" para inmunizar el balance frente a pequeños cambios en las tasas. También se utilizan medidas como el Valor en Riesgo (VaR) o el Valor en Riesgo Condicional (CVaR) sobre el capital económico o el resultado.
+
+La mecánica es iterativa: se definen objetivos, se modelan activos y pasivos, se simulan escenarios, se evalúan resultados y se ajustan las estrategias de inversión y/o diseño de productos.
+
+-----------------------------------------------------------------------
+3) APLICABILIDAD POR RAMO / CONTEXTO
+El ALM es fundamental en seguros de personas, especialmente en ramos de largo plazo:
+
+*   Vida: Es crucial para productos con garantías de tasa de interés (ej. seguros de vida con ahorro, rentas vitalicias diferidas) y para gestionar el riesgo de longevidad y mortalidad. Un descalce de duración o una inadecuada gestión de tasas puede erosionar el capital.
+*   Retiro: En rentas vitalicias previsionales, donde los pasivos se extienden por décadas, el calce de flujos de caja es vital. El riesgo de longevidad es un factor central que debe ser modelado y gestionado activamente dentro del marco ALM.
+*   Accidentes Personales y Salud: Aunque los pasivos suelen ser de menor duración que en Vida o Retiro, el ALM es relevante para la gestión de reservas de siniestros pendientes (IBNR) y para mitigar la volatilidad de la siniestralidad, especialmente en coberturas de largo plazo o con componentes de rentas.
+
+En el contexto argentino, la gestión ALM debe considerar el marco regulatorio. La Resolución SSN 40.835/2017 (Sistema de Gestión Integral de Riesgos - SGIR) exige un marco robusto de gestión de riesgos, donde el ALM es un pilar esencial para el riesgo de mercado y el riesgo de suscripción. Además, el régimen de inversiones de la SSN (Resolución SSN 35.615/2010 y sus modificatorias, como la Resolución SSN 40/2024 y la Resolución SSN 348/2024) establece límites y activos computables que condicionan las estrategias de inversión y, por ende, las soluciones de calce de activos y pasivos.
+
+-----------------------------------------------------------------------
+4) EJEMPLO NUMÉRICO O CASO CONCRETO
+Imaginá que tu aseguradora tiene un portafolio de rentas vitalicias previsionales con una duración promedio de los pasivos de 18 años, descontados a una tasa técnica del 2.5%. La cartera de activos que respalda estos pasivos, compuesta principalmente por títulos públicos y obligaciones negociables, tiene una duración promedio de 12 años y rinde un 3.5%.
+
+Existe un "duration gap" de 6 años (18 - 12). Si las tasas de interés de mercado bajan un 1%, el valor presente de los pasivos aumentará aproximadamente un 18% (18 años * 1%), mientras que el valor de los activos solo aumentará un 12% (12 años * 1%). Este descalce generaría una pérdida significativa en el patrimonio neto y en los capitales mínimos requeridos, afectando la solvencia de la compañía.
+
+Una estrategia ALM identificaría este descalce y propondría acciones, como:
+a) Reestructurar la cartera de activos: Buscar activos de mayor duración (siempre dentro de los límites de la SSN) o instrumentos financieros que permitan extender la duración efectiva de los activos.
+b) Modificar el diseño de productos: Evaluar si las garantías de tasa en nuevos productos son sostenibles.
+c) Coberturas: Considerar el uso de derivados (si la regulación lo permite y es económicamente viable) para mitigar el riesgo de tasa.
+
+El equipo actuarial cuantificaría el impacto de estas acciones en el balance bajo diversos escenarios de tasas, proyectando la evolución de los capitales y la rentabilidad.
+
+-----------------------------------------------------------------------
+5) APLICACIÓN PRÁCTICA PARA UN LÍDER DE EQUIPO
+Como líder de equipo en una gerencia de seguros de personas, tenés un rol clave en la implementación efectiva del ALM:
+
+*   Fomentá la Interdisciplinariedad: Promové la colaboración estrecha entre tu equipo actuarial, el área de inversiones, riesgos y finanzas. El ALM es un "deporte de equipo".
+*   Establecé un Comité ALM: Impulsá la creación de un comité formal de ALM con participación de alto nivel para definir políticas, monitorear el desempeño y tomar decisiones estratégicas.
+*   Definí Escenarios de Estrés: Trabajá con tu equipo para desarrollar y aplicar escenarios de estrés realistas (ej. subas/bajas abruptas de tasas, picos de inflación, cambios en la mortalidad/longevidad) para evaluar la resiliencia del balance.
+*   Monitoreá KPIs de ALM: Implementá un tablero de control con indicadores clave como el "duration gap", el "convexity gap", ratios de cobertura de reservas, sensibilidad del capital a movimientos de tasas, y la evolución de la rentabilidad ajustada al riesgo.
+*   Comunicá a la Dirección: Traducí los complejos análisis ALM en reportes claros y accionables para tu superior directo y el directorio, destacando riesgos, oportunidades y las implicaciones estratégicas de las decisiones.
+*   Integrá Modelos: Asegurá que los modelos actuariales de pasivos sean robustos, validados y se integren fluidamente con los modelos de activos y los generadores de escenarios económicos.
+
+-----------------------------------------------------------------------
+6) ERRORES COMUNES O PUNTOS CIEGOS
+*   Foco Unilateral: Concentrarse excesivamente solo en los activos o solo en los pasivos, sin considerar su interacción dinámica.
+*   Ignorar la Liquidez: Una estrategia de calce de duración puede ser efectiva, pero si no se considera la liquidez, la compañía podría enfrentar problemas para cumplir con pagos inesperados.
+*   Modelos Simplificados: Utilizar modelos de pasivos o activos que no capturan adecuadamente la complejidad de las opciones de los asegurados (ej. rescates, opciones de conversión) o la dinámica de los mercados financieros.
+*   No Considerar Escenarios Extremos: Basar las decisiones solo en escenarios promedio o históricos, sin preparar la compañía para eventos de "cisne negro" o movimientos de mercado no lineales.
+*   Falta de Integración: La ausencia de una comunicación y colaboración efectiva entre las áreas de actuarial, inversiones y riesgos puede llevar a decisiones subóptimas y a la pérdida de una visión integral.
+*   Subestimar la Regulación: No considerar plenamente cómo las normativas de la SSN (ej. límites de inversión, requisitos de capital) impactan y restringen las estrategias ALM.
+
+-----------------------------------------------------------------------
+7) EN UNA LÍNEA
+ALM es la brújula estratégica que alinea activos y pasivos para navegar la volatilidad del mercado y asegurar la solvencia y rentabilidad a largo plazo de tu aseguradora.
+
+-----------------------------------------------------------------------
+FUENTES DE REFERENCIA
+- Ley 20.091 - Régimen de Entidades de Seguros y su Control.
+- Resolución SSN 35.615/2010 y sus modificatorias (ej. Resolución SSN 40/2024, Resolución SSN 348/2024) - Régimen de Inversiones de las Entidades Aseguradoras.
+- Resolución SSN 40.835/2017 - Sistema de Gestión Integral de Riesgos (SGIR).
+- International Actuarial Association (IAA) Risk Book - Asset Liability Management Techniques and Practices for Insurance Companies.
+- Milliman. "What is duration and what can it tell us about actuarial liabilities?".
+- Society of Actuaries (SOA) publications sobre Asset-Liability Management.
