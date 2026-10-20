@@ -1,0 +1,64 @@
+EL RÉGIMEN DE ATENCIÓN Y GESTIÓN DE RECLAMOS EN ASEGURADORAS ARGENTINAS
+
+Fecha: 2026-10-20 | Área: Regulación argentina | Lectura estimada: 12 minutos
+
+-----------------------------------------------------------------------
+1) CONCEPTO
+La Superintendencia de Seguros de la Nación (SSN) ha establecido un marco regulatorio robusto para la atención y gestión de reclamos de asegurados y terceros, buscando garantizar la protección de los consumidores de seguros. Este régimen obliga a las entidades aseguradoras a implementar un sistema interno eficaz y a designar un "Responsable de Atención y Gestión de Reclamos". La finalidad es doble: por un lado, asegurar que los asegurados tengan un canal accesible y transparente para presentar sus quejas y obtener una respuesta oportuna; por el otro, permitir que la SSN supervise el cumplimiento de estas obligaciones y actúe como instancia de apelación o mediación cuando el proceso interno no satisface al reclamante. Este sistema no solo es una obligación legal, sino una herramienta clave para la mejora continua de los productos y servicios.
+
+-----------------------------------------------------------------------
+2) FÓRMULA / COMPONENTES / MECÁNICA
+El sistema de atención y gestión de reclamos se articula principalmente a través de la Resolución SSN 40.223/2016, que modificó el Reglamento General de la Actividad Aseguradora (RGAA), y se complementa con la Resolución SSN 38.052/2013 para los reclamos ante la propia SSN.
+
+Los componentes clave son:
+a) Sistema Interno de Reclamos: Cada aseguradora debe contar con un procedimiento claro, accesible y gratuito para la recepción, registro, tramitación y resolución de reclamos. Este sistema debe garantizar la confidencialidad de los datos del reclamante y la imparcialidad en el análisis.
+b) Responsable de Atención y Gestión de Reclamos: La Resolución SSN 40.223/2016 exige la designación de un funcionario con este rol. Sus características son:
+- Independencia: Debe actuar con autonomía respecto de las áreas operativas que originaron el reclamo.
+- Acceso a la información: Debe tener acceso irrestricto a toda la información y documentación relevante para el análisis del reclamo.
+- Facultades: Poseer la autoridad para proponer soluciones y, en su caso, exigir la adopción de medidas correctivas.
+- Reporte: Informar periódicamente a la SSN sobre la gestión de los reclamos recibidos.
+c) Plazos: La aseguradora debe responder al reclamo dentro de los diez (10) días hábiles de su presentación, plazo que puede prorrogarse por otros diez (10) días hábiles adicionales, previa comunicación al reclamante.
+d) Comunicación al Reclamante: La respuesta debe ser clara, precisa y contener los fundamentos de la decisión, informando además la posibilidad de recurrir a la SSN en caso de disconformidad.
+e) Registro: Se debe llevar un registro detallado de todos los reclamos, incluyendo fecha de recepción, motivo, área involucrada, fecha de respuesta y resultado.
+
+La mecánica es secuencial: el asegurado presenta el reclamo ante la aseguradora; si la respuesta no es satisfactoria o no se recibe en plazo, puede escalar el reclamo a la SSN, que actuará conforme a la Resolución SSN 38.052/2013.
+
+-----------------------------------------------------------------------
+3) APLICABILIDAD POR RAMO / CONTEXTO
+Este régimen es de aplicación transversal a todos los ramos de seguros, incluyendo Vida, Retiro, Accidentes Personales y Salud. Sin embargo, su impacto puede sentirse con mayor intensidad en los seguros de personas debido a la naturaleza de los eventos cubiertos y la sensibilidad asociada.
+En Vida y Retiro, los reclamos pueden versar sobre la interpretación de cláusulas de cobertura, liquidación de beneficios por fallecimiento o rescate, cálculo de rentas, o la aplicación de la reticencia. En Accidentes Personales y Salud, los reclamos suelen estar relacionados con la cobertura de prestaciones médicas, reintegros, períodos de carencia, preexistencias o la valoración de incapacidades.
+La correcta gestión de estos reclamos es crucial para la reputación de la compañía y la confianza del público, especialmente en productos de largo plazo o que involucran momentos de vulnerabilidad para el asegurado o sus beneficiarios. Un proceso transparente y eficiente minimiza la insatisfacción y reduce la escalada de casos a la SSN, lo que puede derivar en sanciones o costos reputacionales.
+
+-----------------------------------------------------------------------
+4) EJEMPLO NUMÉRICO O CASO CONCRETO
+Imaginemos un reclamo en un seguro de Vida Colectivo. Un beneficiario presenta un reclamo por la negativa de pago de la indemnización por fallecimiento, alegando que el asegurado no informó una preexistencia. El beneficiario considera que la aseguradora no probó la reticencia dolosa.
+
+1.  Recepción: El 5 de octubre de 2026, el área de Siniestros de Vida recibe el reclamo formal del beneficiario. Se registra en el sistema interno de la aseguradora.
+2.  Análisis interno: El Responsable de Atención y Gestión de Reclamos toma conocimiento del caso. Solicita al área de Siniestros y Suscripción toda la documentación: solicitud de seguro, historia clínica del asegurado, dictamen médico, carta de rechazo.
+3.  Plazo de respuesta: La aseguradora tiene hasta el 19 de octubre de 2026 (10 días hábiles) para responder. Si necesita más tiempo para investigar, puede prorrogar por 10 días hábiles más, comunicándolo al beneficiario antes del 19 de octubre.
+4.  Resolución interna: Tras revisar la evidencia, el Responsable concluye que, si bien existía una preexistencia, la aseguradora no pudo demostrar que el asegurado conocía su relevancia al momento de la declaración, o que la omisión fue dolosa. Propone al área de Siniestros reconsiderar la decisión y proceder al pago.
+5.  Comunicación: El 18 de octubre de 2026, la aseguradora comunica al beneficiario la aceptación del reclamo y el inicio del proceso de pago de la indemnización, evitando así la escalada a la SSN. El caso se cierra con éxito internamente.
+
+-----------------------------------------------------------------------
+5) APLICACIÓN PRÁCTICA PARA UN LÍDER DE EQUIPO
+Como líder de equipo en una gerencia de seguros de personas, tu rol es fundamental para la correcta implementación y cumplimiento de este régimen.
+1.  Capacitación Continua: Asegurá que tu equipo conozca a fondo el procedimiento interno de reclamos, los plazos y las facultades del Responsable de Atención y Gestión de Reclamos. La primera línea de atención debe saber cómo derivar y qué información es crítica.
+2.  Monitoreo de KPIs: Establecé indicadores clave de rendimiento (KPIs) para la gestión de reclamos: tiempo promedio de respuesta, porcentaje de reclamos resueltos en primera instancia, tasa de escalada a la SSN, y motivos recurrentes de reclamo. Analizá estos datos para identificar cuellos de botella o fallas sistémicas.
+3.  Colaboración con el Responsable: Mantené una comunicación fluida y proactiva con el Responsable de Atención y Gestión de Reclamos. Ofrecé el soporte de tu equipo para la provisión de información y análisis, pero respetá su independencia.
+4.  Feedback y Mejora Continua: Utilizá los reclamos como una valiosa fuente de información para mejorar productos, procesos de suscripción, comunicación con asegurados y la capacitación de tu equipo. Si un tipo de reclamo se repite, es una señal de que hay un problema subyacente que tu equipo puede ayudar a resolver.
+5.  Cultura de Servicio: Fomentá una cultura donde los reclamos se vean como una oportunidad para demostrar compromiso con el asegurado y no como una carga. La empatía y la eficiencia en la gestión de un reclamo pueden transformar una experiencia negativa en una positiva.
+
+-----------------------------------------------------------------------
+6) ERRORES COMUNES O PUNTOS CIEGOS
+Uno de los errores más frecuentes es subestimar la importancia del rol del Responsable de Atención y Gestión de Reclamos, no dotándolo de la independencia o los recursos necesarios para cumplir su función. Otro punto ciego es no ver los reclamos como una fuente de inteligencia de negocio; en lugar de analizarlos para identificar patrones y causas raíz, se los gestiona de forma reactiva, perdiendo la oportunidad de prevenir futuros problemas. El incumplimiento de los plazos establecidos por la SSN es también un error grave, que puede derivar en sanciones y afectar la reputación de la compañía. Finalmente, la falta de una comunicación clara y empática con el reclamante, incluso cuando la decisión es desfavorable, puede generar frustración y la escalada innecesaria del caso a la SSN.
+
+-----------------------------------------------------------------------
+7) EN UNA LÍNEA
+La gestión eficaz de reclamos, liderada por un Responsable independiente, es un pilar regulatorio y estratégico que protege al asegurado y potencia la mejora continua de la aseguradora.
+
+-----------------------------------------------------------------------
+FUENTES DE REFERENCIA
+- Resolución SSN 40.223/2016, Superintendencia de Seguros de la Nación.
+- Resolución SSN 38.052/2013, Superintendencia de Seguros de la Nación.
+- Ley 20.091, Régimen Legal de las Entidades de Seguros y su Control.
+- Resolución SSN 38.708/2014, Reglamento General de la Actividad Aseguradora.
