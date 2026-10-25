@@ -1,0 +1,69 @@
+EL LIDERAZGO REFLEXIVO SEGÚN SCHÖN EN SEGUROS DE PERSONAS: DE LA ACCIÓN A LA COMPRENSIÓN PROFUNDA
+
+Fecha: 2026-10-25 | Área: Liderazgo con enfoque reflexivo | Lectura estimada: 12 minutos
+
+-----------------------------------------------------------------------
+1) CONCEPTO
+El liderazgo reflexivo, anclado en el modelo de Donald Schön del "profesional reflexivo", trasciende la mera experiencia para transformarla en aprendizaje estructurado y mejora continua. Para un líder de equipo en una gerencia de seguros de personas y retiro, implica la capacidad de analizar críticamente las propias acciones y decisiones, tanto en el fragor del momento como a posteriori, con el fin de ajustar estrategias, refinar juicios y potenciar el desarrollo propio y del equipo. Este enfoque reconoce que el entorno asegurador es dinámico y a menudo incierto, requiriendo una adaptabilidad constante que solo la reflexión consciente puede proporcionar. No se trata solo de hacer, sino de entender el porqué y el cómo de lo que se hace, y cómo mejorarlo.
+
+-----------------------------------------------------------------------
+2) FÓRMULA / COMPONENTES / MECÁNICA
+El modelo de Schön se descompone en dos componentes interrelacionados que forman un ciclo de aprendizaje continuo:
+
+a) Reflexión-en-acción (Reflection-in-action): Se refiere a la capacidad del líder de pensar y ajustar su accionar mientras está inmerso en la situación. Es el "saber cómo" que se manifiesta en la práctica, donde se detectan anomalías o sorpresas en tiempo real y se reconfigura la comprensión de la situación y la estrategia de respuesta. Es una forma de experimentación en vivo, donde el líder monitorea los resultados de sus intervenciones y las modifica sobre la marcha. Este proceso es a menudo tácito y se basa en la experiencia acumulada y la intuición desarrollada.
+
+b) Reflexión-sobre-la-acción (Reflection-on-action): Ocurre después de que la acción ha tenido lugar. Es un análisis retrospectivo donde el líder revisa la experiencia, evalúa los resultados, identifica los factores que contribuyeron al éxito o al fracaso, y extrae lecciones. Permite la conceptualización de la experiencia, la formulación de principios o teorías de acción y la planificación de futuras intervenciones. Este componente es más deliberado y estructurado, y a menudo implica la documentación y el diálogo.
+
+La mecánica es cíclica: la reflexión-en-acción informa y mejora la acción inmediata, mientras que la reflexión-sobre-la-acción consolida el aprendizaje, refina el conocimiento tácito y explícito, y prepara al líder para futuras situaciones, alimentando así una mejor reflexión-en-acción en el siguiente ciclo.
+
+-----------------------------------------------------------------------
+3) APLICABILIDAD POR RAMO / CONTEXTO
+La aplicación del liderazgo reflexivo es transversal en una gerencia de seguros de personas y retiro:
+
+- Suscripción: Un líder de suscripción puede ejercer la reflexión-en-acción al evaluar un riesgo atípico, ajustando los requisitos de información o las condiciones de cobertura en tiempo real frente a nuevas revelaciones. La reflexión-sobre-la-acción se da al revisar el desempeño de un segmento de cartera, analizando las decisiones de suscripción pasadas para afinar el apetito de riesgo o las políticas de emisión.
+- Siniestros de Vida, AP y Salud: Un gerente de siniestros aplica la reflexión-en-acción al gestionar un reclamo complejo con múltiples partes interesadas, adaptando la estrategia de comunicación o negociación en función de las reacciones. La reflexión-sobre-la-acción implica analizar el proceso de resolución de un grupo de siniestros para identificar cuellos de botella, mejorar la eficiencia o la satisfacción del asegurado.
+- Equipos Técnicos y Actuariales: Un líder técnico puede reflexionar-en-acción al depurar un modelo actuarial, ajustando supuestos o parámetros al observar resultados inesperados durante la ejecución. La reflexión-sobre-la-acción se manifiesta al revisar la precisión de las proyecciones de mortalidad o siniestralidad de un producto, aprendiendo de las desviaciones para mejorar futuros modelos o tarificaciones.
+- Staff y Gestión de Talento: Un gerente aplica la reflexión-en-acción al mediar un conflicto de equipo, modificando su intervención según la dinámica grupal. La reflexión-sobre-la-acción se da al evaluar la efectividad de un programa de capacitación, ajustando el contenido o la metodología para futuras instancias.
+
+-----------------------------------------------------------------------
+4) EJEMPLO NUMÉRICO O CASO CONCRETO
+Consideremos a Ana, gerente del área de Siniestros de Salud de una aseguradora. Su equipo gestiona un volumen creciente de autorizaciones y reembolsos.
+
+Caso: Un nuevo prestador médico de alta complejidad se incorpora a la red, y el volumen de autorizaciones para procedimientos específicos se dispara, generando demoras.
+
+Reflexión-en-acción: Ana observa las demoras y la frustración de su equipo. En lugar de simplemente exigir mayor velocidad, reflexiona sobre la situación. Se da cuenta de que el protocolo existente para este tipo de procedimientos es demasiado genérico y no contempla la especificidad del nuevo prestador. Decide, en el momento, autorizar a dos miembros de su equipo a aplicar un criterio de "vía rápida" para ciertos códigos de prestación con este nuevo prestador, mientras investiga una solución permanente. Esta decisión improvisada busca aliviar la presión inmediata basándose en su conocimiento del equipo y del prestador.
+
+Reflexión-sobre-la-acción: Una vez que la situación se estabiliza, Ana convoca a su equipo. Analizan los casos gestionados bajo la "vía rápida". Descubren que el 80% de esos procedimientos eran de baja complejidad administrativa, pero requerían una validación técnica específica que demoraba el proceso. Ana y su equipo diseñan un nuevo protocolo de autorización diferenciado para este prestador, que incluye un checklist simplificado para casos de baja complejidad y un circuito especializado para los de alta. Además, identifican la necesidad de capacitar al equipo en la lectura de informes médicos específicos de este nuevo prestador. Este proceso de análisis post-evento les permite formalizar un aprendizaje y optimizar el flujo de trabajo.
+
+-----------------------------------------------------------------------
+5) APLICACIÓN PRÁCTICA PARA UN LÍDER DE EQUIPO
+Para vos, como líder, integrar el liderazgo reflexivo implica:
+
+- Crear Espacios de Reflexión: Implementá "post-mortems" o reuniones de "lecciones aprendidas" después de proyectos clave o situaciones desafiantes. Dedicá tiempo explícito en tu agenda para la reflexión personal sobre tus decisiones y el desempeño de tu equipo.
+- Fomentar la Autoconciencia: Promové que tu equipo y vos mismos cuestionen los supuestos subyacentes a las decisiones. Preguntate "¿Por qué hice esto así?" o "¿Qué otra alternativa existía?".
+- Desarrollar la Observación Activa: Entrenate para detectar señales sutiles durante las interacciones o la ejecución de tareas que puedan indicar la necesidad de un ajuste inmediato (reflexión-en-acción).
+- Documentar Aprendizajes: Mantené un registro de las decisiones importantes, los desafíos enfrentados y las soluciones implementadas. Esto facilita la reflexión-sobre-la-acción y la construcción de una base de conocimiento para el equipo.
+- Promover una Cultura de Experimentación Segura: Incentivá a tu equipo a probar nuevos enfoques y a ver los errores como oportunidades de aprendizaje, no como fallos.
+- Buscar Feedback Estructurado: Solicitá y ofrecé retroalimentación específica y constructiva que impulse la reflexión sobre el desempeño y las acciones.
+- KPIs Relevantes: Podés monitorear la reducción de errores recurrentes en procesos críticos, el tiempo de adaptación del equipo a nuevos desafíos, o la calidad de las propuestas de mejora generadas internamente.
+
+-----------------------------------------------------------------------
+6) ERRORES COMUNES O PUNTOS CIEGOS
+- Confundir reflexión con rumiación: Quedarse atascado en el análisis sin llegar a conclusiones o acciones concretas. La reflexión debe ser productiva.
+- Falta de tiempo dedicado: No asignar espacios explícitos para la reflexión, asumiendo que ocurrirá de forma espontánea. Sin estructura, es difícil sostenerla.
+- Sesgo de confirmación: Buscar solo la información que valida las decisiones tomadas, ignorando datos que las contradicen.
+- Miedo a la vulnerabilidad: Evitar la reflexión profunda por temor a exponer errores o limitaciones propias o del equipo.
+- No documentar el aprendizaje: Si las lecciones aprendidas no se registran, se pierden y el ciclo de mejora se interrumpe.
+- Centrarse solo en un tipo de reflexión: Descuidar la agilidad de la reflexión-en-acción por un exceso de análisis posterior, o viceversa, no consolidar el aprendizaje de la acción.
+- Ausencia de un marco: Intentar reflexionar sin un método o preguntas guía claras, lo que puede llevar a divagaciones improductivas.
+
+-----------------------------------------------------------------------
+7) EN UNA LÍNEA
+El liderazgo reflexivo transforma la experiencia en conocimiento aplicado, permitiendo a los líderes de seguros adaptarse y evolucionar continuamente a través de la acción consciente y el análisis crítico.
+
+-----------------------------------------------------------------------
+FUENTES DE REFERENCIA
+- Schön, Donald A. (1983). The Reflective Practitioner: How Professionals Think In Action. Basic Books.
+- Argyris, Chris; Schön, Donald A. (1974). Theory in Practice: Increasing Professional Effectiveness. Jossey-Bass.
+- Ley N° 17.418 de Seguros.
+- Resolución SSN 38.708/2014 - Régimen de Gobierno Corporativo de las Entidades Aseguradoras. (Aunque no menciona explícitamente la reflexión, subraya la importancia de la gestión de riesgos y la toma de decisiones informada, que se beneficia de este enfoque).
