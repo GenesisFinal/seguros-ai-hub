@@ -1,0 +1,77 @@
+RÉGIMEN DE AGENTES INSTITORIOS EN SEGUROS DE PERSONAS: MARCO REGULATORIO Y GESTIÓN DE LA DISTRIBUCIÓN
+
+Fecha: 2026-10-27 | Área: Regulación argentina | Lectura estimada: 12 minutos
+
+-----------------------------------------------------------------------
+1) CONCEPTO
+El Agente Institorio es una figura clave en la distribución de seguros en Argentina, regulada principalmente por la Resolución SSN N° 38.052/2013 y sus modificatorias. A diferencia del Productor Asesor de Seguros (PAS), que es un intermediario que asesora al asegurado y promueve la celebración de contratos, el Agente Institorio actúa en nombre y representación de una o varias aseguradoras, con facultades para celebrar contratos de seguro, pactar modificaciones o prórrogas, y recibir notificaciones, en virtud de un mandato otorgado por la compañía. Esta figura permite que entidades no aseguradoras, como bancos, concesionarias o grandes cadenas de comercio, ofrezcan productos de seguros a sus clientes, integrando la oferta aseguradora a su actividad principal. La relación entre la aseguradora y el Agente Institorio se rige por las reglas del mandato, tal como lo prevé el Artículo 54 de la Ley N° 17.418 de Contrato de Seguros.
+
+-----------------------------------------------------------------------
+2) FÓRMULA / COMPONENTES / MECÁNICA
+La mecánica operativa del régimen de Agentes Institorios se articula en torno a la Resolución SSN N° 38.052/2013, que estableció el Registro de Agentes Institorios (RAI) y una serie de requisitos y obligaciones.
+Para operar, el Agente Institorio debe ser una persona jurídica con al menos dos años de trayectoria en su actividad principal, y debe obtener autorización e inscripción en el RAI por parte de la SSN. La aseguradora, por su parte, debe otorgar un mandato por escritura pública que detalle las facultades del agente, los ramos o planes autorizados y la vigencia. Este mandato debe incluir, como mínimo, la facultad para celebrar contratos de seguros, pactar modificaciones o prórrogas, y recibir notificaciones. También puede autorizarse la cobranza de premios.
+
+Componentes clave del marco regulatorio:
+-   Registro en la SSN (RAI): Obligatorio para todas las personas jurídicas que deseen operar como Agentes Institorios.
+-   Mandato Institorio: Documento legal (escritura pública) que define el alcance de la representación, los productos a comercializar y la forma de retribución.
+-   Obligaciones de información y exhibición: Los Agentes Institorios deben llevar registros diarios de operaciones y siniestros, y exhibir en sus puntos de venta un afiche con información clara sobre sus facultades, la identificación de los responsables de seguros y atención al cliente, y los datos de la SSN. Recientemente, la Resolución Sintetizada 616/2025 ha modernizado este afiche, permitiendo el uso de códigos QR para acceder a la información completa de planes y aseguradoras.
+-   Prohibición de condicionamiento: No pueden condicionar la venta de un bien o servicio a la contratación del seguro que ofrecen, salvo cuando el seguro sea exigido para dar cobertura al interés asegurable del propio Agente Institorio en el marco de una financiación (ej. seguros vinculados a créditos). En estos casos, deben ofrecer al menos tres aseguradoras no vinculadas.
+-   Retribución: Las comisiones o retribuciones a los Agentes Institorios deben contabilizarse bajo la cuenta específica "Retribuciones Seguros Directos Agentes Institorios" (PCU 4.01.06.06.01.02.01.00).
+
+-----------------------------------------------------------------------
+3) APLICABILIDAD POR RAMO / CONTEXTO
+El régimen de Agentes Institorios tiene una amplia aplicabilidad en seguros de personas y retiro, siendo un canal fundamental para la masificación de ciertos productos.
+-   Seguros de Vida: Es común que bancos o entidades financieras actúen como Agentes Institorios para la comercialización de seguros de vida con ahorro, vida colectivo para deudores de créditos o seguros de vida obligatorios asociados a productos financieros.
+-   Seguros de Retiro: Las entidades bancarias son Agentes Institorios naturales para la oferta de planes de retiro, dada su relación con el ahorro y la inversión de los clientes.
+-   Accidentes Personales (AP): Grandes cadenas de retail o empresas de servicios suelen ofrecer seguros de AP vinculados a sus productos o membresías, actuando como Agentes Institorios. Por ejemplo, un seguro de AP para clientes de una tarjeta de crédito o para usuarios de un servicio de transporte.
+-   Salud: Si bien menos frecuente para seguros de salud de alta complejidad, puede aplicarse a coberturas complementarias o de asistencia médica de menor escala, ofrecidas por entidades con una base de clientes relevante.
+En todos estos casos, la figura del Agente Institorio permite a la aseguradora expandir su red de distribución y llegar a segmentos de mercado a los que no accedería directamente o a través de PAS. Ejemplos concretos incluyen bancos como Banco Ciudad que actúan como Agentes Institorios para varias aseguradoras, ofreciendo una gama de productos.
+
+-----------------------------------------------------------------------
+4) EJEMPLO NUMÉRICO O CASO CONCRETO
+Consideremos una cadena de electrodomésticos (persona jurídica con más de dos años de trayectoria) que desea actuar como Agente Institorio para una aseguradora de personas. La cadena, que ya está inscripta en el RAI (Registro de Agentes Institorios), celebra un mandato con la aseguradora "Vida Segura S.A.".
+
+El mandato, otorgado por escritura pública, establece que la cadena de electrodomésticos está facultada para:
+1.  Celebrar contratos de seguros de Vida Colectivo para deudores de créditos de consumo.
+2.  Celebrar contratos de seguros de Accidentes Personales para clientes que adquieran productos específicos (ej. garantía extendida).
+3.  Recibir notificaciones de siniestros y consultas de los asegurados.
+4.  No está facultada para cobrar premios, los cuales son debitados directamente de la tarjeta de crédito del cliente o de su cuenta bancaria.
+
+La cadena ofrece un televisor en 12 cuotas. Al momento de la compra, el vendedor (dependiente capacitado y responsable de atención al cliente asegurado) ofrece al cliente un seguro de Vida Colectivo para deudores de "Vida Segura S.A." que cubre el saldo de la deuda en caso de fallecimiento o invalidez total y permanente. El cliente acepta la cobertura.
+
+En este escenario, el Agente Institorio (cadena de electrodomésticos):
+-   Actúa en nombre de "Vida Segura S.A." para celebrar el contrato de seguro.
+-   Debe informar al cliente las condiciones del seguro, la aseguradora y sus facultades.
+-   Debe registrar la operación en su sistema interno y reportarla a la aseguradora, quien a su vez informará a la SSN.
+-   Si el cliente denuncia un siniestro (ej. fallecimiento), la cadena recibe la notificación y la traslada a "Vida Segura S.A." para su gestión.
+
+La retribución que "Vida Segura S.A." paga a la cadena por cada póliza emitida se contabiliza como "Retribuciones Seguros Directos Agentes Institorios".
+
+-----------------------------------------------------------------------
+5) APLICACIÓN PRÁCTICA PARA UN LÍDER DE EQUIPO
+Como líder de equipo en una gerencia de Seguros de Personas y Retiro, la gestión del canal de Agentes Institorios requiere una atención estratégica y operativa:
+-   Monitoreo de la performance y cumplimiento: Establecé KPIs claros para la producción, siniestralidad y, fundamentalmente, el cumplimiento normativo por parte de los Agentes Institorios. Esto incluye la correcta exhibición de la información, la capacitación de su personal y el manejo adecuado de las denuncias.
+-   Coordinación con áreas de Legales y Compliance: Asegurá una comunicación fluida para validar los mandatos, revisar los procesos de venta y atención al cliente, y garantizar que los Agentes Institorios estén al día con las últimas resoluciones de la SSN, como la Resolución Sintetizada 616/2025 sobre el afiche obligatorio.
+-   Diseño de productos y capacitación: Trabajá con tu equipo técnico para diseñar productos de seguros de personas que se adapten a la lógica de negocio del Agente Institorio, simplificando la contratación y la comunicación. Desarrollá programas de capacitación específicos para el personal de los Agentes Institorios, enfocados en las características del producto, el proceso de venta y la atención al asegurado.
+-   Gestión de la relación comercial: Mantené una relación cercana con los Agentes Institorios para entender sus necesidades, identificar oportunidades de mejora y resolver cualquier conflicto. Asegurate de que la retribución pactada sea transparente y esté correctamente contabilizada.
+-   Análisis de riesgo reputacional: Evaluá constantemente el riesgo reputacional asociado a la operación a través de Agentes Institorios, especialmente en lo que respecta a prácticas de venta y protección al consumidor. La SSN busca equiparar la protección del asegurado con la de otros canales.
+
+-----------------------------------------------------------------------
+6) ERRORES COMUNES O PUNTOS CIEGOS
+-   Falta de control sobre el mandato: No actualizar o revisar periódicamente los mandatos institorios puede llevar a que los agentes excedan sus facultades o comercialicen productos no autorizados.
+-   Incumplimiento de requisitos de información: La omisión o la exhibición incorrecta del afiche obligatorio o de la información requerida por la SSN puede generar multas y sanciones para la aseguradora. La Resolución Sintetizada 616/2025 es un ejemplo reciente de actualización en este punto.
+-   Deficiencias en la capacitación del personal del agente: Un personal no capacitado puede brindar información errónea, generar expectativas falsas en los asegurados o no gestionar adecuadamente las consultas y siniestros, impactando negativamente en la imagen de la aseguradora.
+-   Condicionamiento de la venta: No respetar la prohibición de condicionar la venta de un bien o servicio a la contratación del seguro, o no ofrecer al menos tres opciones de aseguradoras no vinculadas cuando corresponda, es una infracción grave.
+-   Confusión de roles con PAS: Asumir que un Agente Institorio tiene las mismas obligaciones de asesoramiento que un PAS puede llevar a descuidos en la información brindada al cliente, ya que el Agente Institorio representa a la aseguradora, mientras el PAS es un intermediario que asesora al asegurado.
+
+-----------------------------------------------------------------------
+7) EN UNA LÍNEA
+El régimen de Agentes Institorios es un canal de distribución estratégico que exige a las aseguradoras un control riguroso del mandato, la capacitación y el cumplimiento normativo para una gestión de riesgos y reputación efectiva.
+
+-----------------------------------------------------------------------
+FUENTES DE REFERENCIA
+-   Ley N° 17.418 de Contrato de Seguros, Artículo 54.
+-   Resolución SSN N° 38.052/2013, de la Superintendencia de Seguros de la Nación.
+-   Resolución Sintetizada SSN N° 616/2025, de la Superintendencia de Seguros de la Nación.
+-   Ley N° 20.091 de Entidades de Seguros y su Control.
+-   Ley N° 22.400 de Régimen de los Productores Asesores de Seguros.
