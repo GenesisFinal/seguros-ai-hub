@@ -40,8 +40,8 @@ async function loadKnowledgeBase() {
 
 function updateAllDocumentCounters() {
   if (!knowledgeBase) return;
-  const totalDocs = knowledgeBase.total_docs || (knowledgeBase.documents ? knowledgeBase.documents.length : 94);
-  const totalChunks = knowledgeBase.total_chunks || (knowledgeBase.chunks ? knowledgeBase.chunks.length : 651);
+  const totalDocs = knowledgeBase.total_docs || (knowledgeBase.documents ? knowledgeBase.documents.length : 131);
+  const totalChunks = knowledgeBase.total_chunks || (knowledgeBase.chunks ? knowledgeBase.chunks.length : 941);
 
   const statDocs = document.getElementById('stat-docs');
   if (statDocs) statDocs.innerText = totalDocs;
@@ -650,7 +650,7 @@ async function generateExecutiveBriefing() {
   const container = document.getElementById('briefing-content');
   if (!container) return;
   
-  const total = knowledgeBase.documents ? knowledgeBase.documents.length : 94;
+  const total = knowledgeBase.documents ? knowledgeBase.documents.length : 131;
 
   container.innerHTML = `
     <div class="flex flex-col items-center justify-center space-y-3 py-16 text-center">
