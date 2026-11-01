@@ -33,16 +33,13 @@ jobs:
         run: |
           python generate_daily_article.py
 
-      - name: Actualizar Base de Conocimiento RAG
+      - name: Actualizar Base de Conocimiento RAG (knowledge_base.json)
         run: |
-          python -c "
-          from ingestion import sync_repository
-          sync_repository()
-          " || python cloud_ingestion.py || true
+          python cloud_ingestion.py
 
       - name: Commit y Push a GitHub
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           git add Repo/ knowledge_base.json
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto: Nuevo artículo diario de seguros" && git push)
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto: Nuevo artículo diario de seguros y actualización de base RAG" && git push)
