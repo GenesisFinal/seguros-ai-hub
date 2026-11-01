@@ -71,7 +71,7 @@ def generate_article_content(target_date: str, weekday_num: int, existing_topics
     if not api_key:
         raise ValueError("GEMINI_API_KEY no encontrada en las variables de entorno.")
 
-    recent_topics_sample = "\n".join([f"- {t}" for t in existing_topics[-45:]])
+    recent_topics_sample = "\n".join([f"- {t}" for t in existing_topics])
 
     system_instruction = f"""Sos el redactor principal del proyecto 'Aprendizaje Diario de Seguros'.
 Tu tarea es investigar, validar y redactar el artículo técnico del día.
@@ -79,8 +79,8 @@ Tu tarea es investigar, validar y redactar el artículo técnico del día.
 REGLAS INELUDIBLES:
 1. AUDIENCIA: Líder de equipo, jefe de área o gerente en una Gerencia de Seguros de Personas y Retiro (suscripción, siniestros de Vida, Retiro, Accidentes Personales, Salud, equipo técnico y staff). Tratar en términos genéricos ('tu equipo', 'tu superior directo').
 2. ÁREA TEMÁTICA DE HOY ({dia_nombre}): '{area_tematica}' (Pilar: {pilar}).
-3. NO REPETICIÓN: Debe ser un tema original o con un enfoque técnico completamente distinto al ya tratado.
-   Últimos temas tratados recientemente (NO REPETIR ESTOS TEMAS):
+3. NO REPETICIÓN ESTRICTA: Debe ser un tema completamente nuevo y original que NO haya sido tratado antes.
+   Temas históricos ya publicados en el repositorio (PROHIBIDO REPETIR CUALQUIERA DE ESTOS TEMAS O MARCOS TEÓRICOS):
 {recent_topics_sample}
 4. INVESTIGACIÓN Y VERIFICACIÓN WEB: Verificá fechas, números de resoluciones de la SSN, leyes (17.418, 20.091, 22.400, etc.), fórmulas actuariales o cifras. NUNCA inventes números de resolución ni datos falsos.
 5. ESTILO Y LENGUAJE: Español rioplatense (voseo profesional: 'tenés', 'hacés', 'considerá', 'tu equipo'). Tono objetivo, riguroso y técnico.
@@ -89,7 +89,7 @@ REGLAS INELUDIBLES:
 8. FORMATO: Texto plano limpio (sin markdown, sin negritas '**', sin encabezados '#', sin HTML).
 
 ESTRUCTURA OBLIGATORIA DEL TEXTO:
-Línea 1: TÍTULO DEL TEMA EN MAYÚSCULAS
+Línea 1: TÍTULO DEL TEMA EN MAYÚSCULAS (sin prefijos como 'Título:' ni 'Pilar:')
 Línea 2: (Línea en blanco)
 Línea 3: Fecha: {target_date} | Área: {area_tematica} | Lectura estimada: 12 minutos
 Línea 4: (Línea en blanco)
@@ -151,11 +151,11 @@ FUENTES DE REFERENCIA
     lines = [l.strip() for l in clean_content.splitlines() if l.strip()]
     first_line = lines[0] if lines else "Artículo de Seguros"
 
-    # Si la primera línea empieza con Fecha: o separadores, el modelo olvidó el título en la línea 1
-    if first_line.startswith('Fecha:') or first_line.startswith('---') or first_line.startswith('1)'):
+    # Si la primera línea empieza con Fecha:, Pilar:, Área: o separadores, buscar el título real
+    if any(first_line.lower().startswith(p) for p in ['fecha:', '---', '1)', 'pilar:', 'área:', 'area:']):
         candidate_title = None
-        for l in lines[:5]:
-            if not l.startswith('Fecha:') and not l.startswith('---') and not any(l.startswith(f"{i})") for i in range(1, 8)):
+        for l in lines[:6]:
+            if not any(l.lower().startswith(p) for p in ['fecha:', '---', 'pilar:', 'área:', 'area:']) and not any(l.startswith(f"{i})") for i in range(1, 8)):
                 candidate_title = l
                 break
         if not candidate_title:
