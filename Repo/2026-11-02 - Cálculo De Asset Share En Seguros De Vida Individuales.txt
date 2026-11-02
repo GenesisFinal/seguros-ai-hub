@@ -1,0 +1,92 @@
+CÁLCULO DE ASSET SHARE EN SEGUROS DE VIDA INDIVIDUALES
+
+Fecha: 2026-11-02 | Área: Técnico actuarial / seguros de personas | Lectura estimada: 12 minutos
+
+-----------------------------------------------------------------------
+
+1) CONCEPTO
+El Asset Share, o "participación en los activos", representa la acumulación de activos atribuibles a una póliza o cohorte de pólizas de seguros de vida individuales a lo largo del tiempo. Es una métrica interna, no contable, que considera todos los flujos de entrada (primas, rendimientos de inversión) y salida (siniestros, gastos, valores de rescate, reservas). Su propósito principal es evaluar la rentabilidad real de un producto, diseñar valores de rescate equitativos y fundamentar decisiones estratégicas de pricing y gestión de cartera.
+
+-----------------------------------------------------------------------
+
+2) FÓRMULA / COMPONENTES / MECÁNICA
+El cálculo del Asset Share es un proceso recursivo que se realiza período a período, generalmente de forma anual, para una póliza o un grupo homogéneo de pólizas. La fórmula básica para el Asset Share al final del año 't' (AS(t)) es:
+
+AS(t) = [ (AS(t-1) + Prima Neta(t) - Gastos(t) - Siniestros(t) - Valor de Rescate Pagado(t)) * (1 + i) ] / (1 - Tasa de Caducidad(t))
+
+Donde:
+- AS(t-1): Asset Share al final del año anterior (t-1).
+- Prima Neta(t): Las primas cobradas en el año 't', netas de comisiones iniciales e impuestos directos.
+- Gastos(t): Todos los gastos de adquisición, administración y mantenimiento atribuibles a la póliza en el año 't'.
+- Siniestros(t): El costo esperado de los siniestros (fallecimiento, invalidez) para la póliza en el año 't'.
+- Valor de Rescate Pagado(t): El valor de rescate que se paga a las pólizas que caducan por rescate en el año 't'.
+- i: La tasa de rendimiento de la inversión de los activos de la compañía.
+- Tasa de Caducidad(t): La tasa esperada de caducidad (lapse) de las pólizas en el año 't', que incluye las salidas por rescate, no pago de prima o fallecimiento. Este factor ajusta el Asset Share para las pólizas que permanecen en vigor.
+
+El Asset Share se interpreta como el monto de activos que la compañía debería tener acumulado para cada póliza vigente en un momento dado, para cubrir sus obligaciones futuras y generar el margen de ganancia esperado.
+
+-----------------------------------------------------------------------
+
+3) APLICABILIDAD POR RAMO / CONTEXTO
+El Asset Share es una herramienta fundamental y de aplicación crítica en los seguros de Vida Individual, especialmente en productos con componente de ahorro o que generan valores de rescate, como las pólizas de Vida Entera, Dotal, Mixtas o Rentas Vitalicias Diferidas. Permite:
+- Diseño y pricing de productos: Asegurar que el producto sea rentable a lo largo de su vida útil y que las primas sean adecuadas.
+- Determinación de valores de rescate: Establecer valores que sean equitativos para el asegurado y financieramente sostenibles para la aseguradora, evitando el arbitraje. La Ley 17.418, en su Artículo 138, establece la obligación del asegurador de indicar en la póliza el valor de rescate si lo hubiere, y las condiciones para su ejercicio.
+- Análisis de rentabilidad: Monitorear la rentabilidad real de la cartera frente a las proyecciones iniciales.
+- Gestión de riesgos: Evaluar el impacto de cambios en los supuestos (tasas de interés, caducidad, gastos) sobre la rentabilidad del producto.
+En ramos como Vida Colectivo, Accidentes Personales o Salud, donde los productos suelen ser de corto plazo, sin acumulación de valor individual ni valores de rescate, el concepto de Asset Share es menos relevante. La rentabilidad en estos casos se analiza más a través de ratios de siniestralidad y gastos sobre primas.
+
+-----------------------------------------------------------------------
+
+4) EJEMPLO NUMÉRICO O CASO CONCRETO
+Consideremos una póliza de Vida Entera con una prima anual de $1.000, emitida a un asegurado de 35 años.
+- Año 1:
+    - AS(0) = $0
+    - Prima Neta (después de comisiones y gastos de adquisición iniciales): $700
+    - Gastos de Mantenimiento: $50
+    - Costo esperado de Siniestros (mortalidad) para una suma asegurada de $100.000: $100
+    - Valor de Rescate Pagado: $0 (común en el primer año)
+    - Tasa de Inversión (i): 5%
+    - Tasa de Caducidad esperada (lapse): 10%
+    - AS(1) = [ (0 + $700 - $50 - $100 - $0) * (1 + 0.05) ] / (1 - 0.10)
+    - AS(1) = [ $550 * 1.05 ] / 0.90
+    - AS(1) = $577.50 / 0.90 = $641.67
+
+- Año 2 (asumiendo AS(1) = $641.67, Prima Neta = $900, Gastos = $30, Siniestros = $110, Tasa de Caducidad = 5%, Tasa de Inversión = 5%, Valor de Rescate de las pólizas que caducan = $200):
+    - AS(2) = [ (AS(1) + Prima Neta(2) - Gastos(2) - Siniestros(2) - (Valor de Rescate por póliza que caduca * Tasa de Caducidad(2))) * (1 + i) ] / (1 - Tasa de Caducidad(2))
+    - AS(2) = [ ($641.67 + $900 - $30 - $110 - ($200 * 0.05)) * 1.05 ] / (1 - 0.05)
+    - AS(2) = [ ($641.67 + $900 - $30 - $110 - $10) * 1.05 ] / 0.95
+    - AS(2) = [ $1391.67 * 1.05 ] / 0.95
+    - AS(2) = $1461.25 / 0.95 = $1538.16
+
+Este valor de $1.538,16 representa el monto de activos que la compañía debería tener acumulado para esta póliza al final del año 2 para mantener la rentabilidad proyectada y cubrir sus obligaciones.
+
+-----------------------------------------------------------------------
+
+5) APLICACIÓN PRÁCTICA PARA UN LÍDER DE EQUIPO
+Como líder de equipo en una Gerencia de Seguros de Personas, entender el Asset Share te brinda una perspectiva profunda para la toma de decisiones:
+- Evaluación de la rentabilidad: Utilizá los análisis de Asset Share para identificar qué productos o cohortes de pólizas están cumpliendo con las expectativas de rentabilidad y cuáles no. Esto te permite orientar al equipo de producto o pricing para realizar ajustes estratégicos.
+- Gestión de valores de rescate: Al interactuar con tu equipo técnico o legal, podés argumentar sobre la equidad y sostenibilidad de los valores de rescate ofrecidos, asegurando que no erosionen el Asset Share de las pólizas que permanecen vigentes y que la compañía no incurra en pérdidas por rescates tempranos.
+- Monitoreo del riesgo de caducidad: Un Asset Share negativo en los primeros años de una póliza es una señal de alerta. Monitoreá las tasas de caducidad reales frente a las supuestas y considerá estrategias de retención o ajustes en el pricing.
+- Comunicación estratégica: Traducí los resultados del Asset Share a métricas de negocio comprensibles para tu superior directo o la dirección, explicando cómo las decisiones de pricing, gastos o inversión impactan la rentabilidad a largo plazo de la cartera.
+- Desarrollo de capacidades: Fomentá la capacitación de tu equipo en el modelado e interpretación del Asset Share, promoviendo una visión holística de la rentabilidad del producto y la gestión de riesgos.
+
+-----------------------------------------------------------------------
+
+6) ERRORES COMUNES O PUNTOS CIEGOS
+- Asignación imprecisa de gastos: No atribuir de forma rigurosa los gastos de adquisición y mantenimiento a cada póliza puede distorsionar significativamente el Asset Share. Un Costeo Basado en Actividades (ABC) es una metodología recomendable para esto.
+- Supuestos de experiencia irreales: Si las tasas de caducidad, mortalidad o morbilidad reales difieren sustancialmente de las supuestas, el Asset Share proyectado será engañoso. La realización periódica de estudios de experiencia actuarial (A/E) es fundamental.
+- Tasa de inversión optimista: Proyectar rendimientos de inversión excesivamente altos puede hacer que un producto parezca más rentable de lo que realmente es, exponiendo a la compañía a un riesgo de descalce de activos y pasivos (ALM).
+- Ignorar el impacto fiscal y regulatorio: No considerar el impacto de impuestos sobre las inversiones o las primas, ni las regulaciones específicas de la SSN sobre valores de rescate mínimos, puede llevar a un Asset Share incorrecto o a productos no conformes.
+- Falta de granularidad: Calcular el Asset Share a un nivel demasiado agregado (ej., toda la cartera de Vida) puede ocultar problemas de rentabilidad en segmentos específicos de productos o cohortes de pólizas.
+
+-----------------------------------------------------------------------
+
+7) EN UNA LÍNEA
+El Asset Share es la métrica interna que revela la acumulación de valor real por póliza, fundamental para el diseño, pricing y gestión de la rentabilidad de tus productos de seguros de vida individuales.
+
+-----------------------------------------------------------------------
+
+FUENTES DE REFERENCIA
+- Bowers, N. L., Gerber, H. U., Hickman, J. C., Jones, D. A., & Nesbitt, C. J. (1997). Actuarial Mathematics. The Society of Actuaries.
+- Dickson, D. C. (2005). Insurance Risk and Ruin. Cambridge University Press.
+- Ley de Seguros N° 17.418. Artículo 138.
