@@ -1,0 +1,60 @@
+LINEAMIENTOS DE PUBLICIDAD Y CARTELERÍA EN SEGUROS: RESOLUCIONES SSN 360/2024 Y 435/2025
+
+Fecha: 2026-11-03 | Área: Regulación argentina | Lectura estimada: 12 minutos
+
+-----------------------------------------------------------------------
+1) CONCEPTO
+La regulación de la publicidad y cartelería en el mercado asegurador argentino busca garantizar la transparencia, veracidad y claridad de la información que las entidades brindan a los asegurados y al público en general. Este marco normativo, consolidado en el Reglamento General de la Actividad Aseguradora (RGAA) -t.o. Resolución SSN N° 38.708/2014- y sus modificatorias, ha sido actualizado recientemente por la Superintendencia de Seguros de la Nación (SSN) a través de la Resolución SSN 360/2024 y la Resolución SSN 435/2025. El objetivo principal es fortalecer la protección del consumidor, asegurando que la comunicación de los productos y servicios de seguros sea comprensible, no induzca a error y facilite el acceso a los canales de reclamo y a la información contractual esencial. Estas normativas establecen pautas específicas para la difusión de mensajes en todos los medios, desde la cartelería física hasta las plataformas digitales, incluyendo requisitos sobre leyendas obligatorias y la visibilidad del Servicio de Atención al Asegurado (SAU).
+
+-----------------------------------------------------------------------
+2) FÓRMULA / COMPONENTES / MECÁNICA
+Los lineamientos de publicidad y cartelería se estructuran en torno a varios componentes clave:
+a) Claridad y Comprensibilidad: Toda publicidad, promoción o difusión debe ser clara y comprensible para el público.
+b) Leyenda Obligatoria: Es mandatorio incluir la leyenda "Entidad autorizada por la Superintendencia de Seguros de la Nación. Registro Nº. …..".
+c) Información del Servicio de Atención al Asegurado (SAU):
+- En Casa Matriz, Sucursales y Agencias (excepto ARTs): Exhibir un cartel visible y destacado en el ingreso principal con el texto "Servicio de Atención al Asegurado de XXX (nombre de la compañía). La compañía de seguros dispone de un Servicio de Atención al Asegurado que atenderá los reclamos que presenten los tomadores de seguros, asegurados, beneficiarios y/o derechohabientes. Se deben indicar los responsables del servicio, incluyendo el número de inscripción de la Compañía en la SSN, teléfono de contacto y mail o enlace web para la realización del reclamo.
+- En Página Web Institucional y Aplicaciones Móviles (excepto ARTs): La misma información del SAU debe incluirse de forma actualizada, destacada y visible en el pie de página. Adicionalmente, se debe agregar la leyenda: "En caso de reclamo ante la entidad aseguradora no resuelto o desestimado, podrá denunciarlo a través de www.argentina.gob.ar/ssn.".
+d) Mecanismos Electrónicos para Comercialización (Resolución SSN 435/2025): Para las aseguradoras que utilicen medios electrónicos, deben incluir, de manera fácilmente visible en el inicio de su página web y aplicación, la opción de solicitud de baja de póliza, información sobre cómo requerir copia de la póliza u otra documentación contractual, y el procedimiento para efectuar una denuncia de siniestro.
+
+-----------------------------------------------------------------------
+3) APLICABILIDAD POR RAMO / CONTEXTO
+Estos lineamientos tienen un alcance general para las entidades aseguradoras, con algunas particularidades:
+- Exclusión de ARTs: Las Aseguradoras de Riesgos del Trabajo (ART) están exceptuadas de la obligación de exhibir la cartelería del SAU en sus oficinas y la información del SAU en el pie de página de sus sitios web institucionales. Sin embargo, la publicidad general de las ART también debe cumplir con principios de claridad y veracidad, y la SRT tiene su propio "Manual de Marca para pauta publicitaria de ART" (Resolución SRT 19/23) que establece criterios mínimos para la inclusión de logo y datos de contacto.
+- Obligatoriedad de Baja Electrónica: El mecanismo de solicitud de rescisión de contrato a través de medios electrónicos es obligatorio para pólizas contratadas por esa vía y que correspondan a las ramas de Automotores, Motovehículos, Combinado Familiar e Integral, Robo y Riesgos Similares, Otros Riesgos de Daños Patrimoniales y Accidentes Personales. Esto impacta directamente en los seguros de personas (Accidentes Personales) y en algunos productos que pueden ser parte de carteras de seguros de personas (como combinados familiares que incluyan coberturas de vida o AP). Los seguros de Vida y Retiro, aunque no están explícitamente mencionados en esta lista para la baja electrónica obligatoria, deben cumplir con los principios generales de publicidad y la información del SAU.
+
+-----------------------------------------------------------------------
+4) EJEMPLO NUMÉRICO O CASO CONCRETO
+Imaginemos una aseguradora de personas, "Vida Segura S.A.", que comercializa seguros de Vida Individual, Accidentes Personales y Retiro. Para cumplir con las Resoluciones SSN 360/2024 y 435/2025, la compañía debe realizar las siguientes acciones:
+1. Cartelería Física: En la entrada principal de su casa central y de todas sus sucursales, instala un cartel de 60x40 cm, visible desde el exterior, que indica: "Servicio de Atención al Asegurado de Vida Segura S.A. Responsable: Ana Pérez. Suplente: Juan Gómez. Teléfono: 0800-XXX-XXXX. Email: sau@vidassegura.com.ar. Nº de Inscripción SSN: 12345. En caso de reclamo no resuelto, denuncie en www.argentina.gob.ar/ssn.".
+2. Página Web y App: En la portada de su sitio web institucional y en su aplicación móvil, en el pie de página, replica la misma información del SAU de forma destacada. Además, en la sección de "Mi Póliza" o "Gestiones Online", incorpora un botón claramente visible etiquetado como "Solicitar Baja de Póliza" para sus seguros de Accidentes Personales, y enlaces para "Solicitar Copia de Póliza" y "Denunciar Siniestro".
+3. Publicidad General: En todos sus anuncios gráficos y digitales, incluyendo banners, posts en redes sociales y spots de radio, añade la leyenda "Vida Segura S.A. Entidad autorizada por la Superintendencia de Seguros de la Nación. Registro Nº 12345." de manera legible y en un tamaño adecuado.
+
+-----------------------------------------------------------------------
+5) APLICACIÓN PRÁCTICA PARA UN LÍDER DE EQUIPO
+Como líder de equipo en una gerencia de seguros de personas y retiro, tu rol es crucial para asegurar el cumplimiento de estas normativas. Te sugiero:
+- Auditoría Interna Continua: Realizá auditorías periódicas de todos los materiales publicitarios y canales de comunicación (físicos y digitales) para verificar la correcta inclusión de las leyendas y la información del SAU.
+- Capacitación Constante: Capacitá a tu equipo de marketing, ventas y atención al cliente sobre los requisitos específicos de las Resoluciones SSN 360/2024 y 435/2025. Asegurate de que comprendan la importancia de la claridad y la veracidad.
+- Coordinación Inter-áreas: Trabajá de cerca con el área de Legales y Compliance para interpretar correctamente la normativa y con el área de IT para implementar los mecanismos de baja y acceso a la información en plataformas digitales.
+- Monitoreo de Reclamos: Prestá atención a los reclamos relacionados con la falta de información o publicidad engañosa. Estos pueden ser indicadores de incumplimientos y pueden derivar en sanciones de la SSN.
+- Proactividad en la Adaptación: Ante cualquier nueva modificación regulatoria, liderá la adaptación rápida de los procesos y materiales de tu equipo para mantener la conformidad.
+
+-----------------------------------------------------------------------
+6) ERRORES COMUNES O PUNTOS CIEGOS
+Los errores más frecuentes en la aplicación de esta normativa incluyen:
+- Información Desactualizada: No mantener al día los datos de los responsables del SAU o los números de registro de la SSN en todos los canales.
+- Visibilidad Insuficiente: Colocar la información obligatoria en lugares poco visibles o con tamaños de letra diminutos, lo que contraviene el espíritu de la norma.
+- Incumplimiento en Canales Menos Obvios: Olvidar la aplicación de los lineamientos en medios como folletería interna, correos electrónicos masivos, o publicidad en redes sociales, donde la supervisión puede ser menos rigurosa.
+- Ambigüedad en la Redacción: Utilizar un lenguaje técnico excesivo o ambiguo que dificulta la comprensión por parte del asegurado, a pesar de incluir las leyendas requeridas.
+- Falta de Mecanismo de Baja Electrónica: No implementar o no hacer suficientemente visible el proceso de baja de pólizas contratadas digitalmente en los ramos obligatorios, exponiendo a la entidad a sanciones.
+
+-----------------------------------------------------------------------
+7) EN UNA LÍNEA
+La transparencia en la publicidad y el fácil acceso a la información y canales de reclamo son pilares regulatorios esenciales para la protección del asegurado en Argentina.
+
+-----------------------------------------------------------------------
+FUENTES DE REFERENCIA
+- Resolución SSN 360/2024 (publicada el 6 de agosto de 2024)
+- Resolución SSN 435/2025 (publicada el 12 de agosto de 2025)
+- Reglamento General de la Actividad Aseguradora (t.o. Resolución SSN N° 38.708/2014)
+- Ley N° 20.091 - Régimen Legal de las Entidades de Seguros y su Control
+- Resolución SRT 19/23 - Manual de Marca para pauta publicitaria de ART
