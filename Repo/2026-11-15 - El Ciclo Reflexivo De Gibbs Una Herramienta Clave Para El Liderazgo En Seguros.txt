@@ -1,0 +1,73 @@
+EL CICLO REFLEXIVO DE GIBBS: UNA HERRAMIENTA CLAVE PARA EL LIDERAZGO EN SEGUROS
+
+Fecha: 2026-11-15 | Área: Liderazgo con enfoque reflexivo | Lectura estimada: 12 minutos
+
+-----------------------------------------------------------------------
+1) CONCEPTO
+El liderazgo con enfoque reflexivo es una capacidad esencial para cualquier gerente o líder de equipo que busque optimizar su desempeño y el de su equipo en un entorno tan dinámico como el de los seguros. Una herramienta particularmente efectiva para estructurar esta reflexión es el Ciclo Reflexivo de Gibbs. Desarrollado por Graham Gibbs en 1988, este modelo proporciona un marco sistemático de seis etapas para aprender de la experiencia, transformando los eventos vividos en conocimientos aplicables y planes de acción concretos. A diferencia de una simple introspección, el ciclo de Gibbs fomenta un análisis profundo y desglosado de las situaciones, permitiendo a los líderes identificar no solo lo que sucedió, sino también por qué, cómo se sintieron al respecto y qué harán de manera diferente en el futuro. Es una herramienta práctica que empodera a los profesionales para convertir sus experiencias en aprendizajes accionables.
+
+-----------------------------------------------------------------------
+2) FÓRMULA / COMPONENTES / MECÁNICA
+El Ciclo Reflexivo de Gibbs se compone de seis etapas interconectadas que guían al líder a través de un proceso estructurado de análisis de una experiencia. Su naturaleza cíclica lo hace ideal para el aprendizaje continuo y la mejora de situaciones recurrentes.
+
+Las etapas son:
+1.  Descripción: ¿Qué pasó? Se relata el evento de manera objetiva, sin juicios ni interpretaciones. Se establecen los hechos clave: quiénes estuvieron involucrados, dónde, cuándo y qué ocurrió.
+2.  Sentimientos: ¿Qué pensaste y sentiste? Se exploran las emociones y pensamientos experimentados antes, durante y después del evento. Reconocer estas emociones ayuda a identificar sesgos y reacciones personales.
+3.  Evaluación: ¿Qué fue bueno y qué fue malo de la experiencia? Se valoran los aspectos positivos y negativos de la situación, siendo lo más objetivo posible.
+4.  Análisis: ¿Qué sentido podés darle a la situación? Se profundiza en las razones subyacentes de los resultados. ¿Por qué las cosas salieron bien o mal? Aquí se busca comprender las causas raíz y se pueden integrar conocimientos teóricos o de la experiencia.
+5.  Conclusión: ¿Qué más podrías haber hecho? ¿Qué aprendiste? Se sintetizan los aprendizajes y se consideran acciones alternativas que podrían haberse tomado. Se identifican las lecciones clave.
+6.  Plan de Acción: ¿Qué vas a hacer diferente la próxima vez? Se desarrollan metas específicas y concretas para abordar situaciones similares en el futuro, asegurando que la reflexión conduzca a un crecimiento tangible.
+
+-----------------------------------------------------------------------
+3) APLICABILIDAD POR RAMO / CONTEXTO
+Este ciclo es altamente aplicable en las diversas áreas de una Gerencia de Seguros de Personas y Retiro:
+
+-   Suscripción: Un líder puede reflexionar sobre una decisión de underwriting compleja que generó un siniestro inesperado o una objeción del productor. Aplicar Gibbs ayuda a analizar los criterios de riesgo, la comunicación con el equipo y la aplicación de políticas.
+-   Siniestros (Vida, AP, Salud): Ante la resolución de un siniestro particularmente delicado o un reclamo con alta exposición, el líder puede usar el ciclo para evaluar la gestión, la empatía con el asegurado, la eficiencia del proceso y las oportunidades de mejora en la comunicación o la documentación.
+-   Retiro: En la gestión de carteras de rentas vitalicias o productos de retiro, un líder podría reflexionar sobre una estrategia de inversión que no cumplió las expectativas o un cambio regulatorio que impactó los pasivos, analizando las decisiones tomadas y las proyecciones iniciales.
+-   Equipos Técnicos y Staff: Para cualquier interacción de equipo, gestión de proyectos o desarrollo de colaboradores, el ciclo permite al líder reflexionar sobre su estilo de comunicación, la efectividad de una delegación o el impacto de un feedback brindado. Fomenta la autoconciencia y la mejora continua en la gestión de personas.
+
+-----------------------------------------------------------------------
+4) EJEMPLO NUMÉRICO O CASO CONCRETO
+Imaginemos a un líder de equipo de Suscripción de Seguros de Vida que tuvo una reunión tensa con su superior directo y el gerente comercial debido a un aumento en la tasa de rechazos de pólizas de alto valor, lo que impactó las metas de producción.
+
+1.  Descripción: "La semana pasada, en la reunión de revisión de resultados, el Gerente Comercial y mi superior directo expresaron preocupación por el incremento del 15% en los rechazos de pólizas de Vida Individual de más de $50 millones de suma asegurada en el último trimestre. Me pidieron un plan de acción urgente."
+2.  Sentimientos: "Me sentí frustrado y un poco a la defensiva durante la reunión, ya que considero que mi equipo está aplicando correctamente las políticas. También sentí presión por la urgencia del pedido y cierta preocupación por el impacto en la relación con el área comercial."
+3.  Evaluación: "Lo bueno fue que la preocupación se planteó directamente, lo que permite abordar el problema. Lo malo fue que no tenía una explicación clara ni un plan inmediato, lo que me hizo sentir expuesto. La comunicación fue tensa y no se generó un espacio de colaboración."
+4.  Análisis: "El aumento de rechazos se debe a un endurecimiento de las políticas de suscripción para riesgos de alto valor implementado hace dos meses, sumado a una falta de comunicación proactiva con el área comercial sobre estos cambios. Mi equipo aplicó la nueva política, pero no anticipamos el impacto en la producción ni preparamos al equipo comercial. Mi defensiva se debió a la percepción de que se cuestionaba el trabajo técnico, sin considerar el contexto de los cambios normativos internos."
+5.  Conclusión: "Aprendí que la comunicación interáreas es tan crítica como la aplicación técnica de las políticas. Debería haber anticipado el impacto y preparado un informe o una sesión de capacitación para el equipo comercial. También, necesito gestionar mejor mis emociones en reuniones de alta presión para mantener un enfoque constructivo."
+6.  Plan de Acción: "1) Elaborar un informe detallado sobre las causas de los rechazos, incluyendo las nuevas políticas y casos tipo. 2) Coordinar una reunión con el Gerente Comercial para presentar el análisis y proponer un plan de trabajo conjunto para la comunicación y el ajuste de expectativas. 3) Realizar un taller interno con mi equipo para mejorar la comunicación de decisiones técnicas a otras áreas. 4) Practicar técnicas de manejo de estrés y comunicación asertiva antes de reuniones clave."
+
+-----------------------------------------------------------------------
+5) APLICACIÓN PRÁCTICA PARA UN LÍDER DE EQUIPO
+Para integrar el Ciclo de Gibbs en tu rutina de liderazgo, considerá lo siguiente:
+
+-   Reservá tiempo: Asigná bloques de tiempo específicos (diarios, semanales o después de eventos significativos) para la reflexión estructurada. Puede ser al final del día o de la semana.
+-   Usá un diario de reflexión: Escribir tus pensamientos en cada etapa del ciclo ayuda a clarificar el pensamiento, a identificar patrones y a documentar tu crecimiento.
+-   Fomentá la reflexión en tu equipo: Introducí el modelo en reuniones de equipo o sesiones de coaching individual. Pedí a tus colaboradores que lo apliquen para analizar proyectos finalizados, desafíos superados o errores cometidos, promoviendo una cultura de aprendizaje.
+-   Buscá feedback: Complementá tu reflexión personal con la perspectiva de pares, mentores o tu superior directo. El feedback externo puede enriquecer tu análisis y ayudarte a identificar puntos ciegos.
+-   Revisá y refiná: Periódicamente, volvé a tus reflexiones anteriores para ver si los planes de acción se implementaron y si generaron el impacto deseado. Ajustá tu enfoque según los nuevos aprendizajes.
+
+-----------------------------------------------------------------------
+6) ERRORES COMUNES O PUNTOS CIEGOS
+Al aplicar el Ciclo de Gibbs, es común caer en:
+
+-   Reflexión superficial: No profundizar en cada etapa, especialmente en "Sentimientos" y "Análisis", lo que lleva a conclusiones simplistas y planes de acción ineficaces.
+-   Saltarse etapas: Intentar ir directamente de la descripción a la conclusión sin un análisis intermedio, perdiendo la oportunidad de un aprendizaje profundo.
+-   Falta de honestidad: Evitar reconocer errores o emociones incómodas, lo que sesga la reflexión y limita el crecimiento personal.
+-   No convertir la conclusión en acción: Generar aprendizajes valiosos pero no traducirlos en un plan de acción concreto y medible, o no darle seguimiento.
+-   Enfoque excesivo en lo negativo: Concentrarse solo en lo que salió mal, sin reconocer los éxitos o los aspectos positivos de la experiencia, lo que puede ser desmotivador.
+
+-----------------------------------------------------------------------
+7) EN UNA LÍNEA
+El Ciclo Reflexivo de Gibbs es un marco estructurado de seis etapas que permite a los líderes transformar cada experiencia en una oportunidad de aprendizaje y mejora continua.
+
+-----------------------------------------------------------------------
+FUENTES DE REFERENCIA
+- Gibbs, G. (1988). Learning by Doing: A Guide to Teaching and Learning Methods. London: FEU.
+- TSW Training. (2026, November 13). Gibbs Reflective Cycle - A Practical Guide.
+- Mantle. (2025, February 24). Using Gibbs' Reflective Cycle to Strengthen Leadership.
+- Simply Psychology. (2025, March 26). Gibbs Reflective Cycle.
+- Reflection Toolkit. (2024, October 15). Gibbs' Reflective Cycle.
+- Dynamic Training. (2026, October 22). Understanding Gibbs' Reflective Cycle.
+- Primeast. (2024, October 01). An Actionable Guide to Gibbs' Reflective Cycle.
