@@ -1,0 +1,71 @@
+EL RÉGIMEN SANCIONATORIO DE LA SSN A LAS ASEGURADORAS Y PRODUCTORES ASESORES DE SEGUROS
+
+Fecha: 2026-11-17 | Área: Regulación argentina | Lectura estimada: 12 minutos
+
+-----------------------------------------------------------------------
+1) CONCEPTO
+El régimen sancionatorio de la Superintendencia de Seguros de la Nación (SSN) constituye el marco legal y administrativo a través del cual el organismo de control ejerce su facultad punitiva sobre las entidades aseguradoras, reaseguradoras y los auxiliares del seguro (como los Productores Asesores de Seguros) que incumplen con la normativa vigente. Su fundamento principal se encuentra en la Ley N° 20.091 de Entidades de Seguros y su Control, específicamente en su Capítulo XIII, que establece las "Penas" aplicables. Este sistema busca garantizar la solvencia del mercado, la transparencia de las operaciones y la protección de los asegurados, promoviendo el estricto apego a las leyes, resoluciones y circulares que rigen la actividad. La SSN, como entidad autárquica, tiene la potestad de investigar, juzgar y sancionar las infracciones, siendo un pilar fundamental de la supervisión basada en riesgos.
+
+-----------------------------------------------------------------------
+2) FÓRMULA / COMPONENTES / MECÁNICA
+Las sanciones aplicables por la SSN varían según la gravedad y la naturaleza del incumplimiento, así como el sujeto infractor. La Ley N° 20.091 establece distintos tipos de penas:
+
+Para las entidades aseguradoras (Artículo 58):
+- Llamado de atención: Una advertencia formal sobre una falta leve.
+- Apercibimiento: Una amonestación más severa que el llamado de atención.
+- Multa: Una sanción pecuniaria cuyo monto se gradúa según la gravedad de la infracción, el perjuicio causado y la reincidencia.
+- Suspensión hasta de tres (3) meses para operar en una o más ramas autorizadas: Aplicable en casos de ejercicio anormal de la actividad o disminución de la capacidad económico-financiera.
+- Revocación de la autorización para operar como asegurador: La sanción más grave, que implica la inhabilitación para ejercer la actividad.
+
+Para los productores, agentes, intermediarios, peritos y liquidadores no dependientes del asegurador (Artículo 59):
+- Llamado de atención.
+- Apercibimiento.
+- Multa: La Ley original establecía un monto máximo de CINCO MIL PESOS ($5.000.-), valor que ha quedado desactualizado, pero el principio de la sanción pecuniaria se mantiene.
+- Inhabilitación hasta de cinco (5) años.
+
+Además de las sanciones directas, la SSN puede aplicar medidas precautorias, como la inhibición general de bienes, para proteger los intereses de los asegurados ante situaciones de déficit patrimonial o irregularidades graves. El procedimiento sancionatorio se inicia de oficio, con una etapa de instrucción donde se recaban pruebas y se da traslado al presunto infractor para que ejerza su derecho de defensa presentando descargos. Posteriormente, se emite una propuesta de resolución y, finalmente, una resolución definitiva que puede ser recurrida ante la Cámara Nacional de Apelaciones en lo Comercial. Es importante destacar que las multas no pagadas por los auxiliares pueden convertirse en arresto, aunque esta es una disposición de la ley original que rara vez se aplica en la práctica actual.
+
+-----------------------------------------------------------------------
+3) APLICABILIDAD POR RAMO / CONTEXTO
+El régimen sancionatorio de la SSN es de aplicación transversal a todos los ramos de seguros (Vida, Retiro, Accidentes Personales, Salud) y a cualquier modalidad de la actividad aseguradora y reaseguradora, ya que la Ley N° 20.091 abarca a todas las "entidades de seguros".
+
+Las infracciones más comunes que derivan en sanciones incluyen:
+- Incumplimientos del régimen de inversiones.
+- Presentación tardía o deficiente de estados contables, informes de inversiones y otra información requerida por la normativa.
+- Déficits en los capitales mínimos o en las relaciones técnicas.
+- Ejercicio irregular o anormal de la actividad aseguradora.
+- Falta de pago de indemnizaciones en tiempo y forma.
+- Incumplimientos relacionados con el Reglamento General de la Actividad Aseguradora (RGAA).
+
+La SSN refuerza constantemente su control, enfocándose en la solvencia de las aseguradoras y el cumplimiento estricto del régimen informativo, lo cual es clave para verificar que las entidades cuenten con el respaldo necesario para hacer frente a sus obligaciones.
+
+-----------------------------------------------------------------------
+4) EJEMPLO NUMÉRICO O CASO CONCRETO
+Un ejemplo reciente de la aplicación de este régimen es la Resolución SSN 320/2026, que impuso una multa a Comarseg Compañía Argentina de Seguros S.A. por la suma de $1.344.863,91. La sanción se debió a la presentación fuera de término de los estados contables correspondientes al período cerrado al 31 de marzo de 2026, incumpliendo las obligaciones previstas en el Reglamento General de la Actividad Aseguradora. La SSN fundamentó la multa en que la demora obstaculiza las tareas de fiscalización y que la compañía ya tenía antecedentes de idéntico incumplimiento, lo que agravó la sanción.
+
+Otro caso relevante es la Resolución SSN 174/2026, que hizo definitivos los ajustes y observaciones a los estados contables de Tres Provincias Seguros de Personas S.A. al 31 de diciembre de 2025, verificando un déficit en el Estado de Capitales Mínimos por $133.692.602. Como resultado, la SSN intimó a la compañía a presentar estados contables rectificados y un Plan de Regularización y Saneamiento, y dispuso la inhibición general de bienes de la aseguradora.
+
+-----------------------------------------------------------------------
+5) APLICACIÓN PRÁCTICA PARA UN LÍDER DE EQUIPO
+Como líder de equipo en una Gerencia de Seguros de Personas y Retiro, tu comprensión y gestión proactiva del régimen sancionatorio de la SSN son cruciales. Primero, asegurate de que tu equipo conozca y cumpla rigurosamente con todos los plazos y requisitos de presentación de información a la SSN, desde estados contables hasta informes específicos de inversiones o siniestralidad. Implementá controles internos robustos que permitan detectar desvíos antes de que se conviertan en incumplimientos sancionables.
+
+Mantené una vigilancia constante sobre los indicadores de solvencia y capital mínimo que afectan a tu área, como las reservas técnicas y los pasivos, y asegurate de que los cálculos sean precisos y estén alineados con la normativa. Fomentá una cultura de cumplimiento normativo dentro de tu equipo, enfatizando la importancia de cada tarea, por más "formal" que parezca, ya que las presentaciones tardías pueden generar multas significativas.
+
+Establecé canales de comunicación fluidos con las áreas de Legales, Contaduría y Auditoría Interna para estar al tanto de cualquier novedad regulatoria o potencial riesgo de incumplimiento. Cuando identifiques un riesgo, comunicáselo de inmediato a tu superior directo, proponiendo planes de acción concretos para mitigar la exposición. Considerá la capacitación continua de tu equipo en las últimas resoluciones de la SSN para mantenerlos actualizados y preparados.
+
+-----------------------------------------------------------------------
+6) ERRORES COMUNES O PUNTOS CIEGOS
+Uno de los errores más comunes es subestimar la gravedad de los incumplimientos formales, como las presentaciones tardías de información. La SSN considera que estos retrasos obstaculizan su función de fiscalización y pueden generar multas elevadas, especialmente si hay reincidencia. Otro punto ciego es la falta de un sistema integrado de monitoreo normativo, lo que lleva a que los equipos operen con información desactualizada o ignoren requisitos específicos.
+
+También es un error no dar la debida importancia a los requerimientos de información de la SSN, demorando las respuestas o enviando datos incompletos o inconsistentes. La falta de una cultura interna de cumplimiento, donde cada miembro del equipo comprende el impacto de su trabajo en el marco regulatorio, puede generar descuidos que deriven en sanciones. Finalmente, confiar exclusivamente en las auditorías externas sin una revisión interna constante de los procesos y el cumplimiento normativo es un riesgo, ya que las auditorías suelen ser periódicas y los incumplimientos pueden ocurrir entre revisiones.
+
+-----------------------------------------------------------------------
+7) EN UNA LÍNEA
+La SSN ejerce su facultad sancionatoria para asegurar la solvencia y el cumplimiento normativo del mercado asegurador, siendo la proactividad y el control interno claves para evitar penalizaciones.
+
+-----------------------------------------------------------------------
+FUENTES DE REFERENCIA
+- Ley N° 20.091 - Ley de Entidades de Seguros y su Control
+- Resolución SSN 320/2026
+- Resolución SSN 174/2026
+- Resolución SSN 67/2026
