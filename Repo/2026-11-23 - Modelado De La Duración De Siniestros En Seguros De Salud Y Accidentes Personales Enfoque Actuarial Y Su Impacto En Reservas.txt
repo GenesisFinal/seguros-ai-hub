@@ -1,0 +1,58 @@
+MODELADO DE LA DURACIÓN DE SINIESTROS EN SEGUROS DE SALUD Y ACCIDENTES PERSONALES: ENFOQUE ACTUARIAL Y SU IMPACTO EN RESERVAS
+
+Fecha: 2026-11-23 | Área: Técnico actuarial / seguros de personas | Lectura estimada: 12 minutos
+
+-----------------------------------------------------------------------
+1) CONCEPTO
+El modelado de la duración de siniestros se refiere a la estimación actuarial del tiempo que un siniestro ya ocurrido permanecerá activo, generando pagos o requiriendo gestión. En seguros de Salud y Accidentes Personales, especialmente en coberturas de largo plazo como incapacidades permanentes, rentas por invalidez o tratamientos médicos prolongados, no solo importa la frecuencia (cuántos siniestros ocurren) o la severidad inicial (cuánto cuesta el siniestro al inicio), sino también cuánto tiempo se extenderá la obligación de la aseguradora. Este concepto es crucial para la valuación de pasivos técnicos, la tarificación de productos y la gestión de la liquidez, ya que un siniestro de alta duración implica una obligación financiera extendida en el tiempo. Se diferencia del modelado de la persistencia de pólizas (lapse) que analiza la continuidad del contrato, y del modelado de la siniestralidad que predice la ocurrencia de nuevos eventos.
+
+-----------------------------------------------------------------------
+2) FÓRMULA / COMPONENTES / MECÁNICA
+La mecánica actuarial para modelar la duración de siniestros se basa en técnicas de análisis de supervivencia o modelos multi-estado. Para un siniestro ya declarado y activo, se estima la probabilidad de que este finalice (por recuperación, fallecimiento o agotamiento de la cobertura) en cada período futuro. Si denotamos p(t) como la probabilidad de que un siniestro activo en el momento t-1 siga activo en el momento t, la probabilidad de que un siniestro dure exactamente k períodos adicionales es el producto de las probabilidades de supervivencia hasta k-1 y la probabilidad de finalización en k. La duración esperada futura de un siniestro (Expected Future Duration - EFD) se calcula como la suma de las probabilidades de supervivencia en cada período futuro.
+Matemáticamente, para un siniestro activo en el momento actual (t=0), la duración esperada futura (EFD) es:
+EFD = Σ (t=1 a ∞) S(t)
+Donde S(t) es la probabilidad de que el siniestro siga activo en el período t, y se calcula como el producto de las probabilidades de supervivencia p(i) para i=1 a t.
+S(t) = p(1) * p(2) * ... * p(t)
+Estas probabilidades p(t) se derivan de la experiencia histórica de la aseguradora, ajustadas por factores como la edad del asegurado, la causa del siniestro, la severidad inicial y el tipo de cobertura. Los modelos semi-Markov o de cadenas de Markov son herramientas potentes para representar transiciones entre estados (activo, recuperado, fallecido) y estimar estas probabilidades dependientes del tiempo.
+
+-----------------------------------------------------------------------
+3) APLICABILIDAD POR RAMO / CONTEXTO
+En el ramo de Accidentes Personales, el modelado de la duración es fundamental para productos con coberturas de incapacidad temporal o permanente que otorgan rentas periódicas. La correcta estimación de cuánto tiempo se pagará una renta por invalidez impacta directamente en la suficiencia de las reservas de siniestros pendientes y en la tarificación de la prima pura. Un error en esta estimación puede generar déficits significativos en el largo plazo.
+En el ramo de Salud, es vital para la gestión de siniestros de enfermedades crónicas, tratamientos de rehabilitación o internaciones prolongadas, donde los costos se extienden en el tiempo. Permite proyectar los flujos de caja de egresos futuros con mayor precisión, optimizar la gestión de siniestros (por ejemplo, mediante programas de rehabilitación que acorten la duración) y asegurar que las reservas por siniestros incurridos y no pagados (IBNP) sean adecuadas, considerando la cola de pagos. La Resolución SSN 35.615/2011 y sus modificatorias, que rige el Régimen de Reservas Técnicas, exige la constitución de reservas adecuadas, y el modelado de la duración es una herramienta clave para cumplir con este requisito en ramos de larga cola.
+
+-----------------------------------------------------------------------
+4) EJEMPLO NUMÉRICO O CASO CONCRETO
+Consideremos un siniestro de incapacidad temporal en un seguro de Accidentes Personales en Argentina, donde un asegurado de 45 años sufrió una lesión que lo mantiene inactivo. La experiencia histórica de la aseguradora indica las siguientes probabilidades de recuperación anual para siniestros de este tipo y edad:
+- Probabilidad de recuperación en el 1er año (p1_rec): 30%
+- Probabilidad de recuperación en el 2do año (si aún está inactivo) (p2_rec): 20%
+- Probabilidad de recuperación en el 3er año (si aún está inactivo) (p3_rec): 15%
+Las probabilidades de que el siniestro *siga activo* son:
+- S(1) = 1 - p1_rec = 1 - 0.30 = 0.70 (probabilidad de seguir activo al final del 1er año)
+- S(2) = S(1) * (1 - p2_rec) = 0.70 * (1 - 0.20) = 0.70 * 0.80 = 0.56 (probabilidad de seguir activo al final del 2do año)
+- S(3) = S(2) * (1 - p3_rec) = 0.56 * (1 - 0.15) = 0.56 * 0.85 = 0.476 (probabilidad de seguir activo al final del 3er año)
+La duración esperada futura (EFD) para los primeros 3 años sería:
+EFD_3años = S(1) + S(2) + S(3) = 0.70 + 0.56 + 0.476 = 1.736 años.
+Esto significa que, en promedio, se espera que este tipo de siniestro dure 1.736 años adicionales desde el momento de la valuación, considerando solo los primeros tres años. Si la renta mensual es de $100.000, la reserva para los pagos futuros esperados solo por duración (sin considerar descuentos por tasa de interés) sería de $100.000 * 1.736 * 12 meses = $208.320.000 en el primer año de pagos. Este cálculo se extendería por toda la vida esperada del siniestro, descontando los flujos de pagos futuros.
+
+-----------------------------------------------------------------------
+5) APLICACIÓN PRÁCTICA PARA UN LÍDER DE EQUIPO
+Como líder de equipo, comprender el modelado de la duración de siniestros te permite:
+- Desafiar y validar las hipótesis de duración utilizadas por tu equipo actuarial en la valuación de reservas, especialmente para productos de larga cola. Preguntá por la sensibilidad de las reservas a cambios en las tasas de recuperación.
+- Colaborar con el área de siniestros para identificar palancas de gestión que puedan influir en la duración promedio de los siniestros, como programas de rehabilitación o seguimiento activo. Podés establecer KPIs relacionados con la duración promedio de siniestros por tipo de cobertura.
+- Informar a tu superior directo sobre la volatilidad potencial de las reservas de siniestros si las hipótesis de duración no se cumplen, y cómo esto impacta en la solvencia y la rentabilidad.
+- Guiar el diseño de nuevos productos, incorporando cláusulas que gestionen el riesgo de duración excesiva, como límites de pago o revisiones periódicas de la incapacidad.
+- Evaluar la rentabilidad de reaseguros de exceso de pérdida o cuota parte que cubran el riesgo de duración de siniestros, no solo la severidad inicial.
+
+-----------------------------------------------------------------------
+6) ERRORES COMUNES O PUNTOS CIEGOS
+Uno de los errores más comunes es subestimar la duración real de los siniestros, lo que lleva a reservas insuficientes y a una subvaloración de los pasivos. Otro punto ciego es no actualizar los modelos de duración con la experiencia más reciente de la aseguradora, asumiendo que las tasas de recuperación o finalización son estáticas. La calidad de los datos históricos es fundamental; datos incompletos o inconsistentes sobre las fechas de inicio y fin de los siniestros pueden distorsionar gravemente las estimaciones. También es un error no considerar la heterogeneidad de los siniestros, aplicando una única tabla de duración a poblaciones diversas sin segmentar por edad, causa del siniestro o severidad. Finalmente, ignorar el impacto de factores externos (cambios en la legislación laboral, avances médicos, inflación) que pueden influir en la duración de los siniestros es un descuido importante.
+
+-----------------------------------------------------------------------
+7) EN UNA LÍNEA
+El modelado de la duración de siniestros es una herramienta actuarial indispensable para asegurar la suficiencia de reservas y la rentabilidad en seguros de Salud y Accidentes Personales de larga cola.
+
+-----------------------------------------------------------------------
+FUENTES DE REFERENCIA
+- Ley N° 17.418 de Seguros.
+- Resolución SSN N° 35.615/2011 y modificatorias - Régimen de Reservas Técnicas.
+- Actuarial Society of South Africa. (2010). *Guidance Note 104: Valuation of Long-Term Insurance Liabilities*. (Referencia a principios actuariales generales sobre valuación de pasivos de largo plazo).
