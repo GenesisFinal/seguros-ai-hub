@@ -1,0 +1,50 @@
+EL RÉGIMEN DE TRANSPARENCIA ACTIVA DE LA SSN PARA ASEGURADORAS: OBLIGACIONES DE INFORMACIÓN PÚBLICA Y SU IMPACTO EN LA CONFIANZA DEL MERCADO
+
+Fecha: 2026-11-24 | Área: Regulación argentina | Lectura estimada: 12 minutos
+
+-----------------------------------------------------------------------
+1) CONCEPTO
+El Régimen de Transparencia Activa de la Superintendencia de Seguros de la Nación (SSN) es un marco normativo que impone a las entidades aseguradoras y reaseguradoras la obligación de publicar de forma proactiva y accesible cierta información relevante para el público en general y para los asegurados en particular. Su objetivo principal es fomentar la transparencia del mercado, permitir que los consumidores tomen decisiones informadas y fortalecer la supervisión por parte del organismo de control. Este régimen, establecido principalmente por la Resolución SSN 38.052/2013 y sus modificatorias, busca que la información financiera, de productos, de gestión y de reclamos esté disponible de manera clara y oportuna en los sitios web de las compañías, contribuyendo a una mayor confianza y estabilidad en el sector.
+
+-----------------------------------------------------------------------
+2) FÓRMULA / COMPONENTES / MECÁNICA
+Más que una fórmula, este régimen se compone de un conjunto de obligaciones de publicación de información estructurada. Los componentes clave que las aseguradoras deben transparentar incluyen:
+- Estados contables: Publicación de los estados financieros trimestrales y anuales, incluyendo balances, estados de resultados y notas complementarias, que reflejan la situación económica y financiera de la entidad.
+- Información de productos: Detalle de los planes de seguros comercializados, sus condiciones generales y particulares, costos, coberturas y exclusiones, para facilitar la comparación y comprensión por parte de los potenciales asegurados.
+- Información de reclamos: Estadísticas sobre la cantidad de reclamos recibidos, su naturaleza (por ramo, por tipo de siniestro), el tiempo promedio de resolución y el porcentaje de reclamos resueltos favorablemente, ofreciendo una visión de la calidad de servicio.
+- Datos de contacto: Información clara y accesible sobre los canales de atención al cliente, incluyendo direcciones, teléfonos y correos electrónicos, así como el procedimiento para presentar quejas o consultas.
+- Gobierno societario: Información sobre la composición del directorio, comités y estructura de gestión, en línea con las buenas prácticas de gobierno corporativo.
+La mecánica implica la actualización periódica de esta información en un lugar destacado y de fácil acceso en el sitio web de la aseguradora, con formatos que permitan su descarga y análisis. La SSN supervisa el cumplimiento de estas obligaciones y puede aplicar sanciones ante su incumplimiento.
+
+-----------------------------------------------------------------------
+3) APLICABILIDAD POR RAMO / CONTEXTO
+Si bien el Régimen de Transparencia Activa es de aplicación general para todas las aseguradoras, su impacto y relevancia se magnifican en los ramos de Seguros de Personas y Retiro. En estos productos, la relación contractual suele ser de largo plazo y la asimetría de información entre la compañía y el asegurado es particularmente alta.
+- Vida: La publicación de condiciones de póliza, valores de rescate, información sobre el cálculo de primas y la gestión de siniestros de Vida es crucial para que el asegurado comprenda sus derechos y obligaciones a lo largo del tiempo.
+- Retiro: La transparencia sobre los rendimientos de las inversiones, las comisiones de administración y las proyecciones de renta vitalicia es fundamental para la confianza en un producto que define el futuro financiero del individuo.
+- Accidentes Personales y Salud: La claridad en las coberturas, exclusiones, procesos de denuncia de siniestros y tiempos de respuesta es vital para la satisfacción del asegurado en momentos de necesidad.
+En todos estos ramos, la información de reclamos permite a los potenciales clientes evaluar el desempeño de la aseguradora en la gestión de eventos críticos, mientras que los estados contables brindan una pauta de la solidez financiera de la entidad que respaldará sus compromisos futuros.
+
+-----------------------------------------------------------------------
+4) EJEMPLO NUMÉRICO O CASO CONCRETO
+Imaginá que tu equipo está evaluando la performance de la gestión de siniestros en el ramo de Accidentes Personales. Accedés al sitio web de una aseguradora competidora y, gracias al Régimen de Transparencia Activa, encontrás el informe trimestral de reclamos. Este informe detalla que, para el último trimestre, la compañía recibió 1.200 reclamos de Accidentes Personales, de los cuales resolvió 1.050 en un plazo promedio de 15 días hábiles, con un 85% de resoluciones favorables. Comparás esto con los datos internos de tu propia gerencia: 1.500 reclamos, 1.200 resueltos en 20 días promedio, con un 80% de resoluciones favorables.
+Este dato, aunque no es un cálculo complejo, te permite identificar un benchmark de mercado. La competencia muestra una mayor eficiencia en el tiempo de respuesta y un porcentaje ligeramente superior de resoluciones favorables. Esta información, públicamente disponible, se convierte en un insumo clave para tu análisis de competitividad y para establecer objetivos de mejora interna en tu equipo de siniestros, más allá de lo que la SSN pueda requerir.
+
+-----------------------------------------------------------------------
+5) APLICACIÓN PRÁCTICA PARA UN LÍDER DE EQUIPO
+Como líder, tenés la responsabilidad de asegurar no solo el cumplimiento normativo, sino también de capitalizar los beneficios de la transparencia.
+Primero, implementá procesos internos robustos para la recopilación, verificación y publicación oportuna de la información requerida. Esto implica coordinar con áreas como Contaduría, Legales, Suscripción y Siniestros. Designá un responsable y establecé un calendario de revisiones y actualizaciones.
+Segundo, utilizá la información pública de tu propia compañía y de la competencia como una herramienta de gestión. Analizá los indicadores de reclamos para identificar áreas de mejora en la experiencia del cliente o en la eficiencia operativa. Compará la oferta de productos y sus condiciones para ajustar tu estrategia comercial.
+Tercero, capacitá a tu equipo sobre la importancia de la transparencia y cómo la información que generan contribuye a la confianza del mercado. Fomentá una cultura de datos abiertos y de mejora continua basada en la información disponible. Esto te permitirá no solo evitar sanciones, sino también posicionar a tu gerencia como un referente de buenas prácticas.
+
+-----------------------------------------------------------------------
+6) ERRORES COMUNES O PUNTOS CIEGOS
+Un error frecuente es considerar el Régimen de Transparencia Activa como una mera obligación burocrática, limitándose a cumplir con el mínimo indispensable sin una estrategia de comunicación clara. Esto puede llevar a la publicación de información desactualizada, incompleta o presentada de forma poco amigable para el usuario. Otro punto ciego es no integrar la generación de esta información con los procesos operativos diarios, lo que resulta en esfuerzos duplicados o datos inconsistentes. La falta de un control interno robusto sobre la veracidad y oportunidad de lo publicado también es un riesgo, ya que la información incorrecta puede generar desconfianza o incluso reclamos por parte de los asegurados. Finalmente, no analizar la información publicada por la competencia es perder una valiosa oportunidad de benchmarking y mejora estratégica.
+
+-----------------------------------------------------------------------
+7) EN UNA LÍNEA
+El Régimen de Transparencia Activa de la SSN es una herramienta regulatoria esencial que, bien gestionada, transforma la obligación de informar en una palanca estratégica para la confianza del mercado y la mejora interna.
+
+-----------------------------------------------------------------------
+FUENTES DE REFERENCIA
+- Resolución SSN 38.052/2013 - Régimen de Transparencia Activa para Entidades de Seguros y Reaseguros.
+- Ley N° 20.091 - Régimen Legal de las Entidades de Seguros y su Control.
